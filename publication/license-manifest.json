@@ -1,6 +1,38 @@
 {
   "schemaVersion": 1,
   "products": {
+    "gitlab": {
+      "status": "blocked",
+      "requiredRevision": 2,
+      "components": [
+        {
+          "name": "GitLab for VS Code",
+          "version": "7.2.5",
+          "license": "MIT",
+          "files": [
+            "publication/licenses/gitlab-7.2.5/GitLab-MIT.txt"
+          ],
+          "sourceUrl": "https://gitlab.com/gitlab-org/gitlab-vscode-extension/-/tree/v7.2.5"
+        },
+        {
+          "name": "DOMPurify",
+          "version": "3.4.0",
+          "license": "Apache-2.0 OR MPL-2.0",
+          "files": [
+            "publication/licenses/gitlab-7.2.5/DOMPurify-3.4.0-Apache-2.0-OR-MPL-2.0.txt"
+          ],
+          "sourceUrl": "https://raw.githubusercontent.com/cure53/DOMPurify/3.4.0/LICENSE"
+        }
+      ],
+      "unresolved": [
+        "GitLab r1 full DOMPurify license is absent from the VSIX; short banners in duo-chat-v2/static/js/290.9855de11da.js.LICENSE.txt and root/static/js/async/298.7999763754.js.LICENSE.txt are not a copy of its chosen license. The client receives only VSIX, not repository notices. Any corrected distribution requires new r2 bytes; never modify r1.",
+        "GitLab extension/assets/language-server/webviews/root/static/js/async/799.4389421310.js.LICENSE.txt and main-bundle-node.js reference dagre.esm.js.LEGAL.txt, but no such legal file exists in any of the 399 archive entries. Exact bundled dagre dependencies and notices remain to be reconstructed.",
+        "GitLab has 3 bundled Node source maps with 319/164/219 package-root locations (283/146/160 unique package names respectively). Complete version-to-license-to-shipped-code attribution is not closed; package.json ranges and only the outer extension package-lock are not authoritative for all prebundled language-server/webview components.",
+        "20 grammar WASM files under extension/assets/language-server/vendor/grammars/ and two identical tree-sitter.wasm runtime copies lack fixed upstream revision-to-byte and full-license correspondence. Candidate binary inventory records every SHA256; do not assume every grammar has the same license.",
+        "extension/assets/language-server/rg SHA256 193906679498de4d939345b937fa24e0e69a03c244bd70c859f5e41232713f21 plus vendor/seccomp/{arm64,x64}/apply-seccomp ELF inputs need exact binary/source and linked-component license attribution. No GPL/LGPL classification or source-offer sufficiency is asserted from strings alone.",
+        "Webview short banners identify Vue 2.7.16, Vue 3.5.32, vue-router 3.6.5/4.6.4, pinia 2.3.1/3.0.4, lucide-vue-next 0.552.0, tippy.js 6.3.7, buffer, ieee754 and markdown/marked; corresponding complete licenses and all non-banner/minified components remain unclosed. The two partial components in this manifest are not an exhaustive GitLab dependency list."
+      ]
+    },
     "error-lens": {
       "status": "ready",
       "requiredRevision": 1,

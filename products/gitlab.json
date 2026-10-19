@@ -1,0 +1,29 @@
+{
+  "id": "gitlab",
+  "extensionId": "local-chinese.gitlab-workflow-zh",
+  "upstreamId": "gitlab.gitlab-workflow",
+  "name": "GitLab",
+  "symbol": "GL",
+  "version": "7.2.5",
+  "description": "GitLab 7.2.5 本地中文版；使用个人访问 Token（PAT）登录。",
+  "knownLimitations": [
+    "本发行仅提供 PAT 登录，不提供原官方 OAuth 登录入口。",
+    "上游通用包所带 rg 为 Linux x64 ELF；Duo 工作流搜索在 Mac/Windows 上未验证且可能不可用。",
+    "本既有 r1 发行按用户明确授权公开；依赖许可材料尚未核对齐，未声明许可证审查通过。"
+  ],
+  "schemaVersion": 1,
+  "localizationRevision": 1,
+  "artifacts": [
+    {
+      "localizationRevision": 1,
+      "tag": "gitlab-7.2.5-r1",
+      "assetName": "gitlab-workflow-zh-7.2.5-r1.vsix",
+      "url": "https://github.com/Nan857/vscode-chinese-extensions/releases/download/gitlab-7.2.5-r1/gitlab-workflow-zh-7.2.5-r1.vsix",
+      "targetPlatform": "universal",
+      "enginesVscode": "^1.106.0",
+      "verificationProfile": "legacy-r1",
+      "sha256": "687b087216400d98f53b178ec05380fcb92f49a45af3f26f00501c8e90d6baa3",
+      "bytes": 39868106
+    }
+  ]
+}

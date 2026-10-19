@@ -68,12 +68,67 @@
         "publication/licenses/error-lens-3.29.0/THIRD-PARTY-NOTICES.md",
         "publication/licenses/error-lens-3.29.0/lodash-4.17.21-MIT.txt"
       ]
+    },
+    {
+      "id": "gitlab",
+      "version": "7.2.5",
+      "extensionId": "local-chinese.gitlab-workflow-zh",
+      "upstreamId": "gitlab.gitlab-workflow",
+      "upstream": {
+        "url": "https://GitLab.gallerycdn.vsassets.io/extensions/gitlab/gitlab-workflow/7.2.5/1792126026745/Microsoft.VisualStudio.Services.VSIXPackage",
+        "sha256": "a9c03d85ee23c5af1f4c526d192bdd21dab68fd1bdcc8d29b38cc0c1c1f58eed",
+        "bytes": 39936100
+      },
+      "base": {
+        "assetName": "gitlab-workflow-zh-7.2.5.vsix",
+        "sha256": "687b087216400d98f53b178ec05380fcb92f49a45af3f26f00501c8e90d6baa3",
+        "bytes": 39868106
+      },
+      "recipe": {
+        "script": "scripts/build-store-product.py",
+        "inputs": [
+          {
+            "path": "scripts/build-store-product.py",
+            "sha256": "44f1d6d062ab2519272d9124ede421f02d10f8a85416a95d3999e68e753f1058",
+            "bytes": 20851
+          },
+          {
+            "path": "patches/gitlab-7.2.5.zh-cn.json",
+            "sha256": "62bc7f6b1ec5d60bc98e1138290245ebe35ac1ae84ab6dd89ab7b9fe36019ddf",
+            "bytes": 547634
+          }
+        ]
+      },
+      "artifact": {
+        "localizationRevision": 1,
+        "tag": "gitlab-7.2.5-r1",
+        "assetName": "gitlab-workflow-zh-7.2.5-r1.vsix",
+        "url": "https://github.com/Nan857/vscode-chinese-extensions/releases/download/gitlab-7.2.5-r1/gitlab-workflow-zh-7.2.5-r1.vsix",
+        "targetPlatform": "universal",
+        "enginesVscode": "^1.106.0",
+        "verificationProfile": "legacy-r1",
+        "sha256": "687b087216400d98f53b178ec05380fcb92f49a45af3f26f00501c8e90d6baa3",
+        "bytes": 39868106
+      },
+      "publicationAuthorization": {
+        "schemaVersion": 1,
+        "kind": "user-authorized-unreviewed-license",
+        "productId": "gitlab",
+        "version": "7.2.5",
+        "localizationRevision": 1,
+        "sha256": "687b087216400d98f53b178ec05380fcb92f49a45af3f26f00501c8e90d6baa3",
+        "bytes": 39868106
+      },
+      "licenseFiles": [
+        "publication/licenses/gitlab-7.2.5/DOMPurify-3.4.0-Apache-2.0-OR-MPL-2.0.txt",
+        "publication/licenses/gitlab-7.2.5/GitLab-MIT.txt"
+      ]
     }
   ],
   "files": {
     "README.md": {
-      "sha256": "2b2792985649cc3ebdff8619da86a28b628b5ed6b6991e3f42a700e5a7bb7cc6",
-      "bytes": 1936
+      "sha256": "90dcdf0fe40ea4283c30285c72df954b039693ad6283b3fe227b632573c996c1",
+      "bytes": 2136
     },
     "localizations/error-lens-3.29.0/LICENSES/lodash-MIT.txt": {
       "sha256": "f71e8ed126b46346494aad5486874cd8f0aafe95092ed67d2e3cb6110f939abc",
@@ -87,13 +142,21 @@
       "sha256": "615e5f2e92e2c37c1750ccc18bb4822d4290a6c452744e37abb3fd8ba45009e4",
       "bytes": 10374
     },
+    "patches/gitlab-7.2.5.zh-cn.json": {
+      "sha256": "62bc7f6b1ec5d60bc98e1138290245ebe35ac1ae84ab6dd89ab7b9fe36019ddf",
+      "bytes": 547634
+    },
     "products/error-lens.json": {
       "sha256": "d156502f71bd766b332ff8c989ac4aff6b1d8e1b93f33e28c4dc8cf4418d40fe",
       "bytes": 962
     },
+    "products/gitlab.json": {
+      "sha256": "5829feef50ed6bdc55197e5169ffdb9a6ac08cf9378f9b77d1976a9e47e09b31",
+      "bytes": 1187
+    },
     "publication/license-manifest.json": {
-      "sha256": "08d01d9c83afcdd3a8622a408251c7da41b1d085af0c00b2ef6a172348d1c61d",
-      "bytes": 859
+      "sha256": "c7499a12ff6f472b40faf631aacd41c2b00ea8e323d2c0b45b88f52245d6835c",
+      "bytes": 3659
     },
     "publication/licenses/error-lens-3.29.0/Error-Lens-MIT.txt": {
       "sha256": "6c34860f0a1fe1dcf6afcfb2f83655f6ce21a95fcd402cc118a642fccb861b1e",
@@ -106,6 +169,14 @@
     "publication/licenses/error-lens-3.29.0/lodash-4.17.21-MIT.txt": {
       "sha256": "f71e8ed126b46346494aad5486874cd8f0aafe95092ed67d2e3cb6110f939abc",
       "bytes": 1952
+    },
+    "publication/licenses/gitlab-7.2.5/DOMPurify-3.4.0-Apache-2.0-OR-MPL-2.0.txt": {
+      "sha256": "1b02e03c3fb4f87d476c128f0eb9def1f5a1709d28b180465228bd41574623b7",
+      "bytes": 27729
+    },
+    "publication/licenses/gitlab-7.2.5/GitLab-MIT.txt": {
+      "sha256": "f79103fcbadad38768311d14ca346c74aa1f59bcf046f3ee4202bb94c1e98255",
+      "bytes": 1076
     },
     "scripts/build-error-lens-product.py": {
       "sha256": "65148e6c7589c054bd5f6c0371a73f61cb9c66b1ca69dc01ad8c93df27508fca",
@@ -120,8 +191,8 @@
       "bytes": 280
     },
     "scripts/rebuild-public-products.py": {
-      "sha256": "fdca1760a626cb14ef48e2cd4e0de13f3ccaa2f1141bc2b8098a9cd6b0fc986b",
-      "bytes": 20835
+      "sha256": "7769925e0bca97b6be737e46a8d1f93113da6caa5bce3f0d90720b440eadb0a6",
+      "bytes": 25667
     }
   }
 }

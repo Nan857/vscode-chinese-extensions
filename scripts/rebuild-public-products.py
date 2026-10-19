@@ -27,14 +27,109 @@ import zipfile
 import zlib
 
 MAX_SOURCE = 64 << 20
-OFFICIAL_HOSTS = {'marketplace.visualstudio.com', 'gitlab.gallerycdn.vsassets.io', 'usernamehw.gallerycdn.vsassets.io'}
 SOURCE_ID = 'Nan857/vscode-chinese-extensions'
-RECIPE_INPUTS = {
-    'gitlab': {'scripts/build-store-product.py', 'patches/gitlab-7.2.5.zh-cn.json'},
-    'error-lens': {'scripts/build-store-product.py', 'scripts/build-error-lens-product.py',
-        'localizations/error-lens-3.29.0/manifest.json', 'localizations/error-lens-3.29.0/runtime.json',
-        'localizations/error-lens-3.29.0/LICENSES/lodash-MIT.txt'},
+SEMVER = r'(?:0|[1-9][0-9]*)\.(?:0|[1-9][0-9]*)\.(?:0|[1-9][0-9]*)'
+LEGACY = {
+    ('gitlab', '7.2.5', 'local-chinese.gitlab-workflow-zh', 'gitlab.gitlab-workflow'):
+        ('687b087216400d98f53b178ec05380fcb92f49a45af3f26f00501c8e90d6baa3', 39868106),
+    ('error-lens', '3.29.0', 'local-chinese.errorlens-zh', 'usernamehw.errorlens'):
+        ('b5acafe76fe3953e9a03e16d0dc51351cc8a03bd627388137bd6369e7fbe0f9b', 75154),
 }
+
+
+def fingerprint_record(record):
+    if (not isinstance(record, dict) or not re.fullmatch(r'[a-f0-9]{64}', str(record.get('sha256', '')))
+            or type(record.get('bytes')) is not int or not 0 < record['bytes'] <= MAX_SOURCE):
+        raise ValueError('invalid registered fingerprint')
+
+
+def legacy_product(product):
+    identity = tuple(product.get(key) for key in ('id', 'version', 'extensionId', 'upstreamId'))
+    expected = LEGACY.get(identity)
+    return (expected is not None and product['artifact']['localizationRevision'] == 1
+            and (product['base']['sha256'], product['base']['bytes']) == expected)
+
+
+def recipe_inputs(product):
+    """The source lock registers inputs, never arbitrary project or ambient paths."""
+    product_id, version = product.get('id'), product.get('version')
+    if (not isinstance(product_id, str) or not re.fullmatch(r'[a-z0-9][a-z0-9-]{0,63}', product_id)
+            or not isinstance(version, str) or not re.fullmatch(SEMVER, version)):
+        raise ValueError('invalid registered product identity')
+    for key in ('extensionId', 'upstreamId'):
+        if not isinstance(product.get(key), str) or not re.fullmatch(r'[a-z0-9][a-z0-9-]{0,63}\.[a-z0-9][a-z0-9-]{0,127}', product[key]):
+            raise ValueError('invalid registered extension identity')
+    recipe = product['recipe']
+    script = relative(recipe['script'])
+    if not re.fullmatch(r'scripts/build-[a-z0-9][a-z0-9-]*\.py', script):
+        raise ValueError('unapproved recipe script')
+    inputs = recipe.get('inputs')
+    if not isinstance(inputs, list) or not 1 <= len(inputs) <= 500:
+        raise ValueError('unapproved recipe inputs')
+    paths = set()
+    prefix = product_id + '-' + version
+    for item in inputs:
+        name = relative(item['path'])
+        fingerprint_record(item)
+        if name in paths or item['bytes'] > 4 << 20:
+            raise ValueError('unapproved recipe inputs')
+        is_script = bool(re.fullmatch(r'scripts/build-[a-z0-9][a-z0-9-]*\.py', name))
+        is_patch = bool(re.fullmatch(r'patches/' + re.escape(prefix) + r'(?:\.[a-z0-9][a-z0-9._-]*)?\.json', name))
+        is_resource = (name.startswith('localizations/' + prefix + '/') and
+            re.fullmatch(r'[A-Za-z0-9][A-Za-z0-9._-]*(?:/[A-Za-z0-9][A-Za-z0-9._-]*)*\.(?:json|txt|md)', name) is not None)
+        if not (is_script or is_patch or is_resource):
+            raise ValueError('unapproved recipe inputs')
+        paths.add(name)
+    if script not in paths or 'scripts/build-store-product.py' not in paths:
+        raise ValueError('unapproved recipe inputs')
+    for key in ('base', 'upstream'):
+        fingerprint_record(product[key])
+    url_check(product['upstream']['url'], product['upstreamId'], version)
+    artifact = product['artifact']
+    revision = artifact.get('localizationRevision')
+    if type(revision) is not int or not 1 <= revision < 2 ** 31:
+        raise ValueError('invalid localization revision')
+    for name in [artifact['tag'], artifact['assetName'], product['base']['assetName']]:
+        if not re.fullmatch(r'[a-z0-9][a-z0-9._-]{0,150}', name):
+            raise ValueError('unsafe release name')
+    if (not product['base']['assetName'].endswith('.vsix')
+            or artifact['tag'] != prefix + '-r' + str(revision)
+            or artifact['assetName'] != Path(product['base']['assetName']).stem + '-r' + str(revision) + '.vsix'):
+        raise ValueError('registered release identity mismatch')
+    expected_profile = 'legacy-r1' if legacy_product(product) else 'metadata-v1'
+    if artifact.get('verificationProfile') != expected_profile:
+        raise ValueError('unapproved verification profile')
+    return paths
+
+
+def unreviewed_authorization(product):
+    """One explicitly requested existing distribution; never a license-ready assertion."""
+    if not legacy_product(product) or product['id'] != 'gitlab':
+        raise ValueError('unreviewed license authorization is not bound to existing GitLab r1')
+    return {'schemaVersion': 1, 'kind': 'user-authorized-unreviewed-license', 'productId': product['id'],
+        'version': product['version'], 'localizationRevision': 1,
+        'sha256': product['base']['sha256'], 'bytes': product['base']['bytes']}
+
+
+def validate_license(product, license_product):
+    revision = product['artifact']['localizationRevision']
+    minimum = license_product.get('requiredRevision')
+    ready = (license_product.get('status') == 'ready' and license_product.get('unresolved') == []
+        and type(minimum) is int and 1 <= minimum <= revision and bool(license_product.get('components')))
+    authorization = product.get('publicationAuthorization')
+    if authorization is not None:
+        if authorization != unreviewed_authorization(product):
+            raise ValueError('unreviewed license authorization fingerprint mismatch')
+    elif not ready:
+        raise ValueError('publication blocked: ' + product['id'])
+    return ready
+
+
+def license_path(name):
+    relative(name)
+    if not re.fullmatch(r'publication/(?:licenses|notices)/(?:[A-Za-z0-9][A-Za-z0-9._-]*/)*[A-Za-z0-9][A-Za-z0-9._-]*\.(?:txt|md)', name):
+        raise ValueError('unapproved license export path')
+    return name
 
 
 
@@ -125,42 +220,33 @@ def validate_repository(root):
             raise ValueError('public input fingerprint mismatch: ' + name)
         scan_text(raw)
     products = lock.get('products')
-    if not isinstance(products, list) or not products or len(products) > 2:
+    if not isinstance(products, list) or not 1 <= len(products) <= 1000:
         raise ValueError('invalid public products')
     ids = set()
     allowed_files = {'README.md', 'scripts/rebuild-public-products.py', 'scripts/product-release-check.py', 'publication/license-manifest.json'}
     for product in products:
         product_id = product['id']
-        if product_id not in {'gitlab', 'error-lens'} or product_id in ids:
+        if product_id in ids:
             raise ValueError('invalid or duplicate product')
         ids.add(product_id)
-        expected_inputs = RECIPE_INPUTS[product_id]
-        paths = [item['path'] for item in product['recipe']['inputs']]
-        if len(paths) != len(set(paths)) or set(paths) != expected_inputs:
-            raise ValueError('unapproved recipe inputs')
-        expected_script = 'scripts/build-store-product.py' if product_id == 'gitlab' else 'scripts/build-error-lens-product.py'
-        if product['recipe']['script'] != expected_script:
-            raise ValueError('unapproved recipe script')
+        paths = recipe_inputs(product)
         allowed_files.update(paths)
         allowed_files.add('products/' + product_id + '.json')
         for file in product['licenseFiles']:
-            relative(file)
-            if not file.startswith(('publication/licenses/', 'publication/notices/')):
-                raise ValueError('unapproved license export path')
+            license_path(file)
             allowed_files.add(file)
         metadata = parse_json(regular(root, 'products/' + product_id + '.json'))
-        if any(metadata[key] != product[key] for key in ('id', 'extensionId', 'upstreamId', 'version')) or metadata['artifacts'] != [product['artifact']]:
+        if (any(metadata[key] != product[key] for key in ('id', 'extensionId', 'upstreamId', 'version'))
+                or metadata.get('localizationRevision') != product['artifact']['localizationRevision']
+                or metadata['artifacts'] != [product['artifact']]):
             raise ValueError('public product metadata mismatch')
-        url_check(product['upstream']['url'])
         for item in product['recipe']['inputs']:
             if files.get(item['path']) != {k: item[k] for k in ('sha256', 'bytes')}:
                 raise ValueError('recipe differs from public whitelist')
         artifact = product['artifact']
         if artifact['url'] != 'https://github.com/' + SOURCE_ID + '/releases/download/' + artifact['tag'] + '/' + artifact['assetName']:
             raise ValueError('artifact is not fixed source')
-        for name in [artifact['tag'], artifact['assetName'], product['base']['assetName']]:
-            if not re.fullmatch(r'[a-z0-9][a-z0-9._-]{0,150}', name):
-                raise ValueError('unsafe release name')
+        fingerprint_record(artifact)
     if set(files) != allowed_files:
         raise ValueError('unexpected public whitelist file')
     licenses = parse_json(regular(root, 'publication/license-manifest.json'))
@@ -169,10 +255,9 @@ def validate_repository(root):
     for product in products:
         license_product = licenses['products'][product['id']]
         component_files = {file for component in license_product['components'] for file in component['files']}
-        if (license_product.get('status') != 'ready' or license_product.get('unresolved') != []
-                or license_product.get('requiredRevision') != product['artifact']['localizationRevision']
-                or component_files != set(product['licenseFiles'])):
-            raise ValueError('publication blocked: ' + product['id'])
+        validate_license(product, license_product)
+        if component_files != set(product['licenseFiles']):
+            raise ValueError('public license file mismatch')
     if 'catalog.json' in actual:
         validate_published_catalog(root, lock)
     return root, lock
@@ -207,36 +292,52 @@ def validate_published_catalog(root, lock):
         raise ValueError('published catalog differs from locked product release')
 
 
-def url_check(url):
+def url_check(url, upstream_id=None, version=None):
     parts = urllib.parse.urlsplit(url)
-    if (parts.scheme != 'https' or parts.hostname not in OFFICIAL_HOSTS or parts.username or parts.password
+    if (parts.scheme != 'https' or not parts.hostname or parts.username or parts.password
             or parts.port not in (None, 443) or parts.fragment or parts.query or '%' in parts.path
             or '..' in parts.path.split('/')):
         raise ValueError('unapproved official download origin')
+    atom = r'([a-z0-9][a-z0-9-]{0,127})'
     if parts.hostname == 'marketplace.visualstudio.com':
-        if not re.fullmatch(r'/_apis/public/gallery/publishers/usernamehw/vsextensions/errorlens/3\.29\.0/vspackage', parts.path):
+        match = re.fullmatch(r'/_apis/public/gallery/publishers/' + atom + r'/vsextensions/' + atom + r'/(' + SEMVER + r')/vspackage', parts.path)
+        if not match:
             raise ValueError('unapproved official marketplace path')
-    elif not re.fullmatch(r'/extensions/(?:gitlab/gitlab-workflow/7\.2\.5|usernamehw/errorlens/3\.29\.0)/[0-9]+/Microsoft\.VisualStudio\.Services\.VSIXPackage', parts.path):
+    else:
+        match = re.fullmatch(r'/extensions/' + atom + '/' + atom + '/(' + SEMVER + r')/[0-9]+/Microsoft\.VisualStudio\.Services\.VSIXPackage', parts.path)
+        if not match or parts.hostname != match[1] + '.gallerycdn.vsassets.io':
+            raise ValueError('unapproved official CDN path')
+    if upstream_id is not None and (upstream_id != match[1] + '.' + match[2] or version != match[3]):
         raise ValueError('unapproved official CDN path')
     return url
 
 
+def source_identity(url):
+    url_check(url)
+    parts = urllib.parse.urlsplit(url)
+    fields = parts.path.split('/')
+    if parts.hostname == 'marketplace.visualstudio.com':
+        return fields[5] + '.' + fields[7], fields[8]
+    return fields[2] + '.' + fields[3], fields[4]
+
+
 class SafeRedirect(urllib.request.HTTPRedirectHandler):
-    def __init__(self):
+    def __init__(self, identity):
         super().__init__()
         self.count = 0
+        self.identity = identity
 
     def redirect_request(self, request, fp, code, message, headers, newurl):
         self.count += 1
         if self.count > 3:
             raise ValueError('official download redirect budget exceeded')
-        url_check(newurl)
+        url_check(newurl, *self.identity)
         return urllib.request.Request(newurl, headers={'Accept-Encoding': 'gzip', 'User-Agent': 'Chinese-Extensions-Public-Rebuild/1'})
 
 
 def download(source, destination):
     url_check(source['url'])
-    opener = urllib.request.build_opener(SafeRedirect(), urllib.request.HTTPSHandler(context=ssl.create_default_context()))
+    opener = urllib.request.build_opener(SafeRedirect(source_identity(source['url'])), urllib.request.HTTPSHandler(context=ssl.create_default_context()))
     started = time.monotonic()
     request = urllib.request.Request(source['url'], headers={'Accept-Encoding': 'gzip', 'User-Agent': 'Chinese-Extensions-Public-Rebuild/1'})
     with opener.open(request, timeout=20) as response:
@@ -268,10 +369,8 @@ def download(source, destination):
 
 def revision_package(root, product, base):
     revision = product['artifact']['localizationRevision']
-    if revision == 1:
+    if legacy_product(product):
         return base
-    if revision != 2:
-        raise ValueError('unreviewed localization revision')
     spec = importlib.util.spec_from_file_location('public_product_zip', root / 'scripts/build-store-product.py')
     helper = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(helper)
