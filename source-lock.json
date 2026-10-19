@@ -1,0 +1,127 @@
+{
+  "schemaVersion": 1,
+  "sourceId": "Nan857/vscode-chinese-extensions",
+  "runtime": {
+    "implementation": "CPython",
+    "python": "3.9.6",
+    "zlib": "1.2.12"
+  },
+  "products": [
+    {
+      "id": "error-lens",
+      "version": "3.29.0",
+      "extensionId": "local-chinese.errorlens-zh",
+      "upstreamId": "usernamehw.errorlens",
+      "upstream": {
+        "url": "https://marketplace.visualstudio.com/_apis/public/gallery/publishers/usernamehw/vsextensions/errorlens/3.29.0/vspackage",
+        "sha256": "90af40c69dad314199ff4e15b4be61ce0df9cef9d12231e99e6089b7d3a11d0f",
+        "bytes": 62677
+      },
+      "base": {
+        "assetName": "errorlens-zh-3.29.0.vsix",
+        "sha256": "b5acafe76fe3953e9a03e16d0dc51351cc8a03bd627388137bd6369e7fbe0f9b",
+        "bytes": 75154
+      },
+      "recipe": {
+        "script": "scripts/build-error-lens-product.py",
+        "inputs": [
+          {
+            "path": "scripts/build-store-product.py",
+            "sha256": "44f1d6d062ab2519272d9124ede421f02d10f8a85416a95d3999e68e753f1058",
+            "bytes": 20851
+          },
+          {
+            "path": "scripts/build-error-lens-product.py",
+            "sha256": "65148e6c7589c054bd5f6c0371a73f61cb9c66b1ca69dc01ad8c93df27508fca",
+            "bytes": 11093
+          },
+          {
+            "path": "localizations/error-lens-3.29.0/manifest.json",
+            "sha256": "fcf2e9a44d4a6efc0872b554aa896603412d6e215ca169d1a8f40a0ee6ef1e19",
+            "bytes": 71651
+          },
+          {
+            "path": "localizations/error-lens-3.29.0/runtime.json",
+            "sha256": "615e5f2e92e2c37c1750ccc18bb4822d4290a6c452744e37abb3fd8ba45009e4",
+            "bytes": 10374
+          },
+          {
+            "path": "localizations/error-lens-3.29.0/LICENSES/lodash-MIT.txt",
+            "sha256": "f71e8ed126b46346494aad5486874cd8f0aafe95092ed67d2e3cb6110f939abc",
+            "bytes": 1952
+          }
+        ]
+      },
+      "artifact": {
+        "localizationRevision": 1,
+        "tag": "error-lens-3.29.0-r1",
+        "assetName": "errorlens-zh-3.29.0-r1.vsix",
+        "url": "https://github.com/Nan857/vscode-chinese-extensions/releases/download/error-lens-3.29.0-r1/errorlens-zh-3.29.0-r1.vsix",
+        "targetPlatform": "universal",
+        "enginesVscode": "^1.107.0",
+        "verificationProfile": "legacy-r1",
+        "sha256": "b5acafe76fe3953e9a03e16d0dc51351cc8a03bd627388137bd6369e7fbe0f9b",
+        "bytes": 75154
+      },
+      "licenseFiles": [
+        "publication/licenses/error-lens-3.29.0/Error-Lens-MIT.txt",
+        "publication/licenses/error-lens-3.29.0/THIRD-PARTY-NOTICES.md",
+        "publication/licenses/error-lens-3.29.0/lodash-4.17.21-MIT.txt"
+      ]
+    }
+  ],
+  "files": {
+    "README.md": {
+      "sha256": "2b2792985649cc3ebdff8619da86a28b628b5ed6b6991e3f42a700e5a7bb7cc6",
+      "bytes": 1936
+    },
+    "localizations/error-lens-3.29.0/LICENSES/lodash-MIT.txt": {
+      "sha256": "f71e8ed126b46346494aad5486874cd8f0aafe95092ed67d2e3cb6110f939abc",
+      "bytes": 1952
+    },
+    "localizations/error-lens-3.29.0/manifest.json": {
+      "sha256": "fcf2e9a44d4a6efc0872b554aa896603412d6e215ca169d1a8f40a0ee6ef1e19",
+      "bytes": 71651
+    },
+    "localizations/error-lens-3.29.0/runtime.json": {
+      "sha256": "615e5f2e92e2c37c1750ccc18bb4822d4290a6c452744e37abb3fd8ba45009e4",
+      "bytes": 10374
+    },
+    "products/error-lens.json": {
+      "sha256": "d156502f71bd766b332ff8c989ac4aff6b1d8e1b93f33e28c4dc8cf4418d40fe",
+      "bytes": 962
+    },
+    "publication/license-manifest.json": {
+      "sha256": "08d01d9c83afcdd3a8622a408251c7da41b1d085af0c00b2ef6a172348d1c61d",
+      "bytes": 859
+    },
+    "publication/licenses/error-lens-3.29.0/Error-Lens-MIT.txt": {
+      "sha256": "6c34860f0a1fe1dcf6afcfb2f83655f6ce21a95fcd402cc118a642fccb861b1e",
+      "bytes": 1065
+    },
+    "publication/licenses/error-lens-3.29.0/THIRD-PARTY-NOTICES.md": {
+      "sha256": "df444e4899a83b5da51b1faacb8416ffe90a6d27d08dcd7db07427b6f2563774",
+      "bytes": 2803
+    },
+    "publication/licenses/error-lens-3.29.0/lodash-4.17.21-MIT.txt": {
+      "sha256": "f71e8ed126b46346494aad5486874cd8f0aafe95092ed67d2e3cb6110f939abc",
+      "bytes": 1952
+    },
+    "scripts/build-error-lens-product.py": {
+      "sha256": "65148e6c7589c054bd5f6c0371a73f61cb9c66b1ca69dc01ad8c93df27508fca",
+      "bytes": 11093
+    },
+    "scripts/build-store-product.py": {
+      "sha256": "44f1d6d062ab2519272d9124ede421f02d10f8a85416a95d3999e68e753f1058",
+      "bytes": 20851
+    },
+    "scripts/product-release-check.py": {
+      "sha256": "aa3734749bd44fc72287717acaff3ea513595ea07ad7f0d658b08aa1fcf8ac89",
+      "bytes": 280
+    },
+    "scripts/rebuild-public-products.py": {
+      "sha256": "fdca1760a626cb14ef48e2cd4e0de13f3ccaa2f1141bc2b8098a9cd6b0fc986b",
+      "bytes": 20835
+    }
+  }
+}

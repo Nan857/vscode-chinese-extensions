@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "products": {
+    "error-lens": {
+      "status": "ready",
+      "requiredRevision": 1,
+      "components": [
+        {
+          "name": "Error Lens",
+          "version": "3.29.0",
+          "license": "MIT",
+          "files": [
+            "publication/licenses/error-lens-3.29.0/Error-Lens-MIT.txt",
+            "publication/licenses/error-lens-3.29.0/THIRD-PARTY-NOTICES.md"
+          ],
+          "sourceUrl": "https://github.com/usernamehw/vscode-error-lens/tree/v3.29.0"
+        },
+        {
+          "name": "lodash",
+          "version": "4.17.21",
+          "license": "MIT",
+          "files": [
+            "publication/licenses/error-lens-3.29.0/lodash-4.17.21-MIT.txt"
+          ],
+          "sourceUrl": "https://registry.npmjs.org/lodash/-/lodash-4.17.21.tgz"
+        }
+      ],
+      "unresolved": []
+    }
+  }
+}

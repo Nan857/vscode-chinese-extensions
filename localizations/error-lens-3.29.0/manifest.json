@@ -1,0 +1,1138 @@
+{
+  "sourceSha256": "5d1505b7811be908ca8f0859725d869ad0215e07c42801dede9cb869347899aa",
+  "translations": [
+    {
+      "pointer": "/displayName",
+      "before": "Error Lens",
+      "after": "Error Lens（中文版）"
+    },
+    {
+      "pointer": "/description",
+      "before": "Improve highlighting of errors, warnings and other language diagnostics.",
+      "after": "更醒目地显示错误、警告和其他语言诊断信息。"
+    },
+    {
+      "pointer": "/contributes/commands/0/title",
+      "before": "Toggle (Enable/Disable) Everything",
+      "after": "切换全部功能（启用／禁用）"
+    },
+    {
+      "pointer": "/contributes/commands/0/description",
+      "before": "Toggle (Enable/Disable) Everything (toggle global setting `\"errorLens.enabled\"`)",
+      "after": "切换全部功能（启用／禁用），即切换全局设置 `\"errorLens.enabled\"`。"
+    },
+    {
+      "pointer": "/contributes/commands/1/title",
+      "before": "Toggle Errors",
+      "after": "切换错误显示"
+    },
+    {
+      "pointer": "/contributes/commands/1/description",
+      "before": "Enable/Disable Errors in `\"errorLens.enabledDiagnosticLevels\"` setting.",
+      "after": "在 `\"errorLens.enabledDiagnosticLevels\"` 设置中启用／禁用错误。"
+    },
+    {
+      "pointer": "/contributes/commands/2/title",
+      "before": "Toggle Warnings",
+      "after": "切换警告显示"
+    },
+    {
+      "pointer": "/contributes/commands/2/description",
+      "before": "Enable/Disable Warnings in `\"errorLens.enabledDiagnosticLevels\"` setting.",
+      "after": "在 `\"errorLens.enabledDiagnosticLevels\"` 设置中启用／禁用警告。"
+    },
+    {
+      "pointer": "/contributes/commands/3/title",
+      "before": "Toggle Info",
+      "after": "切换信息显示"
+    },
+    {
+      "pointer": "/contributes/commands/3/description",
+      "before": "Enable/Disable Info in `\"errorLens.enabledDiagnosticLevels\"` setting.",
+      "after": "在 `\"errorLens.enabledDiagnosticLevels\"` 设置中启用／禁用信息。"
+    },
+    {
+      "pointer": "/contributes/commands/4/title",
+      "before": "Toggle Hint",
+      "after": "切换提示显示"
+    },
+    {
+      "pointer": "/contributes/commands/4/description",
+      "before": "Enable/Disable Hint in `\"errorLens.enabledDiagnosticLevels\"` setting.",
+      "after": "在 `\"errorLens.enabledDiagnosticLevels\"` 设置中启用／禁用提示。"
+    },
+    {
+      "pointer": "/contributes/commands/5/title",
+      "before": "Toggle Inline Message",
+      "after": "切换行内消息显示"
+    },
+    {
+      "pointer": "/contributes/commands/5/description",
+      "before": "Toggle global setting `\"errorLens.messageEnabled\"`.",
+      "after": "切换全局设置 `\"errorLens.messageEnabled\"`。"
+    },
+    {
+      "pointer": "/contributes/commands/6/title",
+      "before": "Search for problem",
+      "after": "搜索问题"
+    },
+    {
+      "pointer": "/contributes/commands/6/description",
+      "before": "Open problem in default browser (controlled by `errorLens.searchForProblemQuery` setting).",
+      "after": "在默认浏览器中搜索问题（由 `errorLens.searchForProblemQuery` 设置控制）。"
+    },
+    {
+      "pointer": "/contributes/commands/7/title",
+      "before": "Select Problem",
+      "after": "选中问题"
+    },
+    {
+      "pointer": "/contributes/commands/7/description",
+      "before": "Set editor selection to the problem range (controlled by `errorLens.selectProblemType` setting).",
+      "after": "在编辑器中选中问题所在范围（由 `errorLens.selectProblemType` 设置控制）。"
+    },
+    {
+      "pointer": "/contributes/commands/8/title",
+      "before": "Toggle Workspace in Disabled List",
+      "after": "切换当前工作区的禁用状态"
+    },
+    {
+      "pointer": "/contributes/commands/8/description",
+      "before": "Exclude/Include current workspace by fs path.",
+      "after": "按文件系统路径将当前工作区加入／移出排除列表。"
+    },
+    {
+      "pointer": "/contributes/commands/9/title",
+      "before": "Disable line",
+      "after": "禁用当前行的检查规则"
+    },
+    {
+      "pointer": "/contributes/commands/9/description",
+      "before": "Add a comment to disable line for linter rule. Comment format is controlled by `\"errorLens.disableLineComments\"` setting.",
+      "after": "添加注释，禁用当前行的代码检查规则。注释格式由 `\"errorLens.disableLineComments\"` 设置控制。"
+    },
+    {
+      "pointer": "/contributes/commands/10/title",
+      "before": "Find Linter Rule Definition",
+      "after": "查找代码检查规则定义"
+    },
+    {
+      "pointer": "/contributes/commands/10/description",
+      "before": "Search in local linter files (like `.eslintrc.json`) for the rule definition. Target files are controlled by \"errorLens.lintFilePaths\" setting.",
+      "after": "在本地代码检查配置文件（如 `.eslintrc.json`）中查找规则定义。目标文件由 \"errorLens.lintFilePaths\" 设置控制。"
+    },
+    {
+      "pointer": "/contributes/commands/11/title",
+      "before": "Copy Problem Message",
+      "after": "复制问题消息"
+    },
+    {
+      "pointer": "/contributes/commands/11/description",
+      "before": "Copy problem message to the clipboard (at the active cursor).",
+      "after": "将当前光标处的问题消息复制到剪贴板。"
+    },
+    {
+      "pointer": "/contributes/commands/12/title",
+      "before": "Exclude Problem",
+      "after": "排除问题"
+    },
+    {
+      "pointer": "/contributes/commands/12/description",
+      "before": "Exclude problem (at the active cursor) (write into settings).",
+      "after": "排除当前光标处的问题，并写入设置。"
+    },
+    {
+      "pointer": "/contributes/commands/13/title",
+      "before": "Copy Problem Code",
+      "after": "复制问题代码"
+    },
+    {
+      "pointer": "/contributes/commands/13/description",
+      "before": "Copy problem code to the clipboard (at the active cursor).",
+      "after": "将当前光标处的问题代码复制到剪贴板。"
+    },
+    {
+      "pointer": "/contributes/commands/14/title",
+      "before": "Update Everything",
+      "after": "刷新全部装饰"
+    },
+    {
+      "pointer": "/contributes/commands/14/description",
+      "before": "Update all decorations. Supports args {\"kind\": \"update\" | \"clear\"}",
+      "after": "刷新所有装饰。支持参数 {\"kind\": \"update\" | \"clear\"}"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.enabled/markdownDescription",
+      "before": "Controls all decorations and features (except commands).",
+      "after": "控制所有装饰和功能（命令除外）。"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.respectUpstreamEnabled/markdownDescription",
+      "before": "When enabled - extension will take into account global VSCode setting `#problems.visibility#`. ([1.85.0 changelog](https://code.visualstudio.com/updates/v1_85#_hide-problem-decorations)).",
+      "after": "启用后，扩展会遵循 VS Code 的全局设置 `#problems.visibility#`。（[1.85.0 更新日志](https://code.visualstudio.com/updates/v1_85#_hide-problem-decorations)）。"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.respectUpstreamEnabled/properties/enabled/description",
+      "before": "When true - extension will honour VSCode setting `#problems.visibility#` and not show errors if `#problems.visibility#` is false.",
+      "after": "为 true 时，扩展会遵循 VS Code 设置 `#problems.visibility#`；`#problems.visibility#` 为 false 时不显示错误。"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.enabledInMergeConflict/markdownDescription",
+      "before": "Controls if decorations are shown if the editor has git merge conflict indicators `<<<<<<<` or `=======` or `>>>>>>>`.",
+      "after": "控制编辑器中存在 Git 合并冲突标记 `<<<<<<<`、`=======` 或 `>>>>>>>` 时是否显示装饰。"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.fontFamily/markdownDescription",
+      "before": "Font family of inline message. [demo](https://github.com/usernamehw/vscode-error-lens/blob/master/docs/docs.md#errorlensfontfamily). May break `#errorLens.alignMessage#`",
+      "after": "行内消息的字体。 [演示](https://github.com/usernamehw/vscode-error-lens/blob/master/docs/docs.md#errorlensfontfamily)。可能导致 `#errorLens.alignMessage#` 失效。"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.fontWeight/markdownDescription",
+      "before": "Font weight of inline message. (`\"normal\"` is alias for 400, `\"bold\"` is alias for 700). [demo](https://github.com/usernamehw/vscode-error-lens/blob/master/docs/docs.md#errorlensfontweight)",
+      "after": "行内消息的字重（`\"normal\"` 对应 400，`\"bold\"` 对应 700）。 [演示](https://github.com/usernamehw/vscode-error-lens/blob/master/docs/docs.md#errorlensfontweight)"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.fontStyleItalic/markdownDescription",
+      "before": "When enabled - shows inline message in italic font style. [demo](https://github.com/usernamehw/vscode-error-lens/blob/master/docs/docs.md#errorlensfontstyleitalic)",
+      "after": "启用后，以斜体显示行内消息。 [演示](https://github.com/usernamehw/vscode-error-lens/blob/master/docs/docs.md#errorlensfontstyleitalic)"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.fontSize/markdownDescription",
+      "before": "Font size of inline message ([CSS units](https://developer.mozilla.org/en-US/docs/Web/CSS/length)). Use negative value to have it relative to the editor's fontSize (e.g. `-3px`). May break `#errorLens.alignMessage#`. [demo](https://github.com/usernamehw/vscode-error-lens/blob/master/docs/docs.md#errorlensfontsize).",
+      "after": "行内消息的字号（[CSS 单位](https://developer.mozilla.org/en-US/docs/Web/CSS/length)）。使用负值可相对于编辑器字号进行调整（如 `-3px`）。可能导致 `#errorLens.alignMessage#` 失效。 [演示](https://github.com/usernamehw/vscode-error-lens/blob/master/docs/docs.md#errorlensfontsize)。"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.margin/markdownDescription",
+      "before": "Distance between the last word on the line and the start of inline message ([CSS units](https://developer.mozilla.org/en-US/docs/Web/CSS/length)). [demo](https://github.com/usernamehw/vscode-error-lens/blob/master/docs/docs.md#errorlensmargin)",
+      "after": "当前行最后一个字与行内消息起始位置之间的距离（[CSS 单位](https://developer.mozilla.org/en-US/docs/Web/CSS/length)）。 [演示](https://github.com/usernamehw/vscode-error-lens/blob/master/docs/docs.md#errorlensmargin)"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.alignMessage/markdownDescription",
+      "before": "Align inline error message (either by starting position or ending position). Only works for monospace fonts. Set \"start\" and \"end\" to **0** to disable. ❗Will conflict with other extension decorations. [demo](https://github.com/usernamehw/vscode-error-lens/blob/master/docs/docs.md#errorlensalignmessage)",
+      "after": "对齐行内错误消息的起始或结束位置。仅适用于等宽字体。将 \"start\" 和 \"end\" 均设为 **0** 可禁用。❗会与其他扩展的装饰冲突。 [演示](https://github.com/usernamehw/vscode-error-lens/blob/master/docs/docs.md#errorlensalignmessage)"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.alignMessage/properties/start/description",
+      "before": "Starting column where to align decorations.",
+      "after": "装饰对齐的起始列。"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.alignMessage/properties/end/description",
+      "before": "Ending column where to align decorations.",
+      "after": "装饰对齐的结束列。"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.alignMessage/properties/minimumMargin/description",
+      "before": "Minimal space between line end and decoration. Very similar to the global setting `errorLens.margin`, but can only be a number of characters.",
+      "after": "行尾与装饰之间的最小间距。类似于全局设置 `errorLens.margin`，但只能使用字符数。"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.alignMessage/properties/padding/description",
+      "before": "Very similar to the global setting `errorLens.padding`, but it can only be a number (not any CSS unit like pixels). First number is top+bottom padding; Second number - left+right padding.",
+      "after": "类似于全局设置 `errorLens.padding`，但只能使用数字，不能使用像素等 CSS 单位。第一个数字为上下内边距，第二个数字为左右内边距。"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.alignMessage/properties/useFixedPosition/description",
+      "before": "Use fixed position for decoration that has stuttering/twitching on the active line (e.g. when typing). Will prevent hover over decoration text.",
+      "after": "使用固定位置，缓解活动行上的装饰在输入等操作时出现的卡顿或抖动。启用后无法悬停查看装饰文本。"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.border/markdownDescription",
+      "before": "Border of the inline message. Examples: `1px solid`, `1px dashed`, `2px dotted`, `1px solid #00000050`... Set to empty string to disable. [demo](https://github.com/usernamehw/vscode-error-lens/blob/master/docs/docs.md#errorlensborder)",
+      "after": "行内消息的边框。例如：`1px solid`、`1px dashed`、`2px dotted`、`1px solid #00000050`……设为空字符串可禁用。 [演示](https://github.com/usernamehw/vscode-error-lens/blob/master/docs/docs.md#errorlensborder)"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.padding/markdownDescription",
+      "before": "Padding of the inline message. Visible when `#errorLens.messageBackgroundMode#` is set to \"message\". [demo](https://github.com/usernamehw/vscode-error-lens/blob/master/docs/docs.md#errorlenspadding)",
+      "after": "行内消息的内边距。仅在 `#errorLens.messageBackgroundMode#` 设为 \"message\" 时可见。 [演示](https://github.com/usernamehw/vscode-error-lens/blob/master/docs/docs.md#errorlenspadding)"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.borderRadius/markdownDescription",
+      "before": "Border radius of the inline message. Visible when `#errorLens.messageBackgroundMode#` is set to \"message\". [demo](https://github.com/usernamehw/vscode-error-lens/blob/master/docs/docs.md#errorlensborderradius)",
+      "after": "行内消息的圆角半径。仅在 `#errorLens.messageBackgroundMode#` 设为 \"message\" 时可见。 [演示](https://github.com/usernamehw/vscode-error-lens/blob/master/docs/docs.md#errorlensborderradius)"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.enabledDiagnosticLevels/markdownDescription",
+      "before": "Customize which diagnostic levels(severity) to highlight. [demo](https://github.com/usernamehw/vscode-error-lens/blob/master/docs/docs.md#errorlensenableddiagnosticlevels)",
+      "after": "自定义需要高亮显示的诊断级别（严重程度）。 [演示](https://github.com/usernamehw/vscode-error-lens/blob/master/docs/docs.md#errorlensenableddiagnosticlevels)"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.messageTemplate/markdownDescription",
+      "before": "Template used for all inline messages. Whitespace between items is important.\n\nList of variables:\n\n- `$message` - diagnostic message text\n\n- `$count` - Number of diagnostics on the line\n\n- `$severity` - Severity prefix taken from `#errorLens.severityText#`\n\n- `$source` - Source of diagnostic e.g. \"eslint\"\n\n- `$code` - Code of the diagnostic [demo](https://github.com/usernamehw/vscode-error-lens/blob/master/docs/docs.md#errorlensmessagetemplate)",
+      "after": "所有行内消息使用的模板。各项之间的空白字符会影响显示。\n\n变量列表：\n\n- `$message` - 诊断消息文本\n\n- `$count` - 当前行的诊断数量\n\n- `$severity` - 来自 `#errorLens.severityText#` 的严重程度前缀\n\n- `$source` - 诊断来源，如 \"eslint\"\n\n- `$code` - 诊断代码 [演示](https://github.com/usernamehw/vscode-error-lens/blob/master/docs/docs.md#errorlensmessagetemplate)"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.messageMaxChars/markdownDescription",
+      "before": "Cut off inline message if it's longer than this value. (Improves performance when the diagnostic message is long). [demo](https://github.com/usernamehw/vscode-error-lens/blob/master/docs/docs.md#errorlensmessagemaxchars)",
+      "after": "行内消息超过此字符数时截断（可改善长诊断消息的显示性能）。 [演示](https://github.com/usernamehw/vscode-error-lens/blob/master/docs/docs.md#errorlensmessagemaxchars)"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.maxInlineMessages/markdownDescription",
+      "before": "Limit inline messages to the lines currently visible in the editor when a file has more lines with problems than this value. VSCode creates a separate set of CSS rules for every distinct inline message, so a file with thousands of problems can freeze the editor for a long time. Line highlighting, gutter icons, problem range decorations, hovers and status bar are not affected. `0` - no limit.",
+      "after": "文件中存在问题的行数超过此值时，仅为编辑器当前可见的行显示行内消息。VS Code 会为每条不同的行内消息创建一组 CSS 规则，因此包含数千个问题的文件可能导致编辑器长时间卡顿。行高亮、边栏图标、问题范围装饰、悬停提示和状态栏不受影响。`0` 表示不限制。"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.severityText/markdownDescription",
+      "before": "Replaces `$severity` variable in `#errorLens.messageTemplate#`. [demo](https://github.com/usernamehw/vscode-error-lens/blob/master/docs/docs.md#errorlensseveritytext)",
+      "after": "替换 `#errorLens.messageTemplate#` 中的 `$severity` 变量。 [演示](https://github.com/usernamehw/vscode-error-lens/blob/master/docs/docs.md#errorlensseveritytext)"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.messageEnabled/markdownDescription",
+      "before": "Controls whether inline message is shown or not (Including background highlight). [demo](https://github.com/usernamehw/vscode-error-lens/blob/master/docs/docs.md#errorlensmessageenabled)",
+      "after": "控制是否显示行内消息（包括背景高亮）。 [演示](https://github.com/usernamehw/vscode-error-lens/blob/master/docs/docs.md#errorlensmessageenabled)"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.messageBackgroundMode/markdownDescription",
+      "before": "Controls how inline message is highlighted in the editor (entire line / only message / none). [demo](https://github.com/usernamehw/vscode-error-lens/blob/master/docs/docs.md#errorlensmessagebackgroundmode)",
+      "after": "控制编辑器中行内消息的高亮方式（整行／仅消息／不高亮）。 [演示](https://github.com/usernamehw/vscode-error-lens/blob/master/docs/docs.md#errorlensmessagebackgroundmode)"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.problemRangeDecorationEnabled/markdownDescription",
+      "before": "When checked - highlight the entire problem range. [demo](https://github.com/usernamehw/vscode-error-lens/blob/master/docs/docs.md#errorlensproblemrangedecorationenabled)",
+      "after": "启用后，高亮显示整个问题范围。 [演示](https://github.com/usernamehw/vscode-error-lens/blob/master/docs/docs.md#errorlensproblemrangedecorationenabled)"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.editorHoverPartsEnabled/markdownDescription",
+      "before": "Controls which parts of the editor hover tooltip to show.",
+      "after": "控制编辑器悬停提示中显示哪些部分。"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.statusBarIconsEnabled/markdownDescription",
+      "before": "When enabled - shows highlighted error/warning icons in status bar. [demo](https://github.com/usernamehw/vscode-error-lens/blob/master/docs/docs.md#errorlensstatusbariconsenabled)",
+      "after": "启用后，在状态栏中显示高亮的错误／警告图标。 [演示](https://github.com/usernamehw/vscode-error-lens/blob/master/docs/docs.md#errorlensstatusbariconsenabled)"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.statusBarIconsPriority/markdownDescription",
+      "before": "Move status bar icons left or right by adjusting the number priority.",
+      "after": "通过调整优先级数字，将状态栏图标向左或向右移动。"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.statusBarIconsAlignment/markdownDescription",
+      "before": "Choose on which side the icons status bar is on: left or right.",
+      "after": "选择状态栏图标位于左侧还是右侧。"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.statusBarIconsTargetProblems/markdownDescription",
+      "before": "Which problems to use for counting problems at icons status bar.",
+      "after": "选择状态栏图标统计哪些问题。"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.statusBarIconsUseBackground/markdownDescription",
+      "before": "When enabled - highlights status bar icons with background, when disabled - with foreground.",
+      "after": "启用后，使用背景色高亮状态栏图标；禁用后，使用前景色。"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.statusBarIconsAtZero/markdownDescription",
+      "before": "What to do when there are 0 errors/warnings - hide the item or strip its background color.",
+      "after": "错误／警告数量为 0 时，隐藏对应状态栏项或移除其背景色。"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.statusBarMessageEnabled/markdownDescription",
+      "before": "When enabled - shows message in status bar. [demo](https://github.com/usernamehw/vscode-error-lens/blob/master/docs/docs.md#errorlensstatusbarmessageenabled)",
+      "after": "启用后，在状态栏中显示消息。 [演示](https://github.com/usernamehw/vscode-error-lens/blob/master/docs/docs.md#errorlensstatusbarmessageenabled)"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.statusBarMessagePriority/markdownDescription",
+      "before": "Move status bar message left or right by adjusting the number priority.",
+      "after": "通过调整优先级数字，将状态栏消息向左或向右移动。"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.statusBarMessageAlignment/markdownDescription",
+      "before": "Choose on which side the message status bar is on: left or right.",
+      "after": "选择状态栏消息位于左侧还是右侧。"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.statusBarColorsEnabled/markdownDescription",
+      "before": "When enabled - use message decoration foreground as color of Status Bar text. Uses colors `errorLens.statusBarErrorForeground`, `errorLens.statusBarWarningForeground`, `errorLens.statusBarInfoForeground`, `errorLens.statusBarHintForeground`. [demo](https://github.com/usernamehw/vscode-error-lens/blob/master/docs/docs.md#errorlensstatusbarcolorsenabled)",
+      "after": "启用后，将消息装饰的前景色用作状态栏文本颜色。使用的颜色为 `errorLens.statusBarErrorForeground`、`errorLens.statusBarWarningForeground`、`errorLens.statusBarInfoForeground`、`errorLens.statusBarHintForeground`。 [演示](https://github.com/usernamehw/vscode-error-lens/blob/master/docs/docs.md#errorlensstatusbarcolorsenabled)"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.statusBarMessageType/markdownDescription",
+      "before": "Pick what to show in Status Bar: closest message or only message for the active line.",
+      "after": "选择状态栏显示的消息：离光标最近的问题，或仅显示当前行的问题。"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.statusBarCommand/markdownDescription",
+      "before": "Command that executes on click for Status Bar.",
+      "after": "点击状态栏消息时执行的命令。"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.statusBarMessageTemplate/markdownDescription",
+      "before": "Template for status bar message. Whitespace between items is important.\n\nList of variables:\n\n- `$message` - diagnostic message text\n\n- `$count` - Number of diagnostics on the line\n\n- `$severity` - Severity prefix taken from `#errorLens.severityText#`\n\n- `$source` - Source of diagnostic e.g. \"eslint\"\n\n- `$code` - Code of the diagnostic",
+      "after": "状态栏消息的模板。各项之间的空白字符会影响显示。\n\n变量列表：\n\n- `$message` - 诊断消息文本\n\n- `$count` - 当前行的诊断数量\n\n- `$severity` - 来自 `#errorLens.severityText#` 的严重程度前缀\n\n- `$source` - 诊断来源，如 \"eslint\"\n\n- `$code` - 诊断代码"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.replace/markdownDescription",
+      "before": "Specify message to transform. E.g. if this is configured to [{ matcher: 'foo (.*)', message: 'just $1' }], the message 'foo bar' would be displayed as 'just bar'. [demo](https://github.com/usernamehw/vscode-error-lens/blob/master/docs/docs.md#errorlensreplace)",
+      "after": "指定要转换的消息。例如，设为 [{ matcher: 'foo (.*)', message: 'just $1' }] 时，消息 'foo bar' 会显示为 'just bar'。 [演示](https://github.com/usernamehw/vscode-error-lens/blob/master/docs/docs.md#errorlensreplace)"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.replace/items/properties/matcher/description",
+      "before": "The RegExp pattern against which to match diagnostic messages",
+      "after": "用于匹配诊断消息的正则表达式。"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.replace/items/properties/message/description",
+      "before": "The entire replacement for messages matching matcher. Can reference match groups like $0 (entire expression), $1 (first capture group), etc.",
+      "after": "匹配 matcher 的消息将整体替换为此内容。可使用 $0（整个匹配）、$1（第一个捕获组）等引用匹配组。"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.transmute/markdownDescription",
+      "before": "Change severity or editor decoration for specific problems. [demo](https://github.com/usernamehw/vscode-error-lens/blob/master/docs/docs.md#errorlenstransmute)",
+      "after": "为特定问题修改严重程度或编辑器装饰。 [演示](https://github.com/usernamehw/vscode-error-lens/blob/master/docs/docs.md#errorlenstransmute)"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.transmute/patternProperties/.*/properties/target/properties/message/description",
+      "before": "Match with problem's message (case-insensitive).",
+      "after": "匹配问题消息（不区分大小写）。"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.transmute/patternProperties/.*/properties/target/properties/messageRegex/description",
+      "before": "Match with problem's message using Regular Expressions.",
+      "after": "使用正则表达式匹配问题消息。"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.transmute/patternProperties/.*/properties/target/properties/source/description",
+      "before": "Match with problem's source, e.g.: `eslint`, `ts`, ...",
+      "after": "匹配问题来源，例如 `eslint`、`ts` 等。"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.transmute/patternProperties/.*/properties/target/properties/code/description",
+      "before": "Match with problem's code, e.g.: `@typescript-eslint/semi`, `6133`, ...",
+      "after": "匹配问题代码，例如 `@typescript-eslint/semi`、`6133` 等。"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.transmute/patternProperties/.*/properties/severity/markdownDescription",
+      "before": "Change problem's severity (can affect which decoration is rendered).",
+      "after": "修改问题的严重程度（可能影响使用哪种装饰）。"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.transmute/patternProperties/.*/properties/decoration/markdownDescription",
+      "before": "Change decoration properties.",
+      "after": "修改装饰属性。"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.transmute/patternProperties/.*/properties/decoration/properties/light/description",
+      "before": "Only works for Light color themes.",
+      "after": "仅适用于浅色主题。"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.transmute/patternProperties/.*/properties/decoration/properties/light/properties/after/description",
+      "before": "Change the properties of the inline message.",
+      "after": "修改行内消息的属性。"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.transmute/patternProperties/.*/properties/decoration/properties/dark/description",
+      "before": "Only works for Dark color themes.",
+      "after": "仅适用于深色主题。"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.transmute/patternProperties/.*/properties/decoration/properties/dark/properties/after/description",
+      "before": "Change the properties of the inline message.",
+      "after": "修改行内消息的属性。"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.excludeByMessage/markdownDescription",
+      "before": "Exclude diagnostics by message. Excludes when the diagnostic message contains the excluding string (case-insensitive). Can use Regular Expressions (use object instead of a string).",
+      "after": "按消息排除诊断。诊断消息包含指定的排除字符串时将被排除（不区分大小写）。支持正则表达式，此时需使用对象而非字符串。"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.excludeBySource/markdownDescription",
+      "before": "Specify `source` or `source(code)` pair to exclude. Examples: \n\n```json\n[\n\t\"eslint\",// exclude all problems from eslint linter\n\t\"eslint(padded-blocks)\",// exclude padded-blocks rule from eslint linter\n\t\"Pylance(reportUndefinedVariable)\",// exlude reportUndefinedVariable rule from Pylance linter\n]\n```",
+      "after": "指定要排除的 `source` 或 `source(code)` 组合。例如：\n\n```json\n[\n\t\"eslint\",// 排除 eslint 的所有问题\n\t\"eslint(padded-blocks)\",// 排除 eslint 的 padded-blocks 规则\n\t\"Pylance(reportUndefinedVariable)\",// 排除 Pylance 的 reportUndefinedVariable 规则\n]\n```"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.excludePatterns/markdownDescription",
+      "before": "Exclude files by using [glob](https://code.visualstudio.com/docs/editor/glob-patterns) pattern. Example `[\"**/*.{ts,js}\"]`",
+      "after": "使用 [glob](https://code.visualstudio.com/docs/editor/glob-patterns) 模式排除文件。例如 `[\"**/*.{ts,js}\"]`。"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.excludeWorkspaces/markdownDescription",
+      "before": "Exclude workspaces by path.",
+      "after": "按路径排除工作区。"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.disableLineComments/markdownDescription",
+      "before": "Used for `errorLens.disableLine` command that adds a comment disabling linter rule for a line.\nTo force comment on the same line - add `SAME_LINE` to the message: `\"eslint\": \"// eslint-disable-line $code SAME_LINE\"`",
+      "after": "用于 `errorLens.disableLine` 命令；该命令添加注释以禁用某行的代码检查规则。\n若要强制将注释放在同一行，请在消息中加入 `SAME_LINE`：`\"eslint\": \"// eslint-disable-line $code SAME_LINE\"`"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.lintFilePaths/markdownDescription",
+      "before": "Specify where to search for linter rule definitions by diagnostic source ([glob](https://code.visualstudio.com/docs/editor/glob-patterns) for local linter files). `node_modules` folder is excluded.",
+      "after": "根据诊断来源，指定查找代码检查规则定义的位置（使用 [glob](https://code.visualstudio.com/docs/editor/glob-patterns) 匹配本地代码检查配置文件）。不包含 `node_modules` 文件夹。"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.searchForProblemQuery/markdownDescription",
+      "before": "Pick query to open in default browser when searching for problem with `errorLens.searchForProblem` command.",
+      "after": "使用 `errorLens.searchForProblem` 命令搜索问题时，在默认浏览器中打开的查询地址。"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.selectProblemType/markdownDescription",
+      "before": "Which problem to select (closest / active line) when executing `errorLens.selectProblem` command.",
+      "after": "执行 `errorLens.selectProblem` 命令时选择哪一个问题（最近的问题／当前行的问题）。"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.light/markdownDescription",
+      "before": "Specify color of decorations for when the light color theme is active.",
+      "after": "使用浅色主题时的装饰颜色。"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.light/properties/errorGutterIconPath/description",
+      "before": "Absolute path to error gutter icon for light themes.",
+      "after": "浅色主题下错误边栏图标的绝对路径。"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.light/properties/errorGutterIconColor/markdownDescription",
+      "before": "Error color of simple gutter icons (shapes and letters) for light themes.",
+      "after": "浅色主题下简单边栏图标（形状和字母）的错误颜色。"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.errorGutterIconPath/markdownDescription",
+      "before": "Absolute path to error gutter icon. [demo](https://github.com/usernamehw/vscode-error-lens/blob/master/docs/docs.md#errorlenserrorguttericonpath)",
+      "after": "错误边栏图标的绝对路径。 [演示](https://github.com/usernamehw/vscode-error-lens/blob/master/docs/docs.md#errorlenserrorguttericonpath)"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.errorGutterIconColor/markdownDescription",
+      "before": "Error color of simple gutter icons (shapes and letters). [demo](https://github.com/usernamehw/vscode-error-lens/blob/master/docs/docs.md#errorlenserrorguttericoncolor)",
+      "after": "简单边栏图标（形状和字母）的错误颜色。 [演示](https://github.com/usernamehw/vscode-error-lens/blob/master/docs/docs.md#errorlenserrorguttericoncolor)"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.light/properties/warningGutterIconPath/description",
+      "before": "Absolute path to warning gutter icon for light themes.",
+      "after": "浅色主题下警告边栏图标的绝对路径。"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.light/properties/warningGutterIconColor/markdownDescription",
+      "before": "Warning color of simple gutter icons (shapes and letters) for light themes.",
+      "after": "浅色主题下简单边栏图标（形状和字母）的警告颜色。"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.warningGutterIconPath/markdownDescription",
+      "before": "Absolute path to warning gutter icon. [demo](https://github.com/usernamehw/vscode-error-lens/blob/master/docs/docs.md#errorlenserrorguttericonpath)",
+      "after": "警告边栏图标的绝对路径。 [演示](https://github.com/usernamehw/vscode-error-lens/blob/master/docs/docs.md#errorlenserrorguttericonpath)"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.warningGutterIconColor/markdownDescription",
+      "before": "Warning color of simple gutter icons (shapes and letters). [demo](https://github.com/usernamehw/vscode-error-lens/blob/master/docs/docs.md#errorlenserrorguttericoncolor)",
+      "after": "简单边栏图标（形状和字母）的警告颜色。 [演示](https://github.com/usernamehw/vscode-error-lens/blob/master/docs/docs.md#errorlenserrorguttericoncolor)"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.light/properties/infoGutterIconPath/description",
+      "before": "Absolute path to info gutter icon for light themes.",
+      "after": "浅色主题下信息边栏图标的绝对路径。"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.light/properties/infoGutterIconColor/markdownDescription",
+      "before": "Info color of simple gutter icons (shapes and letters) for light themes.",
+      "after": "浅色主题下简单边栏图标（形状和字母）的信息颜色。"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.infoGutterIconPath/markdownDescription",
+      "before": "Absolute path to info gutter icon. [demo](https://github.com/usernamehw/vscode-error-lens/blob/master/docs/docs.md#errorlenserrorguttericonpath)",
+      "after": "信息边栏图标的绝对路径。 [演示](https://github.com/usernamehw/vscode-error-lens/blob/master/docs/docs.md#errorlenserrorguttericonpath)"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.infoGutterIconColor/markdownDescription",
+      "before": "Info color of simple gutter icons (shapes and letters). [demo](https://github.com/usernamehw/vscode-error-lens/blob/master/docs/docs.md#errorlenserrorguttericoncolor)",
+      "after": "简单边栏图标（形状和字母）的信息颜色。 [演示](https://github.com/usernamehw/vscode-error-lens/blob/master/docs/docs.md#errorlenserrorguttericoncolor)"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.light/properties/hintGutterIconPath/description",
+      "before": "Absolute path to hint gutter icon for light themes.",
+      "after": "浅色主题下提示边栏图标的绝对路径。"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.light/properties/hintGutterIconColor/markdownDescription",
+      "before": "Hint color of simple gutter icons (shapes and letters) for light themes.",
+      "after": "浅色主题下简单边栏图标（形状和字母）的提示颜色。"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.hintGutterIconPath/markdownDescription",
+      "before": "Absolute path to hint gutter icon. [demo](https://github.com/usernamehw/vscode-error-lens/blob/master/docs/docs.md#errorlenserrorguttericonpath)",
+      "after": "提示边栏图标的绝对路径。 [演示](https://github.com/usernamehw/vscode-error-lens/blob/master/docs/docs.md#errorlenserrorguttericonpath)"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.hintGutterIconColor/markdownDescription",
+      "before": "Hint color of simple gutter icons (shapes and letters). [demo](https://github.com/usernamehw/vscode-error-lens/blob/master/docs/docs.md#errorlenserrorguttericoncolor)",
+      "after": "简单边栏图标（形状和字母）的提示颜色。 [演示](https://github.com/usernamehw/vscode-error-lens/blob/master/docs/docs.md#errorlenserrorguttericoncolor)"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.delay/markdownDescription",
+      "before": "Delay (ms) before showing problem decorations (**0** to disable). Minimum delay of **500** is enforced by the extension. `#errorLens.delayMode#` controls how to handle the delay.",
+      "after": "显示问题装饰前的延迟时间（毫秒；设为 **0** 可禁用延迟）。启用延迟时，扩展会强制使用至少 **500** 毫秒。`#errorLens.delayMode#` 控制延迟的处理方式。"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.delayMode/markdownDescription",
+      "before": "Pick which version of the delay to use.",
+      "after": "选择延迟的处理方式。"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.onSave/markdownDescription",
+      "before": "When enabled - updates decorations only on document save (manual).",
+      "after": "启用后，仅在手动保存文档时更新装饰。"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.onSaveTimeout/markdownDescription",
+      "before": "Time period (ms) that used for showing decorations after the document save (manual, not auto save).",
+      "after": "手动保存文档后显示装饰的时长（毫秒；不适用于自动保存）。"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.onSaveUpdateOnActiveEditorChange/markdownDescription",
+      "before": "When `#errorLens.onSave#` enabled - extension still draws decorations when active/visible editors change.",
+      "after": "启用 `#errorLens.onSave#` 后，活动编辑器或可见编辑器变化时仍会绘制装饰。"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.enableOnDiffView/markdownDescription",
+      "before": "Enable decorations when viewing a diff view in the editor (e.g. Git diff). [demo](https://github.com/usernamehw/vscode-error-lens/blob/master/docs/docs.md#errorlensenableondiffview)",
+      "after": "在编辑器中查看差异（如 Git diff）时启用装饰。 [演示](https://github.com/usernamehw/vscode-error-lens/blob/master/docs/docs.md#errorlensenableondiffview)"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.followCursor/markdownDescription",
+      "before": "Highlight only portion of the problems. [demo](https://github.com/usernamehw/vscode-error-lens/blob/master/docs/docs.md#errorlensfollowcursor)",
+      "after": "仅高亮显示部分问题。 [演示](https://github.com/usernamehw/vscode-error-lens/blob/master/docs/docs.md#errorlensfollowcursor)"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.followCursorMore/markdownDescription",
+      "before": "Augments `#errorLens.followCursor#`.\nAdds number of lines to top and bottom when `#errorLens.followCursor#` is set to `activeLine`.\n Adds number of closest problems when `#errorLens.followCursor#` is `closestProblem` [demo](https://github.com/usernamehw/vscode-error-lens/blob/master/docs/docs.md#errorlensfollowcursormore)",
+      "after": "扩展 `#errorLens.followCursor#` 的作用范围。\n`#errorLens.followCursor#` 设为 `activeLine` 时，向上和向下各增加指定行数。\n`#errorLens.followCursor#` 设为 `closestProblem` 时，增加显示指定数量的最近问题。 [演示](https://github.com/usernamehw/vscode-error-lens/blob/master/docs/docs.md#errorlensfollowcursormore)"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.gutterIconsEnabled/markdownDescription",
+      "before": "When enabled - shows gutter icons (In place of the debug breakpoint icon). [demo](https://github.com/usernamehw/vscode-error-lens/blob/master/docs/docs.md#errorlensguttericonsenabled)",
+      "after": "启用后，在边栏中显示图标（位于调试断点图标的位置）。 [演示](https://github.com/usernamehw/vscode-error-lens/blob/master/docs/docs.md#errorlensguttericonsenabled)"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.gutterIconsFollowCursorOverride/markdownDescription",
+      "before": "When enabled and `#errorLens.followCursor#` setting is not `allLines`, then gutter icons would be rendered for all problems. But line decorations (background, message) only for active line. [demo](https://github.com/usernamehw/vscode-error-lens/blob/master/docs/docs.md#errorlensguttericonsfollowcursoroverride)",
+      "after": "启用后，若 `#errorLens.followCursor#` 不为 `allLines`，则仍为所有问题显示边栏图标，但仅为当前行显示行装饰（背景、消息）。 [演示](https://github.com/usernamehw/vscode-error-lens/blob/master/docs/docs.md#errorlensguttericonsfollowcursoroverride)"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.gutterIconSize/markdownDescription",
+      "before": "Change gutter icon size. Examples: `auto`, `contain`, `cover`, `50%`, `150%` ([CSS units](https://developer.mozilla.org/en-US/docs/Web/CSS/background-size)). [demo](https://github.com/usernamehw/vscode-error-lens/blob/master/docs/docs.md#errorlensguttericonsize)",
+      "after": "更改边栏图标的大小。例如 `auto`、`contain`、`cover`、`50%`、`150%`（[CSS 单位](https://developer.mozilla.org/en-US/docs/Web/CSS/background-size)）。 [演示](https://github.com/usernamehw/vscode-error-lens/blob/master/docs/docs.md#errorlensguttericonsize)"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.gutterIconSet/markdownDescription",
+      "before": "Change gutter icon style. [demo](https://github.com/usernamehw/vscode-error-lens/blob/master/docs/docs.md#errorlensguttericonset)",
+      "after": "更改边栏图标的样式。 [演示](https://github.com/usernamehw/vscode-error-lens/blob/master/docs/docs.md#errorlensguttericonset)"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.gutterEmoji/markdownDescription",
+      "before": "Pick emoji symbol for gutter icon when `#errorLens.gutterIconSet#` is `emoji`. [demo](https://github.com/usernamehw/vscode-error-lens/blob/master/docs/docs.md#errorlensgutteremoji)",
+      "after": "`#errorLens.gutterIconSet#` 设为 `emoji` 时，选择用作边栏图标的表情符号。 [演示](https://github.com/usernamehw/vscode-error-lens/blob/master/docs/docs.md#errorlensgutteremoji)"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.removeLinebreaks/markdownDescription",
+      "before": "When enabled - replaces line breaks in inline diagnostic message with whitespaces.",
+      "after": "启用后，将行内诊断消息中的换行符替换为空白字符。"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.replaceLinebreaksSymbol/markdownDescription",
+      "before": "Symbol to replace linebreaks. Requires enabling `#errorLens.removeLinebreaks#`.",
+      "after": "用于替换换行符的符号。需要启用 `#errorLens.removeLinebreaks#`。"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.scrollbarHackEnabled/markdownDescription",
+      "before": "When enabled - prevents showing horizontal scrollbar in editor (caused by inline decorations). Also prevents mouse hover at inline message. [demo](https://github.com/usernamehw/vscode-error-lens/blob/master/docs/docs.md#errorlensscrollbarhackenabled)",
+      "after": "启用后，阻止编辑器显示由行内装饰导致的水平滚动条。同时无法将鼠标悬停在行内消息上。 [演示](https://github.com/usernamehw/vscode-error-lens/blob/master/docs/docs.md#errorlensscrollbarhackenabled)"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.decorations/markdownDescription",
+      "before": "Advanced decoration tweaking. Possible keys: `errorRange`, `warningRange`, `infoRange`, `hintRange`, `errorMessage`, `warningMessage`, `infoMessage`, `hintMessage`.\n\n Possible properties: `backgroundColor`, `color`, `outline`, `border`, ... [api](https://code.visualstudio.com/api/references/vscode-api#ThemableDecorationAttachmentRenderOptions). [demo](https://github.com/usernamehw/vscode-error-lens/blob/master/docs/docs.md#errorlensdecorations)",
+      "after": "高级装饰调整。可用键：`errorRange`、`warningRange`、`infoRange`、`hintRange`、`errorMessage`、`warningMessage`、`infoMessage`、`hintMessage`。\n\n可用属性：`backgroundColor`、`color`、`outline`、`border` 等。[API](https://code.visualstudio.com/api/references/vscode-api#ThemableDecorationAttachmentRenderOptions)。 [演示](https://github.com/usernamehw/vscode-error-lens/blob/master/docs/docs.md#errorlensdecorations)"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.decorations/patternProperties/^(errorRange|warningRange|infoRange|hintRange|errorMessage|warningMessage|infoMessage|hintMessage)$/markdownDescription",
+      "before": "☑️ Key exists.",
+      "after": "☑️ 键已存在。"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.ignoreUntitled/markdownDescription",
+      "before": "Controls whether to run on untitled (unsaved) files.",
+      "after": "控制是否在未命名（尚未保存）的文件中运行。"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.ignoreDirty/markdownDescription",
+      "before": "Controls whether to run on dirty (modified unsaved) files.",
+      "after": "控制是否在已修改但尚未保存的文件中运行。"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.codeLensEnabled/markdownDescription",
+      "before": "Controls whether to show the Error Lens as a Code Lens above the code. [demo](https://github.com/usernamehw/vscode-error-lens/blob/master/docs/docs.md#errorlenscodelensenabled)",
+      "after": "控制是否以 Code Lens 的形式在代码上方显示 Error Lens。 [演示](https://github.com/usernamehw/vscode-error-lens/blob/master/docs/docs.md#errorlenscodelensenabled)"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.codeLensLength/markdownDescription",
+      "before": "Enforce minimum and maximum length of code lens messages.",
+      "after": "限制 Code Lens 消息的最小和最大长度。"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.codeLensTemplate/markdownDescription",
+      "before": "Template used for all messages appearing in the `#errorLens.codeLensEnabled#`. Whitespace between items is important.\n\nList of variables:\n\n- `$message` - diagnostic message text\n\n- `$count` - Number of diagnostics on the line\n\n- `$severity` - Severity prefix taken from `#errorLens.severityText#`\n\n- `$source` - Source of diagnostic e.g. \"eslint\"\n\n- `$code` - Code of the diagnostic",
+      "after": "`#errorLens.codeLensEnabled#` 中所有消息使用的模板。各项之间的空白字符会影响显示。\n\n变量列表：\n\n- `$message` - 诊断消息文本\n\n- `$count` - 当前行的诊断数量\n\n- `$severity` - 来自 `#errorLens.severityText#` 的严重程度前缀\n\n- `$source` - 诊断来源，如 \"eslint\"\n\n- `$code` - 诊断代码"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.codeLensOnClick/markdownDescription",
+      "before": "Controls what do on clicking the `#errorLens.codeLensEnabled#`.",
+      "after": "控制点击 `#errorLens.codeLensEnabled#` 所显示内容时执行的操作。"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.experimental/markdownDescription",
+      "before": "Experimental / temporary settings.",
+      "after": "实验性／临时设置。"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.messageBackgroundMode/enumDescriptions/0",
+      "before": "The entire line is highlighted.",
+      "after": "高亮显示整行。"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.messageBackgroundMode/enumDescriptions/1",
+      "before": "Inline message is highlighted.",
+      "after": "高亮显示行内消息。"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.messageBackgroundMode/enumDescriptions/2",
+      "before": "Message is not highlighted (only has foreground colors).",
+      "after": "不高亮显示消息背景（仅设置前景色）。"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.statusBarIconsTargetProblems/enumDescriptions/0",
+      "before": "Should be the same as native status bar icons - counts all known problems from all files.",
+      "after": "与原生状态栏图标一致，统计所有文件中的全部已知问题。"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.statusBarIconsTargetProblems/enumDescriptions/1",
+      "before": "Count only problems from the Active Text Editor.",
+      "after": "仅统计当前活动文本编辑器中的问题。"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.statusBarIconsTargetProblems/enumDescriptions/2",
+      "before": "Count only problems from the Visible Text Editors.",
+      "after": "仅统计当前可见文本编辑器中的问题。"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.statusBarMessageType/enumDescriptions/0",
+      "before": "Show closest to the cursor diagnostic.",
+      "after": "显示离光标最近的诊断。"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.statusBarMessageType/enumDescriptions/1",
+      "before": "Show closest to the cursor diagnostic sorted by severity (e.g. error will be shown before warning even if it's farther from the cursor).",
+      "after": "按严重程度排序后，显示离光标最近的诊断（例如，即使错误比警告离光标更远，也会先显示错误）。"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.statusBarMessageType/enumDescriptions/2",
+      "before": "Show only diagnostic that is on the same line as the cursor.",
+      "after": "仅显示与光标位于同一行的诊断。"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.statusBarMessageType/enumDescriptions/3",
+      "before": "Similar to \"activeLine\" but follows the cursor movement inside the line.",
+      "after": "类似于 \"activeLine\"，但会跟随光标在行内的移动。"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.selectProblemType/enumDescriptions/0",
+      "before": "Show closest to the cursor diagnostic.",
+      "after": "显示离光标最近的诊断。"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.selectProblemType/enumDescriptions/1",
+      "before": "Show closest to the cursor diagnostic (sorted by severity e.g. error will be shown before warning even if it's farther from the cursor).",
+      "after": "按严重程度排序后，显示离光标最近的诊断（例如，即使错误比警告离光标更远，也会先显示错误）。"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.selectProblemType/enumDescriptions/2",
+      "before": "Show only diagnostic that is on the same line as the cursor.",
+      "after": "仅显示与光标位于同一行的诊断。"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.delayMode/markdownEnumDescriptions/0",
+      "before": "New problems appear according to `errorLens.delay` setting. Fixed problems disappear faster.",
+      "after": "新问题按 `errorLens.delay` 设置延迟显示，已修复的问题会更快消失。"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.delayMode/markdownEnumDescriptions/1",
+      "before": "Decorations for problems are debounced according to `errorLens.delay` setting.",
+      "after": "按 `errorLens.delay` 设置对问题装饰进行防抖处理。"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.delayMode/markdownEnumDescriptions/2",
+      "before": "Decorations disappear when document changes (typing).",
+      "after": "文档内容改变（输入）时，装饰立即消失。"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.followCursor/enumDescriptions/0",
+      "before": "Highlight all problems in file",
+      "after": "高亮显示文件中的所有问题。"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.followCursor/enumDescriptions/1",
+      "before": "Highlight all problems in file (except the line at the cursor)",
+      "after": "高亮显示文件中的所有问题（光标所在行除外）。"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.followCursor/enumDescriptions/2",
+      "before": "Highlight only the problem at the cursor",
+      "after": "仅高亮显示光标所在位置的问题。"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.followCursor/enumDescriptions/3",
+      "before": "Highlight only closest to the cursor problem",
+      "after": "仅高亮显示离光标最近的问题。"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.gutterIconSet/enumDescriptions/0",
+      "before": "Similar to vscode icons in Problems Panel (old).",
+      "after": "类似于 VS Code 问题面板中的旧版图标。"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.gutterIconSet/enumDescriptions/1",
+      "before": "Similar to vscode icons in Problems Panel (new).",
+      "after": "类似于 VS Code 问题面板中的新版图标。"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.gutterIconSet/enumDescriptions/2",
+      "before": "Similar to vscode icons in Problems Panel, only without a border.",
+      "after": "类似于 VS Code 问题面板中的图标，但不带边框。"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.gutterIconSet/enumDescriptions/3",
+      "before": "Simple filled circle.",
+      "after": "简单的实心圆形。"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.gutterIconSet/enumDescriptions/4",
+      "before": "Simple filled square.",
+      "after": "简单的实心方形。"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.gutterIconSet/enumDescriptions/5",
+      "before": "Simple filled square with rounded corners.",
+      "after": "简单的实心圆角方形。"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.gutterIconSet/enumDescriptions/6",
+      "before": "Simple one letter icon (E,W,I,H).",
+      "after": "简单的单字母图标（E、W、I、H）。"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.gutterIconSet/enumDescriptions/7",
+      "before": "Emoji. (`errorLens.gutterEmoji` to control which emoji to show.)",
+      "after": "表情符号（使用 `errorLens.gutterEmoji` 控制显示哪些表情）。"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.codeLensOnClick/enumDescriptions/0",
+      "before": "Does nothing.",
+      "after": "不执行任何操作。"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.codeLensOnClick/enumDescriptions/1",
+      "before": "Shows problems view.",
+      "after": "显示问题视图。"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.codeLensOnClick/enumDescriptions/2",
+      "before": "Shows quick fix menu.",
+      "after": "显示快速修复菜单。"
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.codeLensOnClick/enumDescriptions/3",
+      "before": "Search for the problem.",
+      "after": "搜索问题。"
+    },
+    {
+      "pointer": "/contributes/colors/0/description",
+      "before": "Background color of the entire line containing error.",
+      "after": "包含错误的整行背景色。"
+    },
+    {
+      "pointer": "/contributes/colors/1/description",
+      "before": "Background color of the error message.",
+      "after": "错误消息的背景色。"
+    },
+    {
+      "pointer": "/contributes/colors/2/description",
+      "before": "Background color of the error range (when errorLens.problemRangeDecorationEnabled setting enabled).",
+      "after": "错误范围的背景色（启用 errorLens.problemRangeDecorationEnabled 设置时使用）。"
+    },
+    {
+      "pointer": "/contributes/colors/3/description",
+      "before": "Background color of the entire line containing error (Only in light themes).",
+      "after": "包含错误的整行背景色（仅适用于浅色主题）。"
+    },
+    {
+      "pointer": "/contributes/colors/4/description",
+      "before": "Text color used to highlight lines containing errors.",
+      "after": "用于高亮显示错误行的文本颜色。"
+    },
+    {
+      "pointer": "/contributes/colors/5/description",
+      "before": "Text color used to highlight lines containing errors (Only in light themes).",
+      "after": "用于高亮显示错误行的文本颜色（仅适用于浅色主题）。"
+    },
+    {
+      "pointer": "/contributes/colors/6/description",
+      "before": "Background color used to highlight lines containing warnings.",
+      "after": "包含警告的整行背景色。"
+    },
+    {
+      "pointer": "/contributes/colors/7/description",
+      "before": "Background color of the warning message.",
+      "after": "警告消息的背景色。"
+    },
+    {
+      "pointer": "/contributes/colors/8/description",
+      "before": "Background color of the warning range (when errorLens.problemRangeDecorationEnabled setting enabled).",
+      "after": "警告范围的背景色（启用 errorLens.problemRangeDecorationEnabled 设置时使用）。"
+    },
+    {
+      "pointer": "/contributes/colors/9/description",
+      "before": "Background color used to highlight lines containing warnings (Only in light themes).",
+      "after": "包含警告的整行背景色（仅适用于浅色主题）。"
+    },
+    {
+      "pointer": "/contributes/colors/10/description",
+      "before": "Text color used to highlight lines containing warnings.",
+      "after": "用于高亮显示警告行的文本颜色。"
+    },
+    {
+      "pointer": "/contributes/colors/11/description",
+      "before": "Text color used to highlight lines containing warnings (Only in light themes).",
+      "after": "用于高亮显示警告行的文本颜色（仅适用于浅色主题）。"
+    },
+    {
+      "pointer": "/contributes/colors/12/description",
+      "before": "Background color used to highlight lines containing info.",
+      "after": "包含信息的整行背景色。"
+    },
+    {
+      "pointer": "/contributes/colors/13/description",
+      "before": "Background color of the info message.",
+      "after": "信息消息的背景色。"
+    },
+    {
+      "pointer": "/contributes/colors/14/description",
+      "before": "Background color of the info range (when errorLens.problemRangeDecorationEnabled setting enabled).",
+      "after": "信息范围的背景色（启用 errorLens.problemRangeDecorationEnabled 设置时使用）。"
+    },
+    {
+      "pointer": "/contributes/colors/15/description",
+      "before": "Background color used to highlight lines containing info (Only in light themes).",
+      "after": "包含信息的整行背景色（仅适用于浅色主题）。"
+    },
+    {
+      "pointer": "/contributes/colors/16/description",
+      "before": "Text color used to highlight lines containing info.",
+      "after": "用于高亮显示信息行的文本颜色。"
+    },
+    {
+      "pointer": "/contributes/colors/17/description",
+      "before": "Text color used to highlight lines containing info (Only in light themes).",
+      "after": "用于高亮显示信息行的文本颜色（仅适用于浅色主题）。"
+    },
+    {
+      "pointer": "/contributes/colors/18/description",
+      "before": "Background color used to highlight lines containing hints.",
+      "after": "包含提示的整行背景色。"
+    },
+    {
+      "pointer": "/contributes/colors/19/description",
+      "before": "Background color of the hint message.",
+      "after": "提示消息的背景色。"
+    },
+    {
+      "pointer": "/contributes/colors/20/description",
+      "before": "Background color of the hint range (when errorLens.problemRangeDecorationEnabled setting enabled).",
+      "after": "提示范围的背景色（启用 errorLens.problemRangeDecorationEnabled 设置时使用）。"
+    },
+    {
+      "pointer": "/contributes/colors/21/description",
+      "before": "Background color used to highlight lines containing hints (Only in light themes).",
+      "after": "包含提示的整行背景色（仅适用于浅色主题）。"
+    },
+    {
+      "pointer": "/contributes/colors/22/description",
+      "before": "Text color used to highlight lines containing hints.",
+      "after": "用于高亮显示提示行的文本颜色。"
+    },
+    {
+      "pointer": "/contributes/colors/23/description",
+      "before": "Text color used to highlight lines containing hints (Only in light themes).",
+      "after": "用于高亮显示提示行的文本颜色（仅适用于浅色主题）。"
+    },
+    {
+      "pointer": "/contributes/colors/24/description",
+      "before": "Status bar icon item error color. Foreground is used when the `errorLens.statusBarIconsUseBackground` setting is disabled.",
+      "after": "状态栏错误图标的前景色。禁用 `errorLens.statusBarIconsUseBackground` 时使用。"
+    },
+    {
+      "pointer": "/contributes/colors/25/description",
+      "before": "Status bar icon item error color. Foreground is used when the `errorLens.statusBarIconsUseBackground` setting is disabled.",
+      "after": "状态栏警告图标的前景色。禁用 `errorLens.statusBarIconsUseBackground` 时使用。"
+    },
+    {
+      "pointer": "/contributes/colors/26/description",
+      "before": "Status bar item error color.",
+      "after": "状态栏错误消息的前景色。"
+    },
+    {
+      "pointer": "/contributes/colors/27/description",
+      "before": "Status bar item warning color.",
+      "after": "状态栏警告消息的前景色。"
+    },
+    {
+      "pointer": "/contributes/colors/28/description",
+      "before": "Status bar item info color.",
+      "after": "状态栏信息消息的前景色。"
+    },
+    {
+      "pointer": "/contributes/colors/29/description",
+      "before": "Status bar item hint color.",
+      "after": "状态栏提示消息的前景色。"
+    }
+  ],
+  "enumLabels": [
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.fontWeight/enumItemLabels",
+      "values": [
+        "100",
+        "200",
+        "300",
+        "400",
+        "常规",
+        "500",
+        "600",
+        "700",
+        "粗体",
+        "800",
+        "900"
+      ]
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.enabledDiagnosticLevels/items/enumItemLabels",
+      "values": [
+        "错误",
+        "警告",
+        "信息",
+        "提示"
+      ]
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.messageBackgroundMode/enumItemLabels",
+      "values": [
+        "整行",
+        "消息",
+        "无"
+      ]
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.statusBarIconsAlignment/enumItemLabels",
+      "values": [
+        "左侧",
+        "右侧"
+      ]
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.statusBarIconsTargetProblems/enumItemLabels",
+      "values": [
+        "全部问题",
+        "活动编辑器",
+        "可见编辑器"
+      ]
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.statusBarIconsAtZero/enumItemLabels",
+      "values": [
+        "隐藏",
+        "移除背景色"
+      ]
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.statusBarMessageAlignment/enumItemLabels",
+      "values": [
+        "左侧",
+        "右侧"
+      ]
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.statusBarMessageType/enumItemLabels",
+      "values": [
+        "最近的问题",
+        "按严重程度优先",
+        "光标所在行",
+        "光标所在位置"
+      ]
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.statusBarCommand/enumItemLabels",
+      "values": [
+        "跳转到问题",
+        "跳转到行",
+        "复制消息"
+      ]
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.transmute/patternProperties/.*/properties/severity/enumItemLabels",
+      "values": [
+        "错误",
+        "警告",
+        "信息",
+        "提示"
+      ]
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.lintFilePaths/patternProperties/.*/oneOf/1/enumItemLabels",
+      "values": [
+        "无"
+      ]
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.selectProblemType/enumItemLabels",
+      "values": [
+        "最近的问题",
+        "按严重程度优先",
+        "光标所在行"
+      ]
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.delayMode/enumItemLabels",
+      "values": [
+        "延迟显示新问题",
+        "对全部问题防抖",
+        "输入时隐藏装饰"
+      ]
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.followCursor/enumItemLabels",
+      "values": [
+        "所有行",
+        "光标所在行以外",
+        "光标所在行",
+        "最近的问题"
+      ]
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.gutterIconSet/enumItemLabels",
+      "values": [
+        "默认（旧版）",
+        "默认（新版）",
+        "无边框",
+        "圆形",
+        "方形",
+        "圆角方形",
+        "字母",
+        "表情符号"
+      ]
+    },
+    {
+      "pointer": "/contributes/configuration/properties/errorLens.codeLensOnClick/enumItemLabels",
+      "values": [
+        "无",
+        "显示问题视图",
+        "显示快速修复",
+        "搜索问题"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,359 @@
+{
+  "sourceSha256": "0d9ecc2dc7561077f95c4a32d717cd0e7b1c572a318b7a23eb3f25b2824e2986",
+  "replacements": [
+    {
+      "before": "\"🟩 Copied 🟩\"",
+      "after": "\"🟩 已复制 🟩\"",
+      "count": 2,
+      "sourceSites": [
+        "src/commands/copyProblemCodeCommand.ts:36",
+        "src/commands/copyProblemMessageCommand.ts:35"
+      ]
+    },
+    {
+      "before": "\"No active Text Editor.\"",
+      "after": "\"当前没有活动的文本编辑器。\"",
+      "count": 2,
+      "sourceSites": [
+        "src/commands/copyProblemMessageCommand.ts:13",
+        "src/commands/excludeProblemCommand.ts:11"
+      ]
+    },
+    {
+      "before": "\"There's no problem at the active line.\"",
+      "after": "\"当前行没有问题。\"",
+      "count": 2,
+      "sourceSites": [
+        "src/commands/copyProblemMessageCommand.ts:22",
+        "src/commands/excludeProblemCommand.ts:16"
+      ]
+    },
+    {
+      "before": "'Diagnostic has no \"source\".'",
+      "after": "'诊断信息没有 \"source\"（来源）字段。'",
+      "count": 3,
+      "sourceSites": [
+        "src/commands/disableLineCommand.ts:29",
+        "src/commands/findLinterRuleDefinitionCommand.ts:29",
+        "src/commands/excludeProblemCommand.ts:25"
+      ]
+    },
+    {
+      "before": "'Diagnostic has no \"code\".'",
+      "after": "'诊断信息没有 \"code\"（诊断代码）字段。'",
+      "count": 2,
+      "sourceSites": [
+        "src/commands/findLinterRuleDefinitionCommand.ts:33",
+        "src/commands/excludeProblemCommand.ts:29"
+      ]
+    },
+    {
+      "before": "\"Show Settings\"",
+      "after": "\"查看设置\"",
+      "count": 1,
+      "sourceSites": [
+        "src/commands/disableLineCommand.ts:66"
+      ]
+    },
+    {
+      "before": "`Comment not specified for source \"${e}\"`",
+      "after": "`尚未为来源 \"${e}\" 配置禁用注释。`",
+      "count": 1,
+      "sourceSites": [
+        "src/commands/disableLineCommand.ts:67"
+      ]
+    },
+    {
+      "before": "`No linter files specified for source: \"${t}\".`",
+      "after": "`尚未为来源 \"${t}\" 指定代码检查器配置文件。`",
+      "count": 1,
+      "sourceSites": [
+        "src/commands/findLinterRuleDefinitionCommand.ts:44"
+      ]
+    },
+    {
+      "before": "`No linter files found that match any of the globs: ${JSON.stringify(l)}.`",
+      "after": "`未找到匹配以下任一 glob 模式的代码检查器配置文件：${JSON.stringify(l)}。`",
+      "count": 1,
+      "sourceSites": [
+        "src/commands/findLinterRuleDefinitionCommand.ts:55"
+      ]
+    },
+    {
+      "before": "`No linter file with \"${o}\" found.`",
+      "after": "`未找到包含 \"${o}\" 的代码检查器配置文件。`",
+      "count": 1,
+      "sourceSites": [
+        "src/commands/findLinterRuleDefinitionCommand.ts:75"
+      ]
+    },
+    {
+      "before": "\"Open Setting\"",
+      "after": "\"打开设置\"",
+      "count": 4,
+      "sourceSites": [
+        "src/commands/findLinterRuleDefinitionCommand.ts:113",
+        "src/commands/findLinterRuleDefinitionCommand.ts:122",
+        "src/commands/excludeProblemCommand.ts:68",
+        "src/commands/excludeProblemCommand.ts:77"
+      ]
+    },
+    {
+      "before": "\"Search\"",
+      "after": "\"搜索\"",
+      "count": 1,
+      "sourceSites": [
+        "src/commands/findLinterRuleDefinitionCommand.ts:121"
+      ]
+    },
+    {
+      "before": "`\"${o}\" is found in multiple files:`",
+      "after": "`在多个文件中找到 \"${o}\"：`",
+      "count": 1,
+      "sourceSites": [
+        "src/commands/findLinterRuleDefinitionCommand.ts:102"
+      ]
+    },
+    {
+      "before": "`Counldn't find workspace folder for \"${e.document.uri.toString()}\".`",
+      "after": "`找不到 \"${e.document.uri.toString()}\" 所属的工作区文件夹。`",
+      "count": 1,
+      "sourceSites": [
+        "src/commands/toggleWorkspaceCommand.ts:13"
+      ]
+    },
+    {
+      "before": "\"Pick workspace folder to include/exclude:\"",
+      "after": "\"选择要包含或排除的工作区文件夹：\"",
+      "count": 1,
+      "sourceSites": [
+        "src/commands/toggleWorkspaceCommand.ts:59"
+      ]
+    },
+    {
+      "before": "\"No opened/picked workspace folder.\"",
+      "after": "\"没有已打开或选中的工作区文件夹。\"",
+      "count": 1,
+      "sourceSites": [
+        "src/commands/toggleWorkspaceCommand.ts:18"
+      ]
+    },
+    {
+      "before": "`\"${t}\" - Removed from \"errorLens.excludeWorkspaces\"`",
+      "after": "`\"${t}\" 已从 \"errorLens.excludeWorkspaces\" 中移除`",
+      "count": 1,
+      "sourceSites": [
+        "src/commands/toggleWorkspaceCommand.ts:28"
+      ]
+    },
+    {
+      "before": "`\"${t}\" - Added to \"errorLens.excludeWorkspaces\" (now ignored)`",
+      "after": "`\"${t}\" 已加入 \"errorLens.excludeWorkspaces\"（现已忽略）`",
+      "count": 1,
+      "sourceSites": [
+        "src/commands/toggleWorkspaceCommand.ts:31"
+      ]
+    },
+    {
+      "before": "\"Open Settings UI\"",
+      "after": "\"打开设置界面\"",
+      "count": 1,
+      "sourceSites": [
+        "src/commands/toggleWorkspaceCommand.ts:38"
+      ]
+    },
+    {
+      "before": "\"Error Lens: Error icon\"",
+      "after": "\"Error Lens：错误图标\"",
+      "count": 1,
+      "sourceSites": [
+        "src/statusBar/statusBarIcons.ts:50"
+      ]
+    },
+    {
+      "before": "\"Error Lens: Warning icon\"",
+      "after": "\"Error Lens：警告图标\"",
+      "count": 1,
+      "sourceSites": [
+        "src/statusBar/statusBarIcons.ts:53"
+      ]
+    },
+    {
+      "before": "\"Error Lens: Message\"",
+      "after": "\"Error Lens：消息\"",
+      "count": 1,
+      "sourceSites": [
+        "src/statusBar/statusBarMessage.ts:60"
+      ]
+    },
+    {
+      "before": "\"<No source>\"",
+      "after": "\"<无来源>\"",
+      "count": 2,
+      "sourceSites": [
+        "src/statusBar/statusBarIcons.ts:162",
+        "src/hover/hover.ts:66"
+      ]
+    },
+    {
+      "before": "\"<No code>\"",
+      "after": "\"<无代码>\"",
+      "count": 1,
+      "sourceSites": [
+        "src/hover/hover.ts:66"
+      ]
+    },
+    {
+      "before": "\"$(clippy) Copy code\"",
+      "after": "\"$(clippy) 复制代码\"",
+      "count": 1,
+      "sourceSites": [
+        "src/hover/hover.ts:56"
+      ]
+    },
+    {
+      "before": "\"Copy problem code into the clipboard.\"",
+      "after": "\"将问题代码复制到剪贴板。\"",
+      "count": 1,
+      "sourceSites": [
+        "src/hover/hover.ts:58"
+      ]
+    },
+    {
+      "before": "\"$(clippy) Copy message\"",
+      "after": "\"$(clippy) 复制消息\"",
+      "count": 1,
+      "sourceSites": [
+        "src/hover/hover.ts:61"
+      ]
+    },
+    {
+      "before": "\"Copy problem mesage into the clipboard.\"",
+      "after": "\"将问题消息复制到剪贴板。\"",
+      "count": 1,
+      "sourceSites": [
+        "src/hover/hover.ts:63"
+      ]
+    },
+    {
+      "before": "\"$(exclude) Exclude\"",
+      "after": "\"$(exclude) 排除\"",
+      "count": 1,
+      "sourceSites": [
+        "src/hover/hover.ts:78"
+      ]
+    },
+    {
+      "before": "\"Exclude problem from Error Lens by source/code\"",
+      "after": "\"按来源和代码在 Error Lens 中排除此问题\"",
+      "count": 1,
+      "sourceSites": [
+        "src/hover/hover.ts:80"
+      ]
+    },
+    {
+      "before": "\"$(file) Definition\"",
+      "after": "\"$(file) 规则定义\"",
+      "count": 1,
+      "sourceSites": [
+        "src/hover/hover.ts:83"
+      ]
+    },
+    {
+      "before": "\"Open diagnostic definition (linter file).\"",
+      "after": "\"打开诊断规则定义（代码检查器配置文件）。\"",
+      "count": 1,
+      "sourceSites": [
+        "src/hover/hover.ts:85"
+      ]
+    },
+    {
+      "before": "\"$(search) Search\"",
+      "after": "\"$(search) 搜索\"",
+      "count": 1,
+      "sourceSites": [
+        "src/hover/hover.ts:88"
+      ]
+    },
+    {
+      "before": "\"Open problem in default browser (controlled by `errorLens.searchForProblemQuery` setting).\"",
+      "after": "\"在默认浏览器中搜索此问题（由 `errorLens.searchForProblemQuery` 设置控制）。\"",
+      "count": 1,
+      "sourceSites": [
+        "src/hover/hover.ts:90"
+      ]
+    },
+    {
+      "before": "\"$(arrow-circle-up) Disable line\"",
+      "after": "\"$(arrow-circle-up) 禁用本行规则\"",
+      "count": 1,
+      "sourceSites": [
+        "src/hover/hover.ts:93"
+      ]
+    },
+    {
+      "before": "\"Add comment to disable linter rule for this line.\"",
+      "after": "\"添加注释以禁用本行的代码检查规则。\"",
+      "count": 1,
+      "sourceSites": [
+        "src/hover/hover.ts:95"
+      ]
+    },
+    {
+      "before": "\"$(book) Docs\"",
+      "after": "\"$(book) 文档\"",
+      "count": 1,
+      "sourceSites": [
+        "src/hover/hover.ts:111"
+      ]
+    },
+    {
+      "before": "\"Open diagnostic code or search it in default browser.\"",
+      "after": "\"打开诊断代码的文档，或在默认浏览器中搜索。\"",
+      "count": 1,
+      "sourceSites": [
+        "src/hover/hover.ts:113"
+      ]
+    },
+    {
+      "before": "`Excluded problem by source+code: \"${e}\"`",
+      "after": "`已按来源和代码排除问题：\"${e}\"`",
+      "count": 1,
+      "sourceSites": [
+        "src/commands/excludeProblemCommand.ts:78"
+      ]
+    },
+    {
+      "before": "`${e}: Exclude by message:`",
+      "after": "`${e} 按消息排除：`",
+      "count": 1,
+      "sourceSites": [
+        "src/commands/excludeProblemCommand.ts:49"
+      ]
+    },
+    {
+      "before": "`Excluded problem by message: \"${e}\"`",
+      "after": "`已按消息排除问题：\"${e}\"`",
+      "count": 1,
+      "sourceSites": [
+        "src/commands/excludeProblemCommand.ts:69"
+      ]
+    },
+    {
+      "before": "`Error Lens: inline messages limited to visible lines (${o} lines with problems > errorLens.maxInlineMessages)`",
+      "after": "`Error Lens：行内消息仅显示在可见行中（存在问题的行数 ${o} > errorLens.maxInlineMessages）`",
+      "count": 1,
+      "sourceSites": [
+        "src/decorations.ts:682"
+      ]
+    },
+    {
+      "before": "'Missing \"regex\" property'",
+      "after": "'缺少 \"regex\" 属性'",
+      "count": 1,
+      "sourceSites": [
+        "src/transmute.ts:83"
+      ]
+    }
+  ]
+}
