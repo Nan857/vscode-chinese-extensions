@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "sourceId": "nan857/vscode-chinese-extensions",
+  "revision": 1,
+  "issuedAt": "2026-10-19T04:34:02Z",
+  "minManagerVersion": "0.8.0",
+  "products": [
+    {
+      "id": "error-lens",
+      "extensionId": "local-chinese.errorlens-zh",
+      "upstreamId": "usernamehw.errorlens",
+      "name": "Error Lens",
+      "description": "更醒目地显示错误、警告和其他语言诊断信息。",
+      "symbol": "EL",
+      "version": "3.29.0",
+      "localizationRevision": 1,
+      "knownLimitations": [
+        "语言服务器／检查器产生的诊断正文保持原文。",
+        "Windows 运行验证尚未执行。"
+      ],
+      "artifacts": [
+        {
+          "targetPlatform": "universal",
+          "enginesVscode": "^1.107.0",
+          "url": "https://github.com/Nan857/vscode-chinese-extensions/releases/download/error-lens-3.29.0-r1/errorlens-zh-3.29.0-r1.vsix",
+          "bytes": 75154,
+          "sha256": "b5acafe76fe3953e9a03e16d0dc51351cc8a03bd627388137bd6369e7fbe0f9b",
+          "verificationProfile": "legacy-r1"
+        }
+      ]
+    }
+  ]
+}
