@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "sourceId": "nan857/vscode-chinese-extensions",
-  "revision": 1,
-  "issuedAt": "2026-10-19T04:34:02Z",
+  "revision": 2,
+  "issuedAt": "2026-10-19T05:35:42Z",
   "minManagerVersion": "0.8.0",
   "products": [
     {
@@ -25,6 +25,31 @@
           "url": "https://github.com/Nan857/vscode-chinese-extensions/releases/download/error-lens-3.29.0-r1/errorlens-zh-3.29.0-r1.vsix",
           "bytes": 75154,
           "sha256": "b5acafe76fe3953e9a03e16d0dc51351cc8a03bd627388137bd6369e7fbe0f9b",
+          "verificationProfile": "legacy-r1"
+        }
+      ]
+    },
+    {
+      "id": "gitlab",
+      "extensionId": "local-chinese.gitlab-workflow-zh",
+      "upstreamId": "gitlab.gitlab-workflow",
+      "name": "GitLab",
+      "description": "GitLab 7.2.5 本地中文版；使用个人访问 Token（PAT）登录。",
+      "symbol": "GL",
+      "version": "7.2.5",
+      "localizationRevision": 1,
+      "knownLimitations": [
+        "本发行仅提供 PAT 登录，不提供原官方 OAuth 登录入口。",
+        "上游通用包所带 rg 为 Linux x64 ELF；Duo 工作流搜索在 Mac/Windows 上未验证且可能不可用。",
+        "本既有 r1 发行按用户明确授权公开；依赖许可材料尚未核对齐，未声明许可证审查通过。"
+      ],
+      "artifacts": [
+        {
+          "targetPlatform": "universal",
+          "enginesVscode": "^1.106.0",
+          "url": "https://github.com/Nan857/vscode-chinese-extensions/releases/download/gitlab-7.2.5-r1/gitlab-workflow-zh-7.2.5-r1.vsix",
+          "bytes": 39868106,
+          "sha256": "687b087216400d98f53b178ec05380fcb92f49a45af3f26f00501c8e90d6baa3",
           "verificationProfile": "legacy-r1"
         }
       ]
