@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "sourceId": "nan857/vscode-chinese-extensions",
-  "revision": 3,
-  "issuedAt": "2026-10-21T04:17:13Z",
+  "revision": 4,
+  "issuedAt": "2026-10-21T05:58:30Z",
   "minManagerVersion": "0.8.0",
   "products": [
     {
@@ -157,13 +157,13 @@
       "id": "ruff",
       "extensionId": "local-chinese.ruff-zh",
       "upstreamId": "charliermarsh.ruff",
-      "name": "Ruff",
-      "description": "为 Python 提供 Ruff 代码检查与格式化支持。",
+      "name": "Ruff-mac（ARM64）",
+      "description": "仅适用于 macOS ARM64（Apple Silicon）的 Python Ruff 代码检查与格式化支持。",
       "symbol": "RF",
       "version": "2026.88.0",
       "localizationRevision": 1,
       "knownLimitations": [
-        "仅含 Mac ARM64 上游 Ruff 0.17.1 二进制；不适用于 Intel Mac、Windows 或 Linux。",
+        "本商店版本仅支持 macOS ARM64（Apple Silicon，darwin-arm64），捆绑上游 Ruff 0.17.1；不适用于 Intel Mac、Windows 或 Linux。",
         "跟随 VS Code 界面语言：zh-cn 中文，其他语言使用原英文。",
         "Ruff 诊断正文、用户代码、协议标识及检查/格式化行为不翻译。",
         "仅执行包级、语法、模拟语言选择和捆绑 Ruff CLI 检查；未执行原生 VS Code 扩展激活或完整语言服务器功能。",

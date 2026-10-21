@@ -495,8 +495,8 @@
   ],
   "files": {
     "README.md": {
-      "sha256": "90dcdf0fe40ea4283c30285c72df954b039693ad6283b3fe227b632573c996c1",
-      "bytes": 2136
+      "sha256": "c2483b190c31a67003dd4407084b196dbc625de44271df31fd505efe365c08b2",
+      "bytes": 2426
     },
     "localizations/autodocstring-0.6.1/config.json": {
       "sha256": "654d27d841848c33805d72376aa89bf8e628ae32c560e30548712fa38784f18e",
@@ -635,8 +635,8 @@
       "bytes": 1225
     },
     "products/ruff.json": {
-      "sha256": "ec056ea514f455680ab0d4fa9c57892c6073085a04192e384f7effbff8cdb3eb",
-      "bytes": 1428
+      "sha256": "8fba6a7b6d142a7266097644f777607d8ec65ca29e39c38a8c959ab73639ba17",
+      "bytes": 1531
     },
     "publication/license-manifest.json": {
       "sha256": "638c2242700568b7fe83a7a5b5a19579539a8420c8a37f9d2138a85c0a101af6",
