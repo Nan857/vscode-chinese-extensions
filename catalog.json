@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "sourceId": "nan857/vscode-chinese-extensions",
-  "revision": 2,
-  "issuedAt": "2026-10-19T05:35:42Z",
+  "revision": 3,
+  "issuedAt": "2026-10-21T04:17:13Z",
   "minManagerVersion": "0.8.0",
   "products": [
     {
@@ -51,6 +51,132 @@
           "bytes": 39868106,
           "sha256": "687b087216400d98f53b178ec05380fcb92f49a45af3f26f00501c8e90d6baa3",
           "verificationProfile": "legacy-r1"
+        }
+      ]
+    },
+    {
+      "id": "autodocstring",
+      "extensionId": "local-chinese.autodocstring-zh",
+      "upstreamId": "njpwerner.autodocstring",
+      "name": "autoDocstring",
+      "description": "自动生成 Python 文档字符串",
+      "symbol": "DS",
+      "version": "0.6.1",
+      "localizationRevision": 1,
+      "knownLimitations": [
+        "跟随 VS Code 界面语言：zh-cn 中文，其他语言使用原英文。",
+        "仅执行包级检查与模拟 VS Code API；未执行原生 VS Code 界面或 Windows 运行验证。",
+        "文档字符串模板、用户代码、诊断正文及日志的原始错误对象保持不变。"
+      ],
+      "artifacts": [
+        {
+          "targetPlatform": "universal",
+          "enginesVscode": "^1.53.0",
+          "url": "https://github.com/Nan857/vscode-chinese-extensions/releases/download/autodocstring-0.6.1-r1/autodocstring-zh-0.6.1-r1.vsix",
+          "bytes": 435780,
+          "sha256": "5b58563d055d1841c7fd9ba2fe8bb5e1ecfbb60351a9d3ccc81dd47d41f9f86c",
+          "verificationProfile": "metadata-v1"
+        }
+      ]
+    },
+    {
+      "id": "even-better-toml",
+      "extensionId": "local-chinese.even-better-toml-zh",
+      "upstreamId": "tamasfe.even-better-toml",
+      "name": "Even Better TOML",
+      "description": "功能完备的 TOML 支持",
+      "symbol": "TOML",
+      "version": "0.21.2",
+      "localizationRevision": 1,
+      "knownLimitations": [
+        "服务器诊断正文、schema 名称和说明及异常正文保留原文。",
+        "尚未执行原生扩展宿主、实际语言服务器/WASM 或跨系统运行验证。"
+      ],
+      "artifacts": [
+        {
+          "targetPlatform": "universal",
+          "enginesVscode": "^1.90.0",
+          "url": "https://github.com/Nan857/vscode-chinese-extensions/releases/download/even-better-toml-0.21.2-r1/even-better-toml-zh-0.21.2-r1.vsix",
+          "bytes": 21529396,
+          "sha256": "6526f88ccac72d494a22240398ebdd8cf17517809dd06624637278d9caeef8c0",
+          "verificationProfile": "metadata-v1"
+        }
+      ]
+    },
+    {
+      "id": "path-intellisense",
+      "extensionId": "local-chinese.path-intellisense-zh",
+      "upstreamId": "christian-kohler.path-intellisense",
+      "name": "Path Intellisense",
+      "description": "自动补全文件名的 Visual Studio Code 插件",
+      "symbol": "PI",
+      "version": "2.10.0",
+      "localizationRevision": 1,
+      "knownLimitations": [
+        "跟随 VS Code 界面语言：zh-cn 中文，其他语言使用原英文。",
+        "仅执行包级检查与模拟 VS Code API；未执行原生 VS Code 界面或 Windows 运行验证。",
+        "上游 manifest 声明的 Web 入口未随原包分发，Web 扩展运行未验证；文件名及补全内容不翻译。"
+      ],
+      "artifacts": [
+        {
+          "targetPlatform": "universal",
+          "enginesVscode": "^1.43.0",
+          "url": "https://github.com/Nan857/vscode-chinese-extensions/releases/download/path-intellisense-2.10.0-r1/path-intellisense-zh-2.10.0-r1.vsix",
+          "bytes": 138708,
+          "sha256": "d0adfba280bd5e2b3239266387f77126a6bdbb9a92257431e03fa56877b4bda7",
+          "verificationProfile": "metadata-v1"
+        }
+      ]
+    },
+    {
+      "id": "indent-rainbow",
+      "extensionId": "local-chinese.indent-rainbow-zh",
+      "upstreamId": "oderwat.indent-rainbow",
+      "name": "indent-rainbow",
+      "description": "通过彩色缩进让代码层次更易阅读",
+      "symbol": "IR",
+      "version": "8.3.1",
+      "localizationRevision": 1,
+      "knownLimitations": [
+        "zh-cn 界面显示中文，其他界面语言保留英文回退。",
+        "原生扩展宿主、真实界面和 Windows 运行尚未验证。",
+        "官方包夹带但运行入口未引用的开发测试依赖与辅助文件未发运；依赖声明保持原值。"
+      ],
+      "artifacts": [
+        {
+          "targetPlatform": "universal",
+          "enginesVscode": "^1.52.0",
+          "url": "https://github.com/Nan857/vscode-chinese-extensions/releases/download/indent-rainbow-8.3.1-r1/indent-rainbow-zh-8.3.1-r1.vsix",
+          "bytes": 216774,
+          "sha256": "21f548e54a402266fd9b629354d4c7b9e623c4cb35250ee4cc40b22ca9a69e44",
+          "verificationProfile": "metadata-v1"
+        }
+      ]
+    },
+    {
+      "id": "ruff",
+      "extensionId": "local-chinese.ruff-zh",
+      "upstreamId": "charliermarsh.ruff",
+      "name": "Ruff",
+      "description": "为 Python 提供 Ruff 代码检查与格式化支持。",
+      "symbol": "RF",
+      "version": "2026.88.0",
+      "localizationRevision": 1,
+      "knownLimitations": [
+        "仅含 Mac ARM64 上游 Ruff 0.17.1 二进制；不适用于 Intel Mac、Windows 或 Linux。",
+        "跟随 VS Code 界面语言：zh-cn 中文，其他语言使用原英文。",
+        "Ruff 诊断正文、用户代码、协议标识及检查/格式化行为不翻译。",
+        "仅执行包级、语法、模拟语言选择和捆绑 Ruff CLI 检查；未执行原生 VS Code 扩展激活或完整语言服务器功能。",
+        "4 个 Rust 组件上游只声明 MIT、未提供独立版权许可文件；已保存原声明和标准 MIT 条款，未补造版权人或年份。"
+      ],
+      "artifacts": [
+        {
+          "targetPlatform": "darwin-arm64",
+          "enginesVscode": "^1.91.0",
+          "url": "https://github.com/Nan857/vscode-chinese-extensions/releases/download/ruff-2026.88.0-r1/ruff-zh-2026.88.0-darwin-arm64-r1.vsix",
+          "bytes": 10093778,
+          "sha256": "60ee092176b6271e07ff3ae96cba94f9d58a2e7158ff9cd4b29aef2c8e68dac4",
+          "verificationProfile": "metadata-v1"
         }
       ]
     }
