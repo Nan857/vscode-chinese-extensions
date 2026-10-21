@@ -1,0 +1,14 @@
+{
+  "extension.displayName": "Path Intellisense",
+  "extension.description": "自动补全文件名的 Visual Studio Code 插件",
+  "configuration.title": "Path Intellisense",
+  "configuration.path-intellisense.extensionOnImport.description": "在 import 语句中添加文件扩展名",
+  "configuration.path-intellisense.mappings.description": "路径映射。映射值按绝对路径解析（可使用 '${workspaceFolder}'）",
+  "configuration.path-intellisense.showHiddenFiles.description": "显示隐藏文件",
+  "configuration.path-intellisense.autoSlashAfterDirectory.description": "自动在目录后添加斜杠",
+  "configuration.path-intellisense.absolutePathToWorkspace.description": "将绝对路径的起点设为当前工作区",
+  "configuration.path-intellisense.absolutePathTo.description": "指定后，未映射的绝对路径导入将以此位置为起点。与 'absolutePathToWorkspace' 同时设置时，此项优先",
+  "configuration.path-intellisense.showOnAbsoluteSlash.description": "导入路径以正斜杠（'/'）开头时显示建议",
+  "configuration.path-intellisense.ignoreTsConfigBaseUrl.description": "忽略 tsconfig 文件中的路径映射",
+  "configuration.path-intellisense.autoTriggerNextSuggestion.description": "完成一次补全后自动触发下一次建议"
+}

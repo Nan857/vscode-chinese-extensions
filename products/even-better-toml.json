@@ -1,0 +1,28 @@
+{
+  "id": "even-better-toml",
+  "extensionId": "local-chinese.even-better-toml-zh",
+  "upstreamId": "tamasfe.even-better-toml",
+  "name": "Even Better TOML",
+  "symbol": "TOML",
+  "version": "0.21.2",
+  "description": "功能完备的 TOML 支持",
+  "knownLimitations": [
+    "服务器诊断正文、schema 名称和说明及异常正文保留原文。",
+    "尚未执行原生扩展宿主、实际语言服务器/WASM 或跨系统运行验证。"
+  ],
+  "schemaVersion": 1,
+  "localizationRevision": 1,
+  "artifacts": [
+    {
+      "localizationRevision": 1,
+      "tag": "even-better-toml-0.21.2-r1",
+      "assetName": "even-better-toml-zh-0.21.2-r1.vsix",
+      "url": "https://github.com/Nan857/vscode-chinese-extensions/releases/download/even-better-toml-0.21.2-r1/even-better-toml-zh-0.21.2-r1.vsix",
+      "targetPlatform": "universal",
+      "enginesVscode": "^1.90.0",
+      "verificationProfile": "metadata-v1",
+      "sha256": "6526f88ccac72d494a22240398ebdd8cf17517809dd06624637278d9caeef8c0",
+      "bytes": 21529396
+    }
+  ]
+}

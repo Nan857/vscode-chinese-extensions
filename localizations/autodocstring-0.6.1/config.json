@@ -1,0 +1,84 @@
+{
+  "id": "autodocstring",
+  "publisher": "njpwerner",
+  "version": "0.6.1",
+  "name": "autoDocstring",
+  "displayName": "autoDocstring（中文版）",
+  "symbol": "DS",
+  "description": "自动生成 Python 文档字符串",
+  "sourceSha256": "348d1c6e3b193d6f27eaa45344aa2ace748384b651520b8fed26bf7747de7a87",
+  "sourceBytes": 428356,
+  "sourceUrl": "https://marketplace.visualstudio.com/_apis/public/gallery/publishers/njpwerner/vsextensions/autodocstring/0.6.1/vspackage",
+  "identityAdaptations": [],
+  "licenseComponents": [
+    {
+      "name": "autoDocstring",
+      "version": "0.6.1",
+      "license": "MIT",
+      "files": [
+        "publication/licenses/autodocstring-0.6.1/autoDocstring-0.6.1-MIT.txt",
+        "publication/licenses/autodocstring-0.6.1/THIRD-PARTY-NOTICES.md"
+      ],
+      "sourceUrl": "https://marketplace.visualstudio.com/_apis/public/gallery/publishers/njpwerner/vsextensions/autodocstring/0.6.1/vspackage",
+      "sourceArchivePath": "extension/LICENSE.txt",
+      "licenseSha256": "b45dabfc0ae9ace61c82135fb1814400766adc2f3415e79e7e5f7b53fc0f0d06"
+    },
+    {
+      "name": "@types/stack-trace",
+      "version": "0.0.29",
+      "license": "MIT",
+      "files": [
+        "publication/licenses/autodocstring-0.6.1/types-stack-trace-0.0.29-MIT.txt"
+      ],
+      "sourceUrl": "https://marketplace.visualstudio.com/_apis/public/gallery/publishers/njpwerner/vsextensions/autodocstring/0.6.1/vspackage",
+      "sourceArchivePath": "extension/node_modules/@types/stack-trace/LICENSE",
+      "licenseSha256": "27ebda9d51f0a56b7e281ccd8230a27236dcb51c05f64b07869ecf6e965d68b0",
+      "packageJsonArchivePath": "extension/node_modules/@types/stack-trace/package.json",
+      "packageJsonSha256": "571116cc3f13e3fced569c9b26f24ed010e25164c79d8e3bbd4fd14dc1f2326e"
+    },
+    {
+      "name": "mustache",
+      "version": "4.2.0",
+      "license": "MIT",
+      "files": [
+        "publication/licenses/autodocstring-0.6.1/mustache-4.2.0-MIT.txt"
+      ],
+      "sourceUrl": "https://marketplace.visualstudio.com/_apis/public/gallery/publishers/njpwerner/vsextensions/autodocstring/0.6.1/vspackage",
+      "sourceArchivePath": "extension/node_modules/mustache/LICENSE",
+      "licenseSha256": "e60b280838180a70cbb4b934f825c8119cdcf8912259ff4c6da20b284231c832",
+      "packageJsonArchivePath": "extension/node_modules/mustache/package.json",
+      "packageJsonSha256": "7d8e6d143f2802cc9375213846e6a5b325dc50b412dcf165331a4f85f3a7ea47"
+    },
+    {
+      "name": "stack-trace",
+      "version": "0.0.10",
+      "license": "MIT",
+      "files": [
+        "publication/licenses/autodocstring-0.6.1/stack-trace-0.0.10-MIT.txt"
+      ],
+      "sourceUrl": "https://marketplace.visualstudio.com/_apis/public/gallery/publishers/njpwerner/vsextensions/autodocstring/0.6.1/vspackage",
+      "sourceArchivePath": "extension/node_modules/stack-trace/License",
+      "licenseSha256": "c5ece09265dbd6335030832335dec72919b9ecfd4db126cb9bb9b8d023970304",
+      "packageJsonArchivePath": "extension/node_modules/stack-trace/package.json",
+      "packageJsonSha256": "4cfcf7afd31ff54581a72247ff56687b372286874be0f604ed8312554c22495e"
+    },
+    {
+      "name": "ts-dedent",
+      "version": "2.2.0",
+      "license": "MIT",
+      "files": [
+        "publication/licenses/autodocstring-0.6.1/ts-dedent-2.2.0-MIT.txt"
+      ],
+      "sourceUrl": "https://marketplace.visualstudio.com/_apis/public/gallery/publishers/njpwerner/vsextensions/autodocstring/0.6.1/vspackage",
+      "sourceArchivePath": "extension/node_modules/ts-dedent/LICENSE",
+      "licenseSha256": "eff13095d9d762c3bd9dda74370c81e2130c28f2691bc455603abf973bac25b9",
+      "packageJsonArchivePath": "extension/node_modules/ts-dedent/package.json",
+      "packageJsonSha256": "5b7b143207d896b95bc7efae51301f3b3c55aded192a9773dbad53efa2e0da02"
+    }
+  ],
+  "knownLimitations": [
+    "跟随 VS Code 界面语言：zh-cn 中文，其他语言使用原英文。",
+    "仅执行包级检查与模拟 VS Code API；未执行原生 VS Code 界面或 Windows 运行验证。",
+    "文档字符串模板、用户代码、诊断正文及日志的原始错误对象保持不变。"
+  ]
+}

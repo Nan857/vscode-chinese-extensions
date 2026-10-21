@@ -1,0 +1,18 @@
+{
+  "extension.displayName": "autoDocstring - Python 文档字符串生成器",
+  "extension.description": "自动生成 Python 文档字符串",
+  "command.generateDocstring.title": "生成文档字符串",
+  "configuration.title": "Python 文档字符串生成器配置",
+  "configuration.autoDocstring.docstringFormat.description": "要使用的文档字符串格式。",
+  "configuration.autoDocstring.customTemplatePath.description": "自定义文档字符串模板的路径（优先于 docstringFormat）。可以是绝对路径，也可以是相对于项目根目录的路径。",
+  "configuration.autoDocstring.generateDocstringOnEnter.description": "在输入文档字符串的起始引号（由 quoteStyle 指定）后，按 Enter 键生成文档字符串",
+  "configuration.autoDocstring.includeExtendedSummary.description": "包含 [extended_summary] 标签",
+  "configuration.autoDocstring.includeName.description": "在文档字符串开头包含函数名称",
+  "configuration.autoDocstring.startOnNewLine.description": "在新行开始文档字符串",
+  "configuration.autoDocstring.guessTypes.description": "推断参数和返回值的类型",
+  "configuration.autoDocstring.quoteStyle.description": "生成文档字符串命令使用的引号样式",
+  "configuration.autoDocstring.logLevel.description": "输出日志信息",
+  "configuration.autoDocstring.logLevel.label.none": "无",
+  "configuration.autoDocstring.logLevel.label.info": "信息",
+  "configuration.autoDocstring.logLevel.label.debug": "调试"
+}

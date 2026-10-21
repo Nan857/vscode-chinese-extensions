@@ -1,0 +1,143 @@
+{
+  "manifestEntries": 16,
+  "runtimeEntries": 6,
+  "changes": [
+    {
+      "key": "localizer.description",
+      "before": "Makes indentation easier to read",
+      "after": "通过彩色缩进让代码层次更易阅读",
+      "context": "extension/package.json:description"
+    },
+    {
+      "key": "localizer.configuration.title",
+      "before": "Indent-Rainbow configuration",
+      "after": "indent-rainbow 配置",
+      "context": "extension/package.json:configuration.title"
+    },
+    {
+      "key": "localizer.includedLanguages",
+      "before": "For which languages indent-rainbow should be activated. When empty will use for all languages.",
+      "after": "启用 indent-rainbow 的语言；留空时对所有语言启用。",
+      "context": "extension/package.json:includedLanguages"
+    },
+    {
+      "key": "localizer.excludedLanguages",
+      "before": "For which languages indent-rainbow should be deactivated. When left empty will ignore.",
+      "after": "禁用 indent-rainbow 的语言；留空时不排除任何语言。",
+      "context": "extension/package.json:excludedLanguages"
+    },
+    {
+      "key": "localizer.ignoreErrorLanguages",
+      "before": "For which languages indent-rainbow should skip indent error detection (use '*' to deactivate errors for all languages).",
+      "after": "跳过缩进错误检测的语言（使用 '*' 可对所有语言禁用错误检测）。",
+      "context": "extension/package.json:ignoreErrorLanguages"
+    },
+    {
+      "key": "localizer.updateDelay",
+      "before": "The delay in ms until the editor gets updated.",
+      "after": "更新编辑器前的延迟时间，单位为毫秒。",
+      "context": "extension/package.json:updateDelay"
+    },
+    {
+      "key": "localizer.indentSetter",
+      "before": "Automatically change indent settings for languages (see README.md for details).",
+      "after": "自动修改指定语言的缩进设置（详见 README.md）。",
+      "context": "extension/package.json:indentSetter"
+    },
+    {
+      "key": "localizer.errorColor",
+      "before": "Indent color for when there is an error in the indentation, for example if you have your tabs set to 2 spaces but the indent is 3 spaces. Can be any type of web based color format (hex, rgba, rgb).",
+      "after": "缩进错误时使用的颜色，例如制表符宽度设为 2 个空格，而实际缩进为 3 个空格。支持任意网页颜色格式（hex、rgba、rgb）。",
+      "context": "extension/package.json:errorColor"
+    },
+    {
+      "key": "localizer.tabmixColor",
+      "before": "Indent color for when there is a mix between spaces and tabs in the indentation. Can be any type of web based color format (hex, rgba, rgb) or a empty string(to be disabled this coloring).",
+      "after": "缩进中混用空格和制表符时使用的颜色。支持任意网页颜色格式（hex、rgba、rgb）；设为空字符串可禁用此着色。",
+      "context": "extension/package.json:tabmixColor"
+    },
+    {
+      "key": "localizer.ignoreLinePatterns",
+      "before": "Skip error highlighting for RegEx patterns. Defaults to c/cpp decorated block and full line comments.",
+      "after": "跳过匹配指定正则表达式的错误高亮。默认跳过 C/C++ 装饰性块注释和整行注释。",
+      "context": "extension/package.json:ignoreLinePatterns"
+    },
+    {
+      "key": "localizer.colors",
+      "before": "An array with color (hex, rgba, rgb) strings which are used as colors, can be any length.",
+      "after": "用于缩进着色的颜色字符串数组（hex、rgba、rgb），数组长度不限。",
+      "context": "extension/package.json:colors"
+    },
+    {
+      "key": "localizer.colorOnWhiteSpaceOnly",
+      "before": "If error color is disabled, indent colors will be rendered until the length of rendered characters (white spaces, tabs, and other ones) is divisible by tabsize. Turn on this option to render white spaces and tabs only.",
+      "after": "禁用错误颜色后，缩进颜色会一直渲染，直到已渲染字符（空格、制表符等）的长度能被制表符宽度整除。启用此选项后仅为空格和制表符着色。",
+      "context": "extension/package.json:colorOnWhiteSpaceOnly"
+    },
+    {
+      "key": "localizer.indicatorStyle",
+      "before": "Classic mode uses a full colored tab to indicate the indendation. Light mode will only display a colored border similar to the default indent guide lines. You can disable the default indicators with `#editor.guides.indentation#`.",
+      "after": "经典模式使用整块颜色表示缩进；轻量模式仅显示彩色边框，类似默认缩进参考线。可通过 `#editor.guides.indentation#` 禁用默认参考线。",
+      "context": "extension/package.json:indicatorStyle"
+    },
+    {
+      "key": "localizer.lightIndicatorStyleLineWidth",
+      "before": "This property defines the indent indicator lineWidth when using light mode.",
+      "after": "轻量模式下缩进指示线的宽度（lineWidth）。",
+      "context": "extension/package.json:lightIndicatorStyleLineWidth"
+    },
+    {
+      "key": "localizer.indicatorStyle.classic",
+      "before": "classic",
+      "after": "经典",
+      "context": "extension/package.json:indentRainbow.indicatorStyle.enumItemLabels"
+    },
+    {
+      "key": "localizer.indicatorStyle.light",
+      "before": "light",
+      "after": "轻量",
+      "context": "extension/package.json:indentRainbow.indicatorStyle.enumItemLabels"
+    },
+    {
+      "context": "extension/out/src/extension.js",
+      "before": "['Reload now', 'Later']",
+      "after": "(vscode.env.language === \"zh-cn\" ? [\"立即重新加载\", \"稍后\"] : ['Reload now', 'Later'])",
+      "locales": [
+        "zh-cn",
+        "en"
+      ]
+    },
+    {
+      "context": "extension/out/src/extension.js",
+      "before": "'The VSCode window needs to reload for the changes to take effect. Would you like to reload the window now?'",
+      "after": "(vscode.env.language === \"zh-cn\" ? \"需要重新加载 VS Code 窗口才能使更改生效。现在重新加载吗？\" : \"The VSCode window needs to reload for the changes to take effect. Would you like to reload the window now?\")",
+      "locales": [
+        "zh-cn",
+        "en"
+      ]
+    },
+    {
+      "context": "extension/dist/web/extension.js",
+      "before": "[\"Reload now\",\"Later\"]",
+      "after": "(o.env.language === \"zh-cn\" ? [\"立即重新加载\", \"稍后\"] : [\"Reload now\",\"Later\"])",
+      "locales": [
+        "zh-cn",
+        "en"
+      ]
+    },
+    {
+      "context": "extension/dist/web/extension.js",
+      "before": "\"The VSCode window needs to reload for the changes to take effect. Would you like to reload the window now?\"",
+      "after": "(o.env.language === \"zh-cn\" ? \"需要重新加载 VS Code 窗口才能使更改生效。现在重新加载吗？\" : \"The VSCode window needs to reload for the changes to take effect. Would you like to reload the window now?\")",
+      "locales": [
+        "zh-cn",
+        "en"
+      ]
+    }
+  ],
+  "excluded": [
+    "README/changelog and source comments",
+    "No language server diagnostic payloads exist for this extension"
+  ],
+  "nativeUI": "not run"
+}

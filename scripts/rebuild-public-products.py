@@ -28,6 +28,7 @@ import zlib
 
 MAX_SOURCE = 64 << 20
 SOURCE_ID = 'Nan857/vscode-chinese-extensions'
+SUPPORTED_PLATFORMS = ('universal', 'darwin-arm64')
 SEMVER = r'(?:0|[1-9][0-9]*)\.(?:0|[1-9][0-9]*)\.(?:0|[1-9][0-9]*)'
 LEGACY = {
     ('gitlab', '7.2.5', 'local-chinese.gitlab-workflow-zh', 'gitlab.gitlab-workflow'):
@@ -84,8 +85,10 @@ def recipe_inputs(product):
         raise ValueError('unapproved recipe inputs')
     for key in ('base', 'upstream'):
         fingerprint_record(product[key])
-    url_check(product['upstream']['url'], product['upstreamId'], version)
     artifact = product['artifact']
+    if artifact.get('targetPlatform') not in SUPPORTED_PLATFORMS:
+        raise ValueError('unapproved official target platform')
+    url_check(product['upstream']['url'], product['upstreamId'], version, artifact.get('targetPlatform'))
     revision = artifact.get('localizationRevision')
     if type(revision) is not int or not 1 <= revision < 2 ** 31:
         raise ValueError('invalid localization revision')
@@ -292,10 +295,19 @@ def validate_published_catalog(root, lock):
         raise ValueError('published catalog differs from locked product release')
 
 
-def url_check(url, upstream_id=None, version=None):
+def url_check(url, upstream_id=None, version=None, target_platform=None):
     parts = urllib.parse.urlsplit(url)
+    # Unbound callers may inspect only the two canonical URL shapes. Product
+    # validation/download/redirects always supply the locked artifact platform.
+    if target_platform is None:
+        target_platform = 'darwin-arm64' if parts.query == 'targetPlatform=darwin-arm64' else 'universal'
+    if target_platform not in SUPPORTED_PLATFORMS:
+        raise ValueError('unapproved official target platform')
+    platform_query = 'targetPlatform=darwin-arm64' if target_platform == 'darwin-arm64' else ''
     if (parts.scheme != 'https' or not parts.hostname or parts.username or parts.password
-            or parts.port not in (None, 443) or parts.fragment or parts.query or '%' in parts.path
+            or parts.port not in (None, 443) or parts.fragment or '#' in url or parts.query != platform_query
+            or url.count('?') != bool(platform_query) or '%' in parts.path
+            or any(ord(char) <= 32 or ord(char) == 127 for char in url)
             or '..' in parts.path.split('/')):
         raise ValueError('unapproved official download origin')
     atom = r'([a-z0-9][a-z0-9-]{0,127})'
@@ -322,22 +334,26 @@ def source_identity(url):
 
 
 class SafeRedirect(urllib.request.HTTPRedirectHandler):
-    def __init__(self, identity):
+    def __init__(self, identity, target_platform='universal'):
         super().__init__()
         self.count = 0
         self.identity = identity
+        if target_platform not in SUPPORTED_PLATFORMS:
+            raise ValueError('unapproved official target platform')
+        self.target_platform = target_platform
 
     def redirect_request(self, request, fp, code, message, headers, newurl):
         self.count += 1
         if self.count > 3:
             raise ValueError('official download redirect budget exceeded')
-        url_check(newurl, *self.identity)
+        url_check(newurl, *self.identity, self.target_platform)
         return urllib.request.Request(newurl, headers={'Accept-Encoding': 'gzip', 'User-Agent': 'Chinese-Extensions-Public-Rebuild/1'})
 
 
 def download(source, destination):
-    url_check(source['url'])
-    opener = urllib.request.build_opener(SafeRedirect(source_identity(source['url'])), urllib.request.HTTPSHandler(context=ssl.create_default_context()))
+    target_platform = source.get('targetPlatform', 'universal')
+    url_check(source['url'], target_platform=target_platform)
+    opener = urllib.request.build_opener(SafeRedirect(source_identity(source['url']), target_platform), urllib.request.HTTPSHandler(context=ssl.create_default_context()))
     started = time.monotonic()
     request = urllib.request.Request(source['url'], headers={'Accept-Encoding': 'gzip', 'User-Agent': 'Chinese-Extensions-Public-Rebuild/1'})
     with opener.open(request, timeout=20) as response:
@@ -468,7 +484,8 @@ def run_builds(root, lock, output):
         environment = {'PATH': '/usr/bin:/bin:/usr/sbin:/sbin', 'HOME': str(home), 'TMPDIR': str(work), 'LANG': 'C.UTF-8', 'PYTHONDONTWRITEBYTECODE': '1'}
         for product in lock['products']:
             source = sources / (product['id'] + '.vsix')
-            record = {'id': product['id'], 'official': download(product['upstream'], source), 'builds': []}
+            official = dict(product['upstream'], targetPlatform=product['artifact']['targetPlatform'])
+            record = {'id': product['id'], 'official': download(official, source), 'builds': []}
             previous = None
             for repeat in (1, 2):
                 build = work / (product['id'] + '-' + str(repeat))

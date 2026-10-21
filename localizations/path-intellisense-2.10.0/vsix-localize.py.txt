@@ -1,0 +1,340 @@
+#!/usr/bin/env python3
+"""Inspect or localize a hash-locked VSIX copy; Python 3.9+, standard library only."""
+import argparse
+import hashlib
+import io
+import json
+from pathlib import Path, PurePosixPath
+import re
+import stat
+import sys
+import unicodedata
+import xml.etree.ElementTree as ET
+import zipfile
+import zlib
+
+MAX_ARCHIVE, MAX_TOTAL, MAX_ENTRY, MAX_ENTRIES = 64 << 20, 256 << 20, 64 << 20, 2000
+PACKAGE, MANIFEST = 'extension/package.json', 'extension.vsixmanifest'
+NS = 'http://schemas.microsoft.com/developer/vsx-schema/2011'
+ET.register_namespace('', NS)
+
+
+def sha(raw):
+    return hashlib.sha256(raw).hexdigest()
+
+
+def json_bytes(value):
+    return (json.dumps(value, ensure_ascii=False, indent=2) + '\n').encode('utf-8')
+
+
+def parse_json(raw):
+    def pairs(items):
+        result = {}
+        for key, value in items:
+            if key in result:
+                raise ValueError('duplicate JSON key: ' + key)
+            result[key] = value
+        return result
+    return json.loads(raw, object_pairs_hook=pairs)
+
+
+def safe_path(value):
+    if (not isinstance(value, str) or not value or any(c in value for c in '\\:*?"<>|')
+            or any(ord(c) < 32 for c in value) or value != unicodedata.normalize('NFC', value)
+            or PurePosixPath(value).is_absolute() or any(p in {'', '.', '..'} for p in value.split('/'))):
+        raise ValueError('unsafe archive path: ' + repr(value))
+    if any(re.fullmatch(r'(?:con|prn|aux|nul|com[1-9]|lpt[1-9])(?:\..*)?', p, re.I)
+           or p.endswith((' ', '.')) for p in value.split('/')):
+        raise ValueError('nonportable archive path: ' + value)
+    return value
+
+
+def validate_paths(entries):
+    seen, files = {}, set()
+    for name, (_, mode, directory) in entries.items():
+        key = safe_path(name).casefold()
+        if key in seen:
+            raise ValueError('case-alias archive path: ' + name)
+        seen[key] = name
+        if not directory:
+            files.add(key)
+        for parent in PurePosixPath(key).parents:
+            if str(parent) in files:
+                raise ValueError('archive file/directory conflict: ' + name)
+    if any(any(str(p) in files for p in PurePosixPath(key).parents) for key in seen):
+        raise ValueError('archive file/directory conflict')
+
+
+def read_source(source):
+    source = Path(source)
+    if source.is_symlink() or not source.is_file() or source.stat().st_size > MAX_ARCHIVE:
+        raise ValueError('source must be a regular bounded VSIX file')
+    raw = source.read_bytes()
+    entries, total = {}, 0
+    with zipfile.ZipFile(io.BytesIO(raw)) as archive:
+        infos = archive.infolist()
+        if len(infos) > MAX_ENTRIES:
+            raise ValueError('too many archive entries')
+        for item in infos:
+            directory = item.is_dir()
+            name = safe_path(item.filename[:-1] if directory else item.filename)
+            mode = (item.external_attr >> 16) & 0xffff
+            kind = stat.S_IFMT(mode)
+            if name in entries or item.flag_bits & 1:
+                raise ValueError('duplicate or encrypted archive entry: ' + name)
+            if kind not in {0, stat.S_IFREG, stat.S_IFDIR} or (kind == stat.S_IFDIR) != directory and kind:
+                raise ValueError('unsupported archive entry type: ' + name)
+            total += item.file_size
+            if item.file_size > MAX_ENTRY or total > MAX_TOTAL:
+                raise ValueError('inflated archive limit exceeded')
+            content = archive.read(item)  # Reads CRC and catches overlaps/truncation via zipfile.
+            if len(content) != item.file_size or directory and content:
+                raise ValueError('archive entry size mismatch: ' + name)
+            entries[name] = (content, mode & 0o777 or (0o755 if directory else 0o644), directory)
+    validate_paths(entries)
+    for name in (PACKAGE, MANIFEST):
+        if name not in entries or entries[name][2]:
+            raise ValueError('required VSIX file missing: ' + name)
+    package = parse_json(entries[PACKAGE][0])
+    if not isinstance(package, dict):
+        raise ValueError('package.json must be an object')
+    for field in ('publisher', 'name'):
+        if not re.fullmatch(r'[A-Za-z0-9][A-Za-z0-9-]{0,127}', str(package.get(field, ''))):
+            raise ValueError('invalid package identity: ' + field)
+    if not isinstance(package.get('version'), str) or not re.fullmatch(r'[0-9]+\.[0-9]+\.[0-9]+(?:[-+][A-Za-z0-9.+-]+)?', package['version']):
+        raise ValueError('invalid package version')
+    xml = entries[MANIFEST][0]
+    if b'<!DOCTYPE' in xml.upper() or b'<!ENTITY' in xml.upper():
+        raise ValueError('XML declarations are unsupported')
+    root = ET.fromstring(xml)
+    identities = root.findall('./{' + NS + '}Metadata/{' + NS + '}Identity')
+    if root.tag != '{' + NS + '}PackageManifest' or len(identities) != 1:
+        raise ValueError('unsupported VSIX manifest namespace or identity')
+    identity = identities[0]
+    if any(identity.get(a) != package[b] for a, b in [('Publisher', 'publisher'), ('Id', 'name'), ('Version', 'version')]):
+        raise ValueError('package and VSIX identities differ')
+    return raw, entries, package, root
+
+
+def display_path(path):
+    if path in [('displayName',), ('description',)]:
+        return True
+    # Narrow additions for visible UI fields present in these fixed upstreams.
+    if (len(path) == 3 and path[0] == 'capabilities'
+            and path[1] in {'virtualWorkspaces', 'untrustedWorkspaces'}
+            and path[2] == 'description'):
+        return True
+    if len(path) < 3 or path[0] != 'contributes':
+        return False
+    section, last = path[1], path[-1]
+    if section == 'semanticTokenTypes' and len(path) == 4 and isinstance(path[2], int):
+        return last == 'description'
+    if section == 'commands' and len(path) == 4 and isinstance(path[2], int):
+        return last in {'title', 'shortTitle', 'description', 'category'}
+    if section == 'submenus' and len(path) == 4:
+        return last == 'label'
+    if section == 'viewsWelcome' and len(path) == 4:
+        return last == 'contents'
+    if section == 'viewsContainers' and len(path) == 5:
+        return last == 'title'
+    if section == 'views' and len(path) == 5:
+        return last in {'name', 'contextualTitle'}
+    if section == 'walkthroughs':
+        return (len(path) == 4 or len(path) == 6 and path[3] == 'steps') and last in {'title', 'description'}
+    if section != 'configuration':
+        return False
+    tail = list(path[2:])
+    if tail and isinstance(tail[0], int):
+        tail.pop(0)
+    if tail == ['title']:
+        return True
+    if last not in {'title', 'description', 'markdownDescription', 'deprecationMessage',
+                    'markdownDeprecationMessage', 'enumDescriptions', 'markdownEnumDescriptions', 'enumItemLabels'}:
+        return False
+    nodes = tail[:-1]
+    while nodes:
+        kind = nodes.pop(0)
+        if kind in {'properties', 'patternProperties', 'definitions', '$defs'}:
+            if not nodes or not isinstance(nodes.pop(0), str):
+                return False
+        elif kind in {'allOf', 'anyOf', 'oneOf'}:
+            if not nodes or not isinstance(nodes.pop(0), int):
+                return False
+        elif kind not in {'items', 'additionalProperties'}:
+            return False
+    return tail[0] == 'properties'
+
+
+def verify_package(before, after, target):
+    def walk(left, right, path=()):
+        if not isinstance(left, (dict, list)) and type(left) is type(right) and left == right:
+            return
+        if path in [('publisher',), ('name',)] and target and right == target[path[0]]:
+            return
+        if display_path(path) and (isinstance(right, str) or isinstance(right, list) and all(isinstance(x, str) for x in right)):
+            return
+        if isinstance(left, dict) and isinstance(right, dict) and left.keys() <= right.keys():
+            for key in right:
+                if key not in left:
+                    value = right[key]
+                    if not display_path(path + (key,)) or not (isinstance(value, str) or
+                            isinstance(value, list) and all(isinstance(x, str) for x in value)):
+                        raise ValueError('technical manifest field added: ' + repr(path + (key,)))
+                else:
+                    walk(left[key], right[key], path + (key,))
+            return
+        if isinstance(left, list) and isinstance(right, list) and len(left) == len(right):
+            for i, (a, b) in enumerate(zip(left, right)):
+                walk(a, b, path + (i,))
+            return
+        raise ValueError('technical manifest field changed: ' + repr(path))
+    walk(before, after)
+
+
+def executable_kind(raw):
+    if raw.startswith(b'\x7fELF'):
+        return 'ELF'
+    if raw.startswith(b'MZ'):
+        return 'PE'
+    if raw[:4] in {b'\xfe\xed\xfa\xce', b'\xce\xfa\xed\xfe', b'\xfe\xed\xfa\xcf', b'\xcf\xfa\xed\xfe', b'\xca\xfe\xba\xbe'}:
+        return 'Mach-O-or-fat'
+    return 'WASM' if raw.startswith(b'\0asm') else None
+
+
+def inspect_source(source):
+    raw, entries, package, root = read_source(source)
+    files = [{'path': name, 'bytes': len(value[0]), 'sha256': sha(value[0]),
+              'executableKind': executable_kind(value[0])} for name, value in sorted(entries.items()) if not value[2]]
+    candidates = [item['path'] for item in files if re.search(r'(?:package(?:\.nls(?:\.[^.]+)?)?\.json|(?:bundle\.l10n[^/]*\.json)|\.(?:js|html|md))$', item['path'])]
+    identity = root.find('./{' + NS + '}Metadata/{' + NS + '}Identity')
+    return {'schemaVersion': 1, 'sourceSha256': sha(raw), 'sourceBytes': len(raw),
+            'identity': {key: package[key] for key in ('publisher', 'name', 'version')},
+            'engines': package.get('engines'), 'targetPlatform': identity.get('TargetPlatform', 'unspecified'),
+            'files': files, 'uiResourceCandidates': candidates,
+            'boundary': 'Candidate paths and binary magic are inspection hints, not translation coverage or OS execution proof.'}
+
+
+def apply_plan(source, plan_path, output_dir):
+    raw, entries, original, root = read_source(source)
+    plan_file = Path(plan_path)
+    if plan_file.is_symlink() or not plan_file.is_file() or plan_file.stat().st_size > 8 << 20:
+        raise ValueError('plan must be a regular bounded JSON file')
+    plan = parse_json(plan_file.read_bytes())
+    if not isinstance(plan, dict) or set(plan) - {'schemaVersion', 'sourceSha256', 'target', 'replacements', 'additions'}:
+        raise ValueError('unknown plan fields')
+    if type(plan.get('schemaVersion')) is not int or plan['schemaVersion'] != 1 or plan.get('sourceSha256') != sha(raw):
+        raise ValueError('source SHA-256 or plan schema mismatch')
+    target = plan.get('target')
+    if target is not None and (not isinstance(target, dict) or set(target) != {'publisher', 'name'} or
+            not all(isinstance(v, str) and re.fullmatch(r'[A-Za-z0-9][A-Za-z0-9-]{0,127}', v) for v in target.values())):
+        raise ValueError('invalid target identity')
+    output = Path(output_dir).absolute()
+    resolved = output.resolve()
+    if output.exists() or output.is_symlink() or not output.parent.is_dir():
+        raise ValueError('output directory must be fresh with an existing parent')
+    if re.search(r'/(?:\.vscode(?:-insiders|-server|-server-insiders)?)/extensions(?:/|$)', resolved.as_posix()) or '.app/Contents/' in resolved.as_posix():
+        raise ValueError('installed extension trees are not output locations')
+    edits, changed = {}, set()
+    replacements, additions = plan.get('replacements', []), plan.get('additions', [])
+    if not isinstance(replacements, list) or not isinstance(additions, list) or len(replacements) + len(additions) > 10000:
+        raise ValueError('invalid plan operation list')
+    for item in replacements:
+        if not isinstance(item, dict) or set(item) != {'path', 'sha256', 'before', 'after', 'count'}:
+            raise ValueError('invalid replacement fields')
+        name = safe_path(item['path'])
+        if name == MANIFEST or name not in entries or entries[name][2] or sha(entries[name][0]) != item['sha256']:
+            raise ValueError('replacement file hash or path mismatch: ' + name)
+        if not isinstance(item['before'], str) or not item['before'] or not isinstance(item['after'], str) or type(item['count']) is not int or item['count'] < 1:
+            raise ValueError('replacement requires nonempty literal text and positive count')
+        text = entries[name][0].decode('utf-8')
+        starts = [m.start() for m in re.finditer(re.escape(item['before']), text)]
+        if len(starts) != item['count']:
+            raise ValueError('literal replacement count mismatch: ' + name)
+        edits.setdefault(name, []).extend((p, p + len(item['before']), item['after']) for p in starts)
+    for name, positions in edits.items():
+        positions.sort()
+        if any(a[1] > b[0] for a, b in zip(positions, positions[1:])):
+            raise ValueError('overlapping replacements: ' + name)
+        text = entries[name][0].decode('utf-8')
+        for start, end, replacement in reversed(positions):
+            text = text[:start] + replacement + text[end:]
+        entries[name] = (text.encode('utf-8'), entries[name][1], False)
+        changed.add(name)
+    for item in additions:
+        if not isinstance(item, dict) or set(item) != {'path', 'content'} or not isinstance(item['content'], str):
+            raise ValueError('invalid addition fields')
+        name = safe_path(item['path'])
+        if name in entries or not name.startswith('extension/') or len(item['content'].encode('utf-8')) > MAX_ENTRY:
+            raise ValueError('addition path exists or is unsupported: ' + name)
+        entries[name] = (item['content'].encode('utf-8'), 0o644, False)
+        changed.add(name)
+    validate_paths(entries)
+    package = parse_json(entries[PACKAGE][0])
+    if not isinstance(package, dict):
+        raise ValueError('localized package.json must be an object')
+    for name in changed:
+        if name.endswith('.json'):
+            parse_json(entries[name][0])
+    if target:
+        package.update(target)
+    verify_package(original, package, target)
+    if target or package != original:
+        entries[PACKAGE] = (json_bytes(package), entries[PACKAGE][1], False)
+        changed.add(PACKAGE)
+    identity = root.find('./{' + NS + '}Metadata/{' + NS + '}Identity')
+    if target:
+        identity.set('Publisher', target['publisher'])
+        identity.set('Id', target['name'])
+        entries[MANIFEST] = (ET.tostring(root, encoding='utf-8', xml_declaration=True), entries[MANIFEST][1], False)
+        changed.add(MANIFEST)
+    if len(entries) > MAX_ENTRIES or sum(len(v[0]) for v in entries.values()) > MAX_TOTAL:
+        raise ValueError('output archive limit exceeded')
+    buffer = io.BytesIO()
+    with zipfile.ZipFile(buffer, 'w', compression=zipfile.ZIP_DEFLATED, compresslevel=9) as archive:
+        for name, (content, mode, directory) in sorted(entries.items()):
+            info = zipfile.ZipInfo(name + ('/' if directory else ''), (1980, 1, 1, 0, 0, 0))
+            info.create_system = 3
+            info.compress_type = zipfile.ZIP_DEFLATED
+            info.external_attr = ((stat.S_IFDIR if directory else stat.S_IFREG) | mode) << 16
+            archive.writestr(info, content, compresslevel=9)
+    product = buffer.getvalue()
+    if len(product) > MAX_ARCHIVE or sha(Path(source).read_bytes()) != sha(raw):
+        raise ValueError('output limit exceeded or original source changed')
+    filename = package['name'] + '-' + package['version'] + '.vsix'
+    report = {'schemaVersion': 1, 'sourceSha256': sha(raw), 'sourceBytes': len(raw),
+              'outputFile': filename, 'outputSha256': sha(product), 'outputBytes': len(product),
+              'identity': {key: package[key] for key in ('publisher', 'name', 'version')},
+              'engines': package.get('engines'), 'changedEntries': sorted(changed),
+              'boundary': 'Hash/count-bound packaging only; runtime syntax, UI coverage, and OS execution require separate checks.'}
+    output.mkdir()  # Atomic freshness check; never overwrites an existing directory.
+    with (output / filename).open('xb') as stream:
+        stream.write(product)
+    with (output / 'build-report.json').open('xb') as stream:
+        stream.write(json_bytes(report))
+    read_source(output / filename)
+    if sha((output / filename).read_bytes()) != report['outputSha256'] or sha(Path(source).read_bytes()) != report['sourceSha256']:
+        raise ValueError('written output or source readback mismatch')
+    return report
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('command', choices=('inspect', 'apply'))
+    parser.add_argument('--source', type=Path, required=True)
+    parser.add_argument('--plan', type=Path)
+    parser.add_argument('--output-dir', type=Path, default=None)
+    args = parser.parse_args()
+    if args.command == 'apply' and (args.plan is None or args.output_dir is None):
+        parser.error('apply requires --plan and --output-dir')
+    try:
+        result = inspect_source(args.source) if args.command == 'inspect' else apply_plan(args.source, args.plan, args.output_dir)
+        print(json.dumps(result, ensure_ascii=False, indent=2))
+        return 0
+    except (ValueError, OSError, KeyError, TypeError, RuntimeError, NotImplementedError,
+            zipfile.BadZipFile, ET.ParseError, zlib.error) as error:
+        print(json.dumps({'outcome': 'blocked', 'reason': str(error)}, ensure_ascii=False), file=sys.stderr)
+        return 1
+
+
+if __name__ == '__main__':
+    sys.exit(main())

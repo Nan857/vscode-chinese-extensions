@@ -1,0 +1,14 @@
+{
+  "extension.displayName": "Path Intellisense",
+  "extension.description": "Visual Studio Code plugin that autocompletes filenames",
+  "configuration.title": "path-intellisense",
+  "configuration.path-intellisense.extensionOnImport.description": "Adds the file extension to a import statements",
+  "configuration.path-intellisense.mappings.description": "Mappings for paths.  The values should be interpreted as absolute paths (and can use '${workspaceFolder}')",
+  "configuration.path-intellisense.showHiddenFiles.description": "Show hidden files",
+  "configuration.path-intellisense.autoSlashAfterDirectory.description": "Automatically adds slash after directory",
+  "configuration.path-intellisense.absolutePathToWorkspace.description": "Sets an absolute path to the current workspace",
+  "configuration.path-intellisense.absolutePathTo.description": "If defined, unmapped absolute path imports are based on this location.  Takes priority over 'absolutePathToWorkspace' if both are defined",
+  "configuration.path-intellisense.showOnAbsoluteSlash.description": "Shows suggestions when the import starts with a forward slash ('/')",
+  "configuration.path-intellisense.ignoreTsConfigBaseUrl.description": "Ignores tsconfig file for mappings",
+  "configuration.path-intellisense.autoTriggerNextSuggestion.description": "Automatically triggers next suggestion after previous suggestion"
+}

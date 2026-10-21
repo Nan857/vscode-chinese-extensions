@@ -1,0 +1,139 @@
+{
+  "schemaVersion": 1,
+  "sourceSha256": "348d1c6e3b193d6f27eaa45344aa2ace748384b651520b8fed26bf7747de7a87",
+  "replacements": [
+    {
+      "path": "extension/package.json",
+      "sha256": "052f72c57fc60daa066d7aa0f9076fe8435dbee8c9aacb5157b80ed0ca0acedf",
+      "before": "\"displayName\": \"autoDocstring - Python Docstring Generator\"",
+      "after": "\"displayName\": \"%extension.displayName%\"",
+      "count": 1
+    },
+    {
+      "path": "extension/package.json",
+      "sha256": "052f72c57fc60daa066d7aa0f9076fe8435dbee8c9aacb5157b80ed0ca0acedf",
+      "before": "\"description\": \"Generates python docstrings automatically\"",
+      "after": "\"description\": \"%extension.description%\"",
+      "count": 1
+    },
+    {
+      "path": "extension/package.json",
+      "sha256": "052f72c57fc60daa066d7aa0f9076fe8435dbee8c9aacb5157b80ed0ca0acedf",
+      "before": "\"title\": \"Generate Docstring\"",
+      "after": "\"title\": \"%command.generateDocstring.title%\"",
+      "count": 1
+    },
+    {
+      "path": "extension/package.json",
+      "sha256": "052f72c57fc60daa066d7aa0f9076fe8435dbee8c9aacb5157b80ed0ca0acedf",
+      "before": "\"title\": \"Python Docstring Generator configuration\"",
+      "after": "\"title\": \"%configuration.title%\"",
+      "count": 1
+    },
+    {
+      "path": "extension/package.json",
+      "sha256": "052f72c57fc60daa066d7aa0f9076fe8435dbee8c9aacb5157b80ed0ca0acedf",
+      "before": "\"description\": \"Which docstring format to use.\"",
+      "after": "\"description\": \"%configuration.autoDocstring.docstringFormat.description%\"",
+      "count": 1
+    },
+    {
+      "path": "extension/package.json",
+      "sha256": "052f72c57fc60daa066d7aa0f9076fe8435dbee8c9aacb5157b80ed0ca0acedf",
+      "before": "\"description\": \"Path to custom docstring template (overrides docstringFormat). Path can be absolute or relative to the project root.\"",
+      "after": "\"description\": \"%configuration.autoDocstring.customTemplatePath.description%\"",
+      "count": 1
+    },
+    {
+      "path": "extension/package.json",
+      "sha256": "052f72c57fc60daa066d7aa0f9076fe8435dbee8c9aacb5157b80ed0ca0acedf",
+      "before": "\"description\": \"Generate docstring on pressing enter after opening a docstring (use quoteStyle)\"",
+      "after": "\"description\": \"%configuration.autoDocstring.generateDocstringOnEnter.description%\"",
+      "count": 1
+    },
+    {
+      "path": "extension/package.json",
+      "sha256": "052f72c57fc60daa066d7aa0f9076fe8435dbee8c9aacb5157b80ed0ca0acedf",
+      "before": "\"description\": \"Include [extended_summary] tag\"",
+      "after": "\"description\": \"%configuration.autoDocstring.includeExtendedSummary.description%\"",
+      "count": 1
+    },
+    {
+      "path": "extension/package.json",
+      "sha256": "052f72c57fc60daa066d7aa0f9076fe8435dbee8c9aacb5157b80ed0ca0acedf",
+      "before": "\"description\": \"Include function names at the start of docstrings\"",
+      "after": "\"description\": \"%configuration.autoDocstring.includeName.description%\"",
+      "count": 1
+    },
+    {
+      "path": "extension/package.json",
+      "sha256": "052f72c57fc60daa066d7aa0f9076fe8435dbee8c9aacb5157b80ed0ca0acedf",
+      "before": "\"description\": \"Start docstring on new line\"",
+      "after": "\"description\": \"%configuration.autoDocstring.startOnNewLine.description%\"",
+      "count": 1
+    },
+    {
+      "path": "extension/package.json",
+      "sha256": "052f72c57fc60daa066d7aa0f9076fe8435dbee8c9aacb5157b80ed0ca0acedf",
+      "before": "\"description\": \"Guess the type of parameters and return values\"",
+      "after": "\"description\": \"%configuration.autoDocstring.guessTypes.description%\"",
+      "count": 1
+    },
+    {
+      "path": "extension/package.json",
+      "sha256": "052f72c57fc60daa066d7aa0f9076fe8435dbee8c9aacb5157b80ed0ca0acedf",
+      "before": "\"description\": \"Style of quote used with generate docstring command\"",
+      "after": "\"description\": \"%configuration.autoDocstring.quoteStyle.description%\"",
+      "count": 1
+    },
+    {
+      "path": "extension/package.json",
+      "sha256": "052f72c57fc60daa066d7aa0f9076fe8435dbee8c9aacb5157b80ed0ca0acedf",
+      "before": "\"description\": \"Output log information\"",
+      "after": "\"description\": \"%configuration.autoDocstring.logLevel.description%\"",
+      "count": 1
+    },
+    {
+      "path": "extension/package.json",
+      "sha256": "052f72c57fc60daa066d7aa0f9076fe8435dbee8c9aacb5157b80ed0ca0acedf",
+      "before": "\"scope\": \"window\",",
+      "after": "\"scope\": \"window\",\n                    \"enumItemLabels\": [\"%configuration.autoDocstring.logLevel.label.none%\", \"%configuration.autoDocstring.logLevel.label.info%\", \"%configuration.autoDocstring.logLevel.label.debug%\"],",
+      "count": 1
+    },
+    {
+      "path": "extension/out/extension.js",
+      "sha256": "60293594d504bdca8d24e1f6d96ce17f61cb6a6ec1df5d3460ee96687857bff8",
+      "before": "super(\"Generate Docstring\", vs.CompletionItemKind.Snippet);",
+      "after": "super(vs.env.language === \"zh-cn\" ? \"生成文档字符串\" : \"Generate Docstring\", vs.CompletionItemKind.Snippet);",
+      "count": 1
+    },
+    {
+      "path": "extension/out/extension.js",
+      "sha256": "60293594d504bdca8d24e1f6d96ce17f61cb6a6ec1df5d3460ee96687857bff8",
+      "before": "title: \"Generate Docstring\",",
+      "after": "title: vs.env.language === \"zh-cn\" ? \"生成文档字符串\" : \"Generate Docstring\",",
+      "count": 1
+    },
+    {
+      "path": "extension/out/logger.js",
+      "sha256": "8fc07ccf5b66c5b74fa7e9114f2101b55c8369a3cdad0cd635742c5cdda5de1c",
+      "before": "vscode.window.showErrorMessage(\"AutoDocstring encountered an error. Please view details in the 'autoDocstring' output window\");",
+      "after": "vscode.window.showErrorMessage(vscode.env.language === \"zh-cn\" ? \"AutoDocstring 遇到错误。请在“autoDocstring”输出窗口中查看详细信息\" : \"AutoDocstring encountered an error. Please view details in the 'autoDocstring' output window\");",
+      "count": 1
+    }
+  ],
+  "additions": [
+    {
+      "path": "extension/package.nls.json",
+      "content": "{\n  \"extension.displayName\": \"autoDocstring - Python Docstring Generator\",\n  \"extension.description\": \"Generates python docstrings automatically\",\n  \"command.generateDocstring.title\": \"Generate Docstring\",\n  \"configuration.title\": \"Python Docstring Generator configuration\",\n  \"configuration.autoDocstring.docstringFormat.description\": \"Which docstring format to use.\",\n  \"configuration.autoDocstring.customTemplatePath.description\": \"Path to custom docstring template (overrides docstringFormat). Path can be absolute or relative to the project root.\",\n  \"configuration.autoDocstring.generateDocstringOnEnter.description\": \"Generate docstring on pressing enter after opening a docstring (use quoteStyle)\",\n  \"configuration.autoDocstring.includeExtendedSummary.description\": \"Include [extended_summary] tag\",\n  \"configuration.autoDocstring.includeName.description\": \"Include function names at the start of docstrings\",\n  \"configuration.autoDocstring.startOnNewLine.description\": \"Start docstring on new line\",\n  \"configuration.autoDocstring.guessTypes.description\": \"Guess the type of parameters and return values\",\n  \"configuration.autoDocstring.quoteStyle.description\": \"Style of quote used with generate docstring command\",\n  \"configuration.autoDocstring.logLevel.description\": \"Output log information\",\n  \"configuration.autoDocstring.logLevel.label.none\": \"None\",\n  \"configuration.autoDocstring.logLevel.label.info\": \"Info\",\n  \"configuration.autoDocstring.logLevel.label.debug\": \"Debug\"\n}\n"
+    },
+    {
+      "path": "extension/package.nls.zh-cn.json",
+      "content": "{\n  \"extension.displayName\": \"autoDocstring - Python 文档字符串生成器\",\n  \"extension.description\": \"自动生成 Python 文档字符串\",\n  \"command.generateDocstring.title\": \"生成文档字符串\",\n  \"configuration.title\": \"Python 文档字符串生成器配置\",\n  \"configuration.autoDocstring.docstringFormat.description\": \"要使用的文档字符串格式。\",\n  \"configuration.autoDocstring.customTemplatePath.description\": \"自定义文档字符串模板的路径（优先于 docstringFormat）。可以是绝对路径，也可以是相对于项目根目录的路径。\",\n  \"configuration.autoDocstring.generateDocstringOnEnter.description\": \"在输入文档字符串的起始引号（由 quoteStyle 指定）后，按 Enter 键生成文档字符串\",\n  \"configuration.autoDocstring.includeExtendedSummary.description\": \"包含 [extended_summary] 标签\",\n  \"configuration.autoDocstring.includeName.description\": \"在文档字符串开头包含函数名称\",\n  \"configuration.autoDocstring.startOnNewLine.description\": \"在新行开始文档字符串\",\n  \"configuration.autoDocstring.guessTypes.description\": \"推断参数和返回值的类型\",\n  \"configuration.autoDocstring.quoteStyle.description\": \"生成文档字符串命令使用的引号样式\",\n  \"configuration.autoDocstring.logLevel.description\": \"输出日志信息\",\n  \"configuration.autoDocstring.logLevel.label.none\": \"无\",\n  \"configuration.autoDocstring.logLevel.label.info\": \"信息\",\n  \"configuration.autoDocstring.logLevel.label.debug\": \"调试\"\n}\n"
+    }
+  ],
+  "target": {
+    "publisher": "local-chinese",
+    "name": "autodocstring-zh"
+  }
+}

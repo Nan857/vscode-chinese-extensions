@@ -1,0 +1,29 @@
+{
+  "id": "indent-rainbow",
+  "extensionId": "local-chinese.indent-rainbow-zh",
+  "upstreamId": "oderwat.indent-rainbow",
+  "name": "indent-rainbow",
+  "symbol": "IR",
+  "version": "8.3.1",
+  "description": "通过彩色缩进让代码层次更易阅读",
+  "knownLimitations": [
+    "zh-cn 界面显示中文，其他界面语言保留英文回退。",
+    "原生扩展宿主、真实界面和 Windows 运行尚未验证。",
+    "官方包夹带但运行入口未引用的开发测试依赖与辅助文件未发运；依赖声明保持原值。"
+  ],
+  "schemaVersion": 1,
+  "localizationRevision": 1,
+  "artifacts": [
+    {
+      "localizationRevision": 1,
+      "tag": "indent-rainbow-8.3.1-r1",
+      "assetName": "indent-rainbow-zh-8.3.1-r1.vsix",
+      "url": "https://github.com/Nan857/vscode-chinese-extensions/releases/download/indent-rainbow-8.3.1-r1/indent-rainbow-zh-8.3.1-r1.vsix",
+      "targetPlatform": "universal",
+      "enginesVscode": "^1.52.0",
+      "verificationProfile": "metadata-v1",
+      "sha256": "21f548e54a402266fd9b629354d4c7b9e623c4cb35250ee4cc40b22ca9a69e44",
+      "bytes": 216774
+    }
+  ]
+}

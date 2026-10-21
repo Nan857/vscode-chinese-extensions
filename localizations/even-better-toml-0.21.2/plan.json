@@ -1,0 +1,664 @@
+{
+  "schemaVersion": 1,
+  "sourceSha256": "21b8d66af4285eee31e21a4492f921ab36dffcd859a67f1115d2930274650808",
+  "replacements": [
+    {
+      "path": "extension/package.json",
+      "sha256": "f6fe2436dc286fc3b6fbf423c43f458893af6969fd2f446816a992ee53d7210a",
+      "before": "{\n  \"name\": \"even-better-toml\",\n  \"displayName\": \"Even Better TOML\",\n  \"description\": \"Fully-featured TOML support\",\n  \"version\": \"0.21.2\",\n  \"autoTag\": {\n    \"enabled\": true\n  },\n  \"repository\": {\n    \"url\": \"https://github.com/tamasfe/taplo\"\n  },\n  \"bugs\": {\n    \"url\": \"https://github.com/tamasfe/taplo/issues\"\n  },\n  \"publisher\": \"tamasfe\",\n  \"author\": {\n    \"name\": \"tamasfe\"\n  },\n  \"preview\": true,\n  \"icon\": \"taplo-icon.png\",\n  \"galleryBanner\": {\n    \"color\": \"#731c12\",\n    \"theme\": \"dark\"\n  },\n  \"license\": \"SEE LICENSE IN LICENSE.md\",\n  \"engines\": {\n    \"vscode\": \"^1.90.0\"\n  },\n  \"categories\": [\n    \"Programming Languages\",\n    \"Linters\",\n    \"Formatters\",\n    \"Other\"\n  ],\n  \"activationEvents\": [\n    \"onLanguage:cargoLock\"\n  ],\n  \"keywords\": [\n    \"toml\",\n    \"syntax\",\n    \"rust\",\n    \"formatter\",\n    \"config\"\n  ],\n  \"extensionKind\": [\n    \"workspace\"\n  ],\n  \"contributes\": {\n    \"grammars\": [\n      {\n        \"language\": \"toml\",\n        \"scopeName\": \"source.toml\",\n        \"path\": \"./toml.tmLanguage.json\"\n      },\n      {\n        \"scopeName\": \"markdown.toml.frontmatter.codeblock\",\n        \"path\": \"./toml.frontmatter.tmLanguage.json\",\n        \"injectTo\": [\n          \"text.html.markdown\"\n        ]\n      },\n      {\n        \"scopeName\": \"markdown.toml.codeblock\",\n        \"path\": \"./toml.markdown.tmLanguage.json\",\n        \"injectTo\": [\n          \"text.html.markdown\"\n        ],\n        \"embeddedLanguages\": {\n          \"meta.embedded.block.toml\": \"toml\"\n        }\n      }\n    ],\n    \"languages\": [\n      {\n        \"id\": \"toml\",\n        \"aliases\": [\n          \"TOML\"\n        ],\n        \"extensions\": [\n          \".toml\"\n        ],\n        \"filenames\": [\n          \"Cargo.lock\",\n          \"uv.lock\"\n        ],\n        \"configuration\": \"./language-configuration.json\"\n      }\n    ],\n    \"menus\": {\n      \"commandPalette\": [\n        {\n          \"command\": \"evenBetterToml.selectSchema\",\n          \"when\": \"editorLangId == toml\"\n        },\n        {\n          \"command\": \"evenBetterToml.copyAsJson\"\n        },\n        {\n          \"command\": \"evenBetterToml.copyAsToml\"\n        },\n        {\n          \"command\": \"evenBetterToml.pasteAsJson\"\n        },\n        {\n          \"command\": \"evenBetterToml.pasteAsToml\"\n        }\n      ]\n    },\n    \"commands\": [\n      {\n        \"command\": \"evenBetterToml.selectSchema\",\n        \"title\": \"TOML: Select Schema\"\n      },\n      {\n        \"command\": \"evenBetterToml.copyAsJson\",\n        \"title\": \"TOML: Copy as JSON\",\n        \"enablement\": \"editorHasSelection\"\n      },\n      {\n        \"command\": \"evenBetterToml.copyAsToml\",\n        \"title\": \"TOML: Copy as TOML\",\n        \"enablement\": \"editorHasSelection\"\n      },\n      {\n        \"command\": \"evenBetterToml.pasteAsJson\",\n        \"title\": \"TOML: Paste as JSON\"\n      },\n      {\n        \"command\": \"evenBetterToml.pasteAsToml\",\n        \"title\": \"TOML: Paste as TOML\"\n      }\n    ],\n    \"semanticTokenTypes\": [\n      {\n        \"id\": \"tomlArrayKey\",\n        \"superType\": \"variable\",\n        \"description\": \"Keys of regular arrays.\"\n      },\n      {\n        \"id\": \"tomlTableKey\",\n        \"superType\": \"variable\",\n        \"description\": \"Keys of inline tables.\"\n      }\n    ],\n    \"semanticTokenScopes\": [\n      {\n        \"scopes\": {\n          \"tomlArrayKey\": [\n            \"support.type.property-name.array.toml\"\n          ],\n          \"tomlTableKey\": [\n            \"support.type.property-name.table.toml\"\n          ]\n        }\n      }\n    ],\n    \"configuration\": {\n      \"title\": \"Even Better TOML\",\n      \"properties\": {\n        \"evenBetterToml.taplo.bundled\": {\n          \"description\": \"Use the bundled taplo language server. If set to `false`, the `taplo` executable must be found in PATH or must be set in `evenBetterToml.taplo.path`.\",\n          \"type\": \"boolean\",\n          \"scope\": \"resource\",\n          \"default\": true\n        },\n        \"evenBetterToml.taplo.path\": {\n          \"description\": \"An absolute path to the `taplo` executable. `evenBetterToml.taplo.bundled` needs to be set to `false` for this to have any effect.\",\n          \"type\": [\n            \"string\",\n            \"null\"\n          ],\n          \"scope\": \"resource\",\n          \"default\": null\n        },\n        \"evenBetterToml.taplo.environment\": {\n          \"type\": [\n            \"object\"\n          ],\n          \"scope\": \"resource\",\n          \"description\": \"Environment variables for Taplo.\",\n          \"additionalProperties\": {\n            \"type\": \"string\"\n          },\n          \"default\": {}\n        },\n        \"evenBetterToml.taplo.extraArgs\": {\n          \"type\": [\n            \"array\",\n            \"null\"\n          ],\n          \"scope\": \"resource\",\n          \"description\": \"Additional arguments for Taplo. Has no effect for the bundled LSP.\",\n          \"items\": {\n            \"type\": \"string\"\n          },\n          \"default\": []\n        },\n        \"evenBetterToml.taplo.configFile.path\": {\n          \"description\": \"An absolute, or workspace relative path to the Taplo configuration file.\",\n          \"type\": \"string\",\n          \"default\": null,\n          \"scope\": \"resource\"\n        },\n        \"evenBetterToml.taplo.configFile.enabled\": {\n          \"description\": \"Whether to enable the usage of a Taplo configuration file.\",\n          \"type\": \"boolean\",\n          \"scope\": \"resource\",\n          \"default\": true\n        },\n        \"evenBetterToml.semanticTokens\": {\n          \"description\": \"Enable semantic tokens for inline table and array keys.\",\n          \"type\": \"boolean\",\n          \"scope\": \"resource\",\n          \"default\": false\n        },\n        \"evenBetterToml.schema.enabled\": {\n          \"description\": \"Enable completion and validation based on JSON schemas.\",\n          \"type\": \"boolean\",\n          \"scope\": \"resource\",\n          \"default\": true\n        },\n        \"evenBetterToml.schema.links\": {\n          \"description\": \"Whether to show clickable links for keys in the editor.\",\n          \"type\": \"boolean\",\n          \"scope\": \"resource\",\n          \"default\": false\n        },\n        \"evenBetterToml.schema.catalogs\": {\n          \"description\": \"A list of URLs to schema catalogs where schemas and associations can be fetched from\",\n          \"type\": \"array\",\n          \"scope\": \"resource\",\n          \"items\": {\n            \"type\": \"string\"\n          },\n          \"default\": [\n            \"https://www.schemastore.org/api/json/catalog.json\"\n          ]\n        },\n        \"evenBetterToml.schema.associations\": {\n          \"description\": \"Document and schema associations.\",\n          \"markdownDescription\": \"Additional document and schema associations. \\n\\n The key must be a regular expression, this pattern is used to associate schemas with absolute document URIs. Overlapping patterns result in undefined behaviour and either matching schema can be used. \\n\\n The value must be an absolute URI to the JSON schema, for supported values and more information [read here](https://taplo.tamasfe.dev/configuration#visual-studio-code).\",\n          \"type\": \"object\",\n          \"scope\": \"resource\",\n          \"default\": {}\n        },\n        \"evenBetterToml.schema.cache.memoryExpiration\": {\n          \"description\": \"The amount of seconds after which schemas will be invalidated from memory.\",\n          \"markdownDescription\": \"The amount of seconds after which schemas will be invalidated from memory. \\n**NOTE**: setting too low values will cause performance issues and validation of some schemas will fail.\",\n          \"type\": \"integer\",\n          \"scope\": \"resource\",\n          \"minimum\": 0,\n          \"default\": 60\n        },\n        \"evenBetterToml.schema.cache.diskExpiration\": {\n          \"description\": \"The amount of seconds after which cached catalogs and schemas expire and will be attempted to be fetched again.\",\n          \"type\": \"integer\",\n          \"scope\": \"resource\",\n          \"minimum\": 0,\n          \"default\": 600\n        },\n        \"evenBetterToml.completion.maxKeys\": {\n          \"description\": \"The maximum amount of keys in a dotted key to display during completion, 0 effectively disables key completions.\",\n          \"type\": \"integer\",\n          \"scope\": \"resource\",\n          \"minimum\": 0,\n          \"default\": 5\n        },\n        \"evenBetterToml.syntax.semanticTokens\": {\n          \"description\": \"Whether to enable semantic tokens for tables and arrays.\",\n          \"type\": \"boolean\",\n          \"scope\": \"resource\",\n          \"default\": true\n        },\n        \"evenBetterToml.formatter.alignEntries\": {\n          \"scope\": \"resource\",\n          \"type\": \"boolean\",\n          \"default\": null,\n          \"description\": \"Align entries vertically. Entries that have table headers, comments, or blank lines between them are not aligned.\"\n        },\n        \"evenBetterToml.formatter.alignComments\": {\n          \"scope\": \"resource\",\n          \"type\": \"boolean\",\n          \"default\": null,\n          \"description\": \"Align consecutive comments after entries and items vertically. This applies to comments that are after entries or array items\"\n        },\n        \"evenBetterToml.formatter.arrayTrailingComma\": {\n          \"scope\": \"resource\",\n          \"type\": \"boolean\",\n          \"default\": null,\n          \"description\": \"Put trailing commas for multiline arrays.\"\n        },\n        \"evenBetterToml.formatter.arrayAutoExpand\": {\n          \"scope\": \"resource\",\n          \"type\": \"boolean\",\n          \"default\": null,\n          \"description\": \"Automatically expand arrays to multiple lines.\"\n        },\n        \"evenBetterToml.formatter.inlineTableExpand\": {\n          \"scope\": \"resource\",\n          \"type\": \"boolean\",\n          \"default\": null,\n          \"description\": \"Expand values inside in line tables.\"\n        },\n        \"evenBetterToml.formatter.arrayAutoCollapse\": {\n          \"scope\": \"resource\",\n          \"type\": \"boolean\",\n          \"default\": null,\n          \"description\": \"Automatically collapse arrays if they fit in one line.\"\n        },\n        \"evenBetterToml.formatter.compactArrays\": {\n          \"scope\": \"resource\",\n          \"type\": \"boolean\",\n          \"default\": null,\n          \"description\": \"Omit whitespace padding inside single-line arrays.\"\n        },\n        \"evenBetterToml.formatter.compactInlineTables\": {\n          \"scope\": \"resource\",\n          \"type\": \"boolean\",\n          \"default\": null,\n          \"description\": \"Omit whitespace padding inside inline tables.\"\n        },\n        \"evenBetterToml.formatter.compactEntries\": {\n          \"scope\": \"resource\",\n          \"type\": \"boolean\",\n          \"default\": null,\n          \"description\": \"Omit whitespace around `=`.\"\n        },\n        \"evenBetterToml.formatter.columnWidth\": {\n          \"scope\": \"resource\",\n          \"type\": \"number\",\n          \"default\": null,\n          \"description\": \"Target maximum column width after which arrays are expanded into new lines.\"\n        },\n        \"evenBetterToml.formatter.indentTables\": {\n          \"scope\": \"resource\",\n          \"type\": \"boolean\",\n          \"default\": null,\n          \"description\": \"Indent subtables if they come in order.\"\n        },\n        \"evenBetterToml.formatter.indentEntries\": {\n          \"scope\": \"resource\",\n          \"type\": \"boolean\",\n          \"default\": null,\n          \"description\": \"Indent entries under tables.\"\n        },\n        \"evenBetterToml.formatter.indentString\": {\n          \"scope\": \"resource\",\n          \"type\": \"string\",\n          \"default\": null,\n          \"description\": \"Indentation to use, should be tabs or spaces but technically could be anything.\"\n        },\n        \"evenBetterToml.formatter.trailingNewline\": {\n          \"scope\": \"resource\",\n          \"type\": \"boolean\",\n          \"default\": null,\n          \"description\": \"Add trailing newline to the source.\"\n        },\n        \"evenBetterToml.formatter.reorderKeys\": {\n          \"scope\": \"resource\",\n          \"type\": \"boolean\",\n          \"default\": null,\n          \"description\": \"Alphabetically reorder keys that are not separated by blank lines.\"\n        },\n        \"evenBetterToml.formatter.reorderArrays\": {\n          \"scope\": \"resource\",\n          \"type\": \"boolean\",\n          \"default\": null,\n          \"description\": \"Alphabetically reorder array values that are not separated by blank lines.\"\n        },\n        \"evenBetterToml.formatter.reorderInlineTables\": {\n          \"scope\": \"resource\",\n          \"type\": \"boolean\",\n          \"default\": null,\n          \"description\": \"Alphabetically reorder inline tables.\"\n        },\n        \"evenBetterToml.formatter.allowedBlankLines\": {\n          \"scope\": \"resource\",\n          \"type\": \"number\",\n          \"default\": null,\n          \"description\": \"The maximum amount of consecutive blank lines allowed.\"\n        },\n        \"evenBetterToml.formatter.crlf\": {\n          \"scope\": \"resource\",\n          \"type\": \"boolean\",\n          \"default\": null,\n          \"description\": \"Use CRLF line endings.\"\n        },\n        \"evenBetterToml.rules\": {\n          \"scope\": \"resource\",\n          \"type\": \"array\",\n          \"default\": [],\n          \"markdownDescription\": \"Array of Taplo rules in JSON format, see [Configuration File - Rules](https://taplo.tamasfe.dev/configuration/file.html#rules). The rules given here are appended to existing rules from config files, if any. There is no conversion done, all object keys must be snake_case, including formatting rules.\"\n        }\n      }\n    }\n  },\n  \"main\": \"./dist/extension.js\",\n  \"browser\": \"./dist/browser-extension.js\",\n  \"scripts\": {\n    \"vscode:prepublish\": \"yarn build\",\n    \"open-in-browser\": \"vscode-test-web --extensionDevelopmentPath=. .\",\n    \"build:syntax\": \"ts-node --project node.tsconfig.json src/syntax/index.ts\",\n    \"build:browser-extension\": \"rollup -c rollup.config.browser-extension.mjs\",\n    \"build:browser-server\": \"rollup -c rollup.config.browser-server.mjs\",\n    \"build:node\": \"rollup -c rollup.config.mjs\",\n    \"build\": \"node scripts/build.mjs\"\n  },\n  \"dependencies\": {\n    \"@taplo/lsp\": \"^0.8.0\",\n    \"deep-equal\": \"^2.2.3\",\n    \"encoding\": \"^0.1.13\",\n    \"fast-glob\": \"^3.3.2\",\n    \"node-fetch\": \"^3.3.2\",\n    \"vscode-languageclient\": \"^9.0.1\",\n    \"which\": \"^5.0.0\"\n  },\n  \"devDependencies\": {\n    \"@rollup/plugin-commonjs\": \"^25.0.7\",\n    \"@rollup/plugin-node-resolve\": \"^15.2.3\",\n    \"@rollup/plugin-replace\": \"^5.0.5\",\n    \"@types/deep-equal\": \"^1.0.4\",\n    \"@types/node\": \"^20.11.9\",\n    \"@types/vscode\": \"^1.90.0\",\n    \"@types/which\": \"^3.0.3\",\n    \"@vscode/test-web\": \"^0.0.51\",\n    \"esbuild\": \"^0.20.0\",\n    \"rollup\": \"^4.9.6\",\n    \"rollup-plugin-esbuild\": \"^6.1.1\",\n    \"ts-node\": \"^10.9.2\",\n    \"typescript\": \"^5.3.3\"\n  },\n  \"packageManager\": \"yarn@4.0.2\"\n}\n",
+      "after": "{\n  \"name\": \"even-better-toml\",\n  \"displayName\": \"Even Better TOML\",\n  \"description\": \"%description%\",\n  \"version\": \"0.21.2\",\n  \"autoTag\": {\n    \"enabled\": true\n  },\n  \"repository\": {\n    \"url\": \"https://github.com/tamasfe/taplo\"\n  },\n  \"bugs\": {\n    \"url\": \"https://github.com/tamasfe/taplo/issues\"\n  },\n  \"publisher\": \"tamasfe\",\n  \"author\": {\n    \"name\": \"tamasfe\"\n  },\n  \"preview\": true,\n  \"icon\": \"taplo-icon.png\",\n  \"galleryBanner\": {\n    \"color\": \"#731c12\",\n    \"theme\": \"dark\"\n  },\n  \"license\": \"SEE LICENSE IN LICENSE.md\",\n  \"engines\": {\n    \"vscode\": \"^1.90.0\"\n  },\n  \"categories\": [\n    \"Programming Languages\",\n    \"Linters\",\n    \"Formatters\",\n    \"Other\"\n  ],\n  \"activationEvents\": [\n    \"onLanguage:cargoLock\"\n  ],\n  \"keywords\": [\n    \"toml\",\n    \"syntax\",\n    \"rust\",\n    \"formatter\",\n    \"config\"\n  ],\n  \"extensionKind\": [\n    \"workspace\"\n  ],\n  \"contributes\": {\n    \"grammars\": [\n      {\n        \"language\": \"toml\",\n        \"scopeName\": \"source.toml\",\n        \"path\": \"./toml.tmLanguage.json\"\n      },\n      {\n        \"scopeName\": \"markdown.toml.frontmatter.codeblock\",\n        \"path\": \"./toml.frontmatter.tmLanguage.json\",\n        \"injectTo\": [\n          \"text.html.markdown\"\n        ]\n      },\n      {\n        \"scopeName\": \"markdown.toml.codeblock\",\n        \"path\": \"./toml.markdown.tmLanguage.json\",\n        \"injectTo\": [\n          \"text.html.markdown\"\n        ],\n        \"embeddedLanguages\": {\n          \"meta.embedded.block.toml\": \"toml\"\n        }\n      }\n    ],\n    \"languages\": [\n      {\n        \"id\": \"toml\",\n        \"aliases\": [\n          \"TOML\"\n        ],\n        \"extensions\": [\n          \".toml\"\n        ],\n        \"filenames\": [\n          \"Cargo.lock\",\n          \"uv.lock\"\n        ],\n        \"configuration\": \"./language-configuration.json\"\n      }\n    ],\n    \"menus\": {\n      \"commandPalette\": [\n        {\n          \"command\": \"evenBetterToml.selectSchema\",\n          \"when\": \"editorLangId == toml\"\n        },\n        {\n          \"command\": \"evenBetterToml.copyAsJson\"\n        },\n        {\n          \"command\": \"evenBetterToml.copyAsToml\"\n        },\n        {\n          \"command\": \"evenBetterToml.pasteAsJson\"\n        },\n        {\n          \"command\": \"evenBetterToml.pasteAsToml\"\n        }\n      ]\n    },\n    \"commands\": [\n      {\n        \"command\": \"evenBetterToml.selectSchema\",\n        \"title\": \"%contributes.commands.0.title%\"\n      },\n      {\n        \"command\": \"evenBetterToml.copyAsJson\",\n        \"title\": \"%contributes.commands.1.title%\",\n        \"enablement\": \"editorHasSelection\"\n      },\n      {\n        \"command\": \"evenBetterToml.copyAsToml\",\n        \"title\": \"%contributes.commands.2.title%\",\n        \"enablement\": \"editorHasSelection\"\n      },\n      {\n        \"command\": \"evenBetterToml.pasteAsJson\",\n        \"title\": \"%contributes.commands.3.title%\"\n      },\n      {\n        \"command\": \"evenBetterToml.pasteAsToml\",\n        \"title\": \"%contributes.commands.4.title%\"\n      }\n    ],\n    \"semanticTokenTypes\": [\n      {\n        \"id\": \"tomlArrayKey\",\n        \"superType\": \"variable\",\n        \"description\": \"%contributes.semanticTokenTypes.0.description%\"\n      },\n      {\n        \"id\": \"tomlTableKey\",\n        \"superType\": \"variable\",\n        \"description\": \"%contributes.semanticTokenTypes.1.description%\"\n      }\n    ],\n    \"semanticTokenScopes\": [\n      {\n        \"scopes\": {\n          \"tomlArrayKey\": [\n            \"support.type.property-name.array.toml\"\n          ],\n          \"tomlTableKey\": [\n            \"support.type.property-name.table.toml\"\n          ]\n        }\n      }\n    ],\n    \"configuration\": {\n      \"title\": \"Even Better TOML\",\n      \"properties\": {\n        \"evenBetterToml.taplo.bundled\": {\n          \"description\": \"%contributes.configuration.properties.evenBetterToml.taplo.bundled.description%\",\n          \"type\": \"boolean\",\n          \"scope\": \"resource\",\n          \"default\": true\n        },\n        \"evenBetterToml.taplo.path\": {\n          \"description\": \"%contributes.configuration.properties.evenBetterToml.taplo.path.description%\",\n          \"type\": [\n            \"string\",\n            \"null\"\n          ],\n          \"scope\": \"resource\",\n          \"default\": null\n        },\n        \"evenBetterToml.taplo.environment\": {\n          \"type\": [\n            \"object\"\n          ],\n          \"scope\": \"resource\",\n          \"description\": \"%contributes.configuration.properties.evenBetterToml.taplo.environment.description%\",\n          \"additionalProperties\": {\n            \"type\": \"string\"\n          },\n          \"default\": {}\n        },\n        \"evenBetterToml.taplo.extraArgs\": {\n          \"type\": [\n            \"array\",\n            \"null\"\n          ],\n          \"scope\": \"resource\",\n          \"description\": \"%contributes.configuration.properties.evenBetterToml.taplo.extraArgs.description%\",\n          \"items\": {\n            \"type\": \"string\"\n          },\n          \"default\": []\n        },\n        \"evenBetterToml.taplo.configFile.path\": {\n          \"description\": \"%contributes.configuration.properties.evenBetterToml.taplo.configFile.path.description%\",\n          \"type\": \"string\",\n          \"default\": null,\n          \"scope\": \"resource\"\n        },\n        \"evenBetterToml.taplo.configFile.enabled\": {\n          \"description\": \"%contributes.configuration.properties.evenBetterToml.taplo.configFile.enabled.description%\",\n          \"type\": \"boolean\",\n          \"scope\": \"resource\",\n          \"default\": true\n        },\n        \"evenBetterToml.semanticTokens\": {\n          \"description\": \"%contributes.configuration.properties.evenBetterToml.semanticTokens.description%\",\n          \"type\": \"boolean\",\n          \"scope\": \"resource\",\n          \"default\": false\n        },\n        \"evenBetterToml.schema.enabled\": {\n          \"description\": \"%contributes.configuration.properties.evenBetterToml.schema.enabled.description%\",\n          \"type\": \"boolean\",\n          \"scope\": \"resource\",\n          \"default\": true\n        },\n        \"evenBetterToml.schema.links\": {\n          \"description\": \"%contributes.configuration.properties.evenBetterToml.schema.links.description%\",\n          \"type\": \"boolean\",\n          \"scope\": \"resource\",\n          \"default\": false\n        },\n        \"evenBetterToml.schema.catalogs\": {\n          \"description\": \"%contributes.configuration.properties.evenBetterToml.schema.catalogs.description%\",\n          \"type\": \"array\",\n          \"scope\": \"resource\",\n          \"items\": {\n            \"type\": \"string\"\n          },\n          \"default\": [\n            \"https://www.schemastore.org/api/json/catalog.json\"\n          ]\n        },\n        \"evenBetterToml.schema.associations\": {\n          \"description\": \"%contributes.configuration.properties.evenBetterToml.schema.associations.description%\",\n          \"markdownDescription\": \"%contributes.configuration.properties.evenBetterToml.schema.associations.markdownDescription%\",\n          \"type\": \"object\",\n          \"scope\": \"resource\",\n          \"default\": {}\n        },\n        \"evenBetterToml.schema.cache.memoryExpiration\": {\n          \"description\": \"%contributes.configuration.properties.evenBetterToml.schema.cache.memoryExpiration.description%\",\n          \"markdownDescription\": \"%contributes.configuration.properties.evenBetterToml.schema.cache.memoryExpiration.markdownDescription%\",\n          \"type\": \"integer\",\n          \"scope\": \"resource\",\n          \"minimum\": 0,\n          \"default\": 60\n        },\n        \"evenBetterToml.schema.cache.diskExpiration\": {\n          \"description\": \"%contributes.configuration.properties.evenBetterToml.schema.cache.diskExpiration.description%\",\n          \"type\": \"integer\",\n          \"scope\": \"resource\",\n          \"minimum\": 0,\n          \"default\": 600\n        },\n        \"evenBetterToml.completion.maxKeys\": {\n          \"description\": \"%contributes.configuration.properties.evenBetterToml.completion.maxKeys.description%\",\n          \"type\": \"integer\",\n          \"scope\": \"resource\",\n          \"minimum\": 0,\n          \"default\": 5\n        },\n        \"evenBetterToml.syntax.semanticTokens\": {\n          \"description\": \"%contributes.configuration.properties.evenBetterToml.syntax.semanticTokens.description%\",\n          \"type\": \"boolean\",\n          \"scope\": \"resource\",\n          \"default\": true\n        },\n        \"evenBetterToml.formatter.alignEntries\": {\n          \"scope\": \"resource\",\n          \"type\": \"boolean\",\n          \"default\": null,\n          \"description\": \"%contributes.configuration.properties.evenBetterToml.formatter.alignEntries.description%\"\n        },\n        \"evenBetterToml.formatter.alignComments\": {\n          \"scope\": \"resource\",\n          \"type\": \"boolean\",\n          \"default\": null,\n          \"description\": \"%contributes.configuration.properties.evenBetterToml.formatter.alignComments.description%\"\n        },\n        \"evenBetterToml.formatter.arrayTrailingComma\": {\n          \"scope\": \"resource\",\n          \"type\": \"boolean\",\n          \"default\": null,\n          \"description\": \"%contributes.configuration.properties.evenBetterToml.formatter.arrayTrailingComma.description%\"\n        },\n        \"evenBetterToml.formatter.arrayAutoExpand\": {\n          \"scope\": \"resource\",\n          \"type\": \"boolean\",\n          \"default\": null,\n          \"description\": \"%contributes.configuration.properties.evenBetterToml.formatter.arrayAutoExpand.description%\"\n        },\n        \"evenBetterToml.formatter.inlineTableExpand\": {\n          \"scope\": \"resource\",\n          \"type\": \"boolean\",\n          \"default\": null,\n          \"description\": \"%contributes.configuration.properties.evenBetterToml.formatter.inlineTableExpand.description%\"\n        },\n        \"evenBetterToml.formatter.arrayAutoCollapse\": {\n          \"scope\": \"resource\",\n          \"type\": \"boolean\",\n          \"default\": null,\n          \"description\": \"%contributes.configuration.properties.evenBetterToml.formatter.arrayAutoCollapse.description%\"\n        },\n        \"evenBetterToml.formatter.compactArrays\": {\n          \"scope\": \"resource\",\n          \"type\": \"boolean\",\n          \"default\": null,\n          \"description\": \"%contributes.configuration.properties.evenBetterToml.formatter.compactArrays.description%\"\n        },\n        \"evenBetterToml.formatter.compactInlineTables\": {\n          \"scope\": \"resource\",\n          \"type\": \"boolean\",\n          \"default\": null,\n          \"description\": \"%contributes.configuration.properties.evenBetterToml.formatter.compactInlineTables.description%\"\n        },\n        \"evenBetterToml.formatter.compactEntries\": {\n          \"scope\": \"resource\",\n          \"type\": \"boolean\",\n          \"default\": null,\n          \"description\": \"%contributes.configuration.properties.evenBetterToml.formatter.compactEntries.description%\"\n        },\n        \"evenBetterToml.formatter.columnWidth\": {\n          \"scope\": \"resource\",\n          \"type\": \"number\",\n          \"default\": null,\n          \"description\": \"%contributes.configuration.properties.evenBetterToml.formatter.columnWidth.description%\"\n        },\n        \"evenBetterToml.formatter.indentTables\": {\n          \"scope\": \"resource\",\n          \"type\": \"boolean\",\n          \"default\": null,\n          \"description\": \"%contributes.configuration.properties.evenBetterToml.formatter.indentTables.description%\"\n        },\n        \"evenBetterToml.formatter.indentEntries\": {\n          \"scope\": \"resource\",\n          \"type\": \"boolean\",\n          \"default\": null,\n          \"description\": \"%contributes.configuration.properties.evenBetterToml.formatter.indentEntries.description%\"\n        },\n        \"evenBetterToml.formatter.indentString\": {\n          \"scope\": \"resource\",\n          \"type\": \"string\",\n          \"default\": null,\n          \"description\": \"%contributes.configuration.properties.evenBetterToml.formatter.indentString.description%\"\n        },\n        \"evenBetterToml.formatter.trailingNewline\": {\n          \"scope\": \"resource\",\n          \"type\": \"boolean\",\n          \"default\": null,\n          \"description\": \"%contributes.configuration.properties.evenBetterToml.formatter.trailingNewline.description%\"\n        },\n        \"evenBetterToml.formatter.reorderKeys\": {\n          \"scope\": \"resource\",\n          \"type\": \"boolean\",\n          \"default\": null,\n          \"description\": \"%contributes.configuration.properties.evenBetterToml.formatter.reorderKeys.description%\"\n        },\n        \"evenBetterToml.formatter.reorderArrays\": {\n          \"scope\": \"resource\",\n          \"type\": \"boolean\",\n          \"default\": null,\n          \"description\": \"%contributes.configuration.properties.evenBetterToml.formatter.reorderArrays.description%\"\n        },\n        \"evenBetterToml.formatter.reorderInlineTables\": {\n          \"scope\": \"resource\",\n          \"type\": \"boolean\",\n          \"default\": null,\n          \"description\": \"%contributes.configuration.properties.evenBetterToml.formatter.reorderInlineTables.description%\"\n        },\n        \"evenBetterToml.formatter.allowedBlankLines\": {\n          \"scope\": \"resource\",\n          \"type\": \"number\",\n          \"default\": null,\n          \"description\": \"%contributes.configuration.properties.evenBetterToml.formatter.allowedBlankLines.description%\"\n        },\n        \"evenBetterToml.formatter.crlf\": {\n          \"scope\": \"resource\",\n          \"type\": \"boolean\",\n          \"default\": null,\n          \"description\": \"%contributes.configuration.properties.evenBetterToml.formatter.crlf.description%\"\n        },\n        \"evenBetterToml.rules\": {\n          \"scope\": \"resource\",\n          \"type\": \"array\",\n          \"default\": [],\n          \"markdownDescription\": \"%contributes.configuration.properties.evenBetterToml.rules.markdownDescription%\"\n        }\n      }\n    }\n  },\n  \"main\": \"./dist/extension.js\",\n  \"browser\": \"./dist/browser-extension.js\",\n  \"scripts\": {\n    \"vscode:prepublish\": \"yarn build\",\n    \"open-in-browser\": \"vscode-test-web --extensionDevelopmentPath=. .\",\n    \"build:syntax\": \"ts-node --project node.tsconfig.json src/syntax/index.ts\",\n    \"build:browser-extension\": \"rollup -c rollup.config.browser-extension.mjs\",\n    \"build:browser-server\": \"rollup -c rollup.config.browser-server.mjs\",\n    \"build:node\": \"rollup -c rollup.config.mjs\",\n    \"build\": \"node scripts/build.mjs\"\n  },\n  \"dependencies\": {\n    \"@taplo/lsp\": \"^0.8.0\",\n    \"deep-equal\": \"^2.2.3\",\n    \"encoding\": \"^0.1.13\",\n    \"fast-glob\": \"^3.3.2\",\n    \"node-fetch\": \"^3.3.2\",\n    \"vscode-languageclient\": \"^9.0.1\",\n    \"which\": \"^5.0.0\"\n  },\n  \"devDependencies\": {\n    \"@rollup/plugin-commonjs\": \"^25.0.7\",\n    \"@rollup/plugin-node-resolve\": \"^15.2.3\",\n    \"@rollup/plugin-replace\": \"^5.0.5\",\n    \"@types/deep-equal\": \"^1.0.4\",\n    \"@types/node\": \"^20.11.9\",\n    \"@types/vscode\": \"^1.90.0\",\n    \"@types/which\": \"^3.0.3\",\n    \"@vscode/test-web\": \"^0.0.51\",\n    \"esbuild\": \"^0.20.0\",\n    \"rollup\": \"^4.9.6\",\n    \"rollup-plugin-esbuild\": \"^6.1.1\",\n    \"ts-node\": \"^10.9.2\",\n    \"typescript\": \"^5.3.3\"\n  },\n  \"packageManager\": \"yarn@4.0.2\"\n}\n",
+      "count": 1
+    },
+    {
+      "path": "extension/dist/extension.js",
+      "sha256": "5c485b4b3f170bec200f74e5afc47d2f214a5edcd15dcffd781f3980df0e5585",
+      "before": "\"Show Details\"",
+      "after": "(be.env.language===\"zh-cn\"?\"查看详情\":\"Show Details\")",
+      "count": 13
+    },
+    {
+      "path": "extension/dist/extension.js",
+      "sha256": "5c485b4b3f170bec200f74e5afc47d2f214a5edcd15dcffd781f3980df0e5585",
+      "before": "\"Copying has failed!\"",
+      "after": "(be.env.language===\"zh-cn\"?\"复制失败！\":\"Copying has failed!\")",
+      "count": 6
+    },
+    {
+      "path": "extension/dist/extension.js",
+      "sha256": "5c485b4b3f170bec200f74e5afc47d2f214a5edcd15dcffd781f3980df0e5585",
+      "before": "\"JSON copied!\"",
+      "after": "(be.env.language===\"zh-cn\"?\"已复制 JSON！\":\"JSON copied!\")",
+      "count": 1
+    },
+    {
+      "path": "extension/dist/extension.js",
+      "sha256": "5c485b4b3f170bec200f74e5afc47d2f214a5edcd15dcffd781f3980df0e5585",
+      "before": "\"TOML copied!\"",
+      "after": "(be.env.language===\"zh-cn\"?\"已复制 TOML！\":\"TOML copied!\")",
+      "count": 1
+    },
+    {
+      "path": "extension/dist/extension.js",
+      "sha256": "5c485b4b3f170bec200f74e5afc47d2f214a5edcd15dcffd781f3980df0e5585",
+      "before": "\"Paste from clipboard has failed!\"",
+      "after": "(be.env.language===\"zh-cn\"?\"从剪贴板粘贴失败！\":\"Paste from clipboard has failed!\")",
+      "count": 3
+    },
+    {
+      "path": "extension/dist/extension.js",
+      "sha256": "5c485b4b3f170bec200f74e5afc47d2f214a5edcd15dcffd781f3980df0e5585",
+      "before": "\"Pasting JSON has failed!\"",
+      "after": "(be.env.language===\"zh-cn\"?\"粘贴 JSON 失败！\":\"Pasting JSON has failed!\")",
+      "count": 1
+    },
+    {
+      "path": "extension/dist/extension.js",
+      "sha256": "5c485b4b3f170bec200f74e5afc47d2f214a5edcd15dcffd781f3980df0e5585",
+      "before": "\"The response shouldn't be empty, but it is.\"",
+      "after": "(be.env.language===\"zh-cn\"?\"响应不应为空，但实际为空。\":\"The response shouldn't be empty, but it is.\")",
+      "count": 2
+    },
+    {
+      "path": "extension/dist/extension.js",
+      "sha256": "5c485b4b3f170bec200f74e5afc47d2f214a5edcd15dcffd781f3980df0e5585",
+      "before": "`Failed to convert TOML to JSON: ${o.error}`",
+      "after": "(be.env.language===\"zh-cn\"?`将 TOML 转换为 JSON 失败：${o.error}`:`Failed to convert TOML to JSON: ${o.error}`)",
+      "count": 1
+    },
+    {
+      "path": "extension/dist/extension.js",
+      "sha256": "5c485b4b3f170bec200f74e5afc47d2f214a5edcd15dcffd781f3980df0e5585",
+      "before": "`Failed to convert JSON to TOML: ${o.error}`",
+      "after": "(be.env.language===\"zh-cn\"?`将 JSON 转换为 TOML 失败：${o.error}`:`Failed to convert JSON to TOML: ${o.error}`)",
+      "count": 1
+    },
+    {
+      "path": "extension/dist/extension.js",
+      "sha256": "5c485b4b3f170bec200f74e5afc47d2f214a5edcd15dcffd781f3980df0e5585",
+      "before": "`Failed to convert to JSON: ${o.error}`",
+      "after": "(be.env.language===\"zh-cn\"?`转换为 JSON 失败：${o.error}`:`Failed to convert to JSON: ${o.error}`)",
+      "count": 1
+    },
+    {
+      "path": "extension/dist/extension.js",
+      "sha256": "5c485b4b3f170bec200f74e5afc47d2f214a5edcd15dcffd781f3980df0e5585",
+      "before": "`Failed to convert to TOML: ${o.error}`",
+      "after": "(be.env.language===\"zh-cn\"?`转换为 TOML 失败：${o.error}`:`Failed to convert to TOML: ${o.error}`)",
+      "count": 1
+    },
+    {
+      "path": "extension/dist/extension.js",
+      "sha256": "5c485b4b3f170bec200f74e5afc47d2f214a5edcd15dcffd781f3980df0e5585",
+      "before": "`Failed to read from clipboard:${s}`",
+      "after": "(be.env.language===\"zh-cn\"?`读取剪贴板失败：${s}`:`Failed to read from clipboard:${s}`)",
+      "count": 2
+    },
+    {
+      "path": "extension/dist/extension.js",
+      "sha256": "5c485b4b3f170bec200f74e5afc47d2f214a5edcd15dcffd781f3980df0e5585",
+      "before": "\"no schema selected\"",
+      "after": "(be.env.language===\"zh-cn\"?\"未选择架构\":\"no schema selected\")",
+      "count": 2
+    },
+    {
+      "path": "extension/dist/extension.js",
+      "sha256": "5c485b4b3f170bec200f74e5afc47d2f214a5edcd15dcffd781f3980df0e5585",
+      "before": "\"TOML Schema\"",
+      "after": "(be.env.language===\"zh-cn\"?\"TOML 架构\":\"TOML Schema\")",
+      "count": 1
+    },
+    {
+      "path": "extension/dist/extension.js",
+      "sha256": "5c485b4b3f170bec200f74e5afc47d2f214a5edcd15dcffd781f3980df0e5585",
+      "before": "\"A request has failed. See the output for more information.\"",
+      "after": "(be.env.language===\"zh-cn\"?\"请求失败。请查看输出以了解详情。\":\"A request has failed. See the output for more information.\")",
+      "count": 1
+    },
+    {
+      "path": "extension/dist/extension.js",
+      "sha256": "5c485b4b3f170bec200f74e5afc47d2f214a5edcd15dcffd781f3980df0e5585",
+      "before": "\"Go to output\"",
+      "after": "(be.env.language===\"zh-cn\"?\"查看输出\":\"Go to output\")",
+      "count": 1
+    },
+    {
+      "path": "extension/dist/extension.js",
+      "sha256": "5c485b4b3f170bec200f74e5afc47d2f214a5edcd15dcffd781f3980df0e5585",
+      "before": "\"Server initialization failed.\"",
+      "after": "(be.env.language===\"zh-cn\"?\"服务器初始化失败。\":\"Server initialization failed.\")",
+      "count": 1
+    },
+    {
+      "path": "extension/dist/extension.js",
+      "sha256": "5c485b4b3f170bec200f74e5afc47d2f214a5edcd15dcffd781f3980df0e5585",
+      "before": "`The ${this.client.name} server crashed ${this.maxRestartCount+1} times in the last 3 minutes. The server will not be restarted. See the output for more information.`",
+      "after": "(be.env.language===\"zh-cn\"?`${this.client.name} 服务器在过去 3 分钟内崩溃了 ${this.maxRestartCount+1} 次。将不再重启服务器。请查看输出以了解详情。`:`The ${this.client.name} server crashed ${this.maxRestartCount+1} times in the last 3 minutes. The server will not be restarted. See the output for more information.`)",
+      "count": 1
+    },
+    {
+      "path": "extension/dist/extension.js",
+      "sha256": "5c485b4b3f170bec200f74e5afc47d2f214a5edcd15dcffd781f3980df0e5585",
+      "before": "\"Connection to server got closed. Server will not be restarted.\"",
+      "after": "(be.env.language===\"zh-cn\"?\"与服务器的连接已关闭。将不再重启服务器。\":\"Connection to server got closed. Server will not be restarted.\")",
+      "count": 1
+    },
+    {
+      "path": "extension/dist/extension.js",
+      "sha256": "5c485b4b3f170bec200f74e5afc47d2f214a5edcd15dcffd781f3980df0e5585",
+      "before": "\"Connection to server got closed. Server will restart.\"",
+      "after": "(be.env.language===\"zh-cn\"?\"与服务器的连接已关闭。服务器将重启。\":\"Connection to server got closed. Server will restart.\")",
+      "count": 1
+    },
+    {
+      "path": "extension/dist/extension.js",
+      "sha256": "5c485b4b3f170bec200f74e5afc47d2f214a5edcd15dcffd781f3980df0e5585",
+      "before": "\"Restarting server failed\"",
+      "after": "(be.env.language===\"zh-cn\"?\"重启服务器失败\":\"Restarting server failed\")",
+      "count": 1
+    },
+    {
+      "path": "extension/dist/extension.js",
+      "sha256": "5c485b4b3f170bec200f74e5afc47d2f214a5edcd15dcffd781f3980df0e5585",
+      "before": "`Client ${this._name}: connection to server is erroring.\n${e.message}\nShutting down server.`",
+      "after": "(be.env.language===\"zh-cn\"?`客户端 ${this._name}：与服务器的连接出现错误。\n${e.message}\n正在关闭服务器。`:`Client ${this._name}: connection to server is erroring.\n${e.message}\nShutting down server.`)",
+      "count": 1
+    },
+    {
+      "path": "extension/dist/extension.js",
+      "sha256": "5c485b4b3f170bec200f74e5afc47d2f214a5edcd15dcffd781f3980df0e5585",
+      "before": "`Client ${this._name}: connection to server is erroring.\n${e.message}`",
+      "after": "(be.env.language===\"zh-cn\"?`客户端 ${this._name}：与服务器的连接出现错误。\n${e.message}`:`Client ${this._name}: connection to server is erroring.\n${e.message}`)",
+      "count": 1
+    },
+    {
+      "path": "extension/dist/extension.js",
+      "sha256": "5c485b4b3f170bec200f74e5afc47d2f214a5edcd15dcffd781f3980df0e5585",
+      "before": "\"Converting workspace diagnostics failed.\"",
+      "after": "(be.env.language===\"zh-cn\"?\"转换工作区诊断失败。\":\"Converting workspace diagnostics failed.\")",
+      "count": 1
+    },
+    {
+      "path": "extension/dist/extension.js",
+      "sha256": "5c485b4b3f170bec200f74e5afc47d2f214a5edcd15dcffd781f3980df0e5585",
+      "before": "\"Workspace diagnostic pull failed.\"",
+      "after": "(be.env.language===\"zh-cn\"?\"拉取工作区诊断失败。\":\"Workspace diagnostic pull failed.\")",
+      "count": 1
+    },
+    {
+      "path": "extension/dist/extension.js",
+      "sha256": "5c485b4b3f170bec200f74e5afc47d2f214a5edcd15dcffd781f3980df0e5585",
+      "before": "\"Sending DidOpenNotebookDocumentNotification failed\"",
+      "after": "(be.env.language===\"zh-cn\"?\"发送 DidOpenNotebookDocumentNotification 失败\":\"Sending DidOpenNotebookDocumentNotification failed\")",
+      "count": 1
+    },
+    {
+      "path": "extension/dist/extension.js",
+      "sha256": "5c485b4b3f170bec200f74e5afc47d2f214a5edcd15dcffd781f3980df0e5585",
+      "before": "\"Sending DidChangeNotebookDocumentNotification failed\"",
+      "after": "(be.env.language===\"zh-cn\"?\"发送 DidChangeNotebookDocumentNotification 失败\":\"Sending DidChangeNotebookDocumentNotification failed\")",
+      "count": 1
+    },
+    {
+      "path": "extension/dist/extension.js",
+      "sha256": "5c485b4b3f170bec200f74e5afc47d2f214a5edcd15dcffd781f3980df0e5585",
+      "before": "\"Sending DidSaveNotebookDocumentNotification failed\"",
+      "after": "(be.env.language===\"zh-cn\"?\"发送 DidSaveNotebookDocumentNotification 失败\":\"Sending DidSaveNotebookDocumentNotification failed\")",
+      "count": 1
+    },
+    {
+      "path": "extension/dist/extension.js",
+      "sha256": "5c485b4b3f170bec200f74e5afc47d2f214a5edcd15dcffd781f3980df0e5585",
+      "before": "\"Sending DidCloseNotebookDocumentNotification failed\"",
+      "after": "(be.env.language===\"zh-cn\"?\"发送 DidCloseNotebookDocumentNotification 失败\":\"Sending DidCloseNotebookDocumentNotification failed\")",
+      "count": 1
+    },
+    {
+      "path": "extension/dist/extension.js",
+      "sha256": "5c485b4b3f170bec200f74e5afc47d2f214a5edcd15dcffd781f3980df0e5585",
+      "before": "\"Handling connection error failed\"",
+      "after": "(be.env.language===\"zh-cn\"?\"处理连接错误失败\":\"Handling connection error failed\")",
+      "count": 1
+    },
+    {
+      "path": "extension/dist/extension.js",
+      "sha256": "5c485b4b3f170bec200f74e5afc47d2f214a5edcd15dcffd781f3980df0e5585",
+      "before": "\"Handling connection close failed\"",
+      "after": "(be.env.language===\"zh-cn\"?\"处理连接关闭失败\":\"Handling connection close failed\")",
+      "count": 1
+    },
+    {
+      "path": "extension/dist/extension.js",
+      "sha256": "5c485b4b3f170bec200f74e5afc47d2f214a5edcd15dcffd781f3980df0e5585",
+      "before": "\"Start failed after configuration change\"",
+      "after": "(be.env.language===\"zh-cn\"?\"配置更改后启动失败\":\"Start failed after configuration change\")",
+      "count": 1
+    },
+    {
+      "path": "extension/dist/extension.js",
+      "sha256": "5c485b4b3f170bec200f74e5afc47d2f214a5edcd15dcffd781f3980df0e5585",
+      "before": "\"Stop failed after configuration change\"",
+      "after": "(be.env.language===\"zh-cn\"?\"配置更改后停止失败\":\"Stop failed after configuration change\")",
+      "count": 1
+    },
+    {
+      "path": "extension/dist/extension.js",
+      "sha256": "5c485b4b3f170bec200f74e5afc47d2f214a5edcd15dcffd781f3980df0e5585",
+      "before": "`Sending document notification ${this._type.method} failed.`",
+      "after": "(be.env.language===\"zh-cn\"?`发送文档通知 ${this._type.method} 失败。`:`Sending document notification ${this._type.method} failed.`)",
+      "count": 1
+    },
+    {
+      "path": "extension/dist/extension.js",
+      "sha256": "5c485b4b3f170bec200f74e5afc47d2f214a5edcd15dcffd781f3980df0e5585",
+      "before": "`Sending document notification ${this._type.method} failed`",
+      "after": "(be.env.language===\"zh-cn\"?`发送文档通知 ${this._type.method} 失败`:`Sending document notification ${this._type.method} failed`)",
+      "count": 2
+    },
+    {
+      "path": "extension/dist/extension.js",
+      "sha256": "5c485b4b3f170bec200f74e5afc47d2f214a5edcd15dcffd781f3980df0e5585",
+      "before": "`Sending document notification ${xe.DidChangeTextDocumentNotification.type.method} failed`",
+      "after": "(be.env.language===\"zh-cn\"?`发送文档通知 ${xe.DidChangeTextDocumentNotification.type.method} 失败`:`Sending document notification ${xe.DidChangeTextDocumentNotification.type.method} failed`)",
+      "count": 1
+    },
+    {
+      "path": "extension/dist/extension.js",
+      "sha256": "5c485b4b3f170bec200f74e5afc47d2f214a5edcd15dcffd781f3980df0e5585",
+      "before": "`Sending notification ${wr.DidChangeConfigurationNotification.type.method} failed`",
+      "after": "(be.env.language===\"zh-cn\"?`发送通知 ${wr.DidChangeConfigurationNotification.type.method} 失败`:`Sending notification ${wr.DidChangeConfigurationNotification.type.method} failed`)",
+      "count": 1
+    },
+    {
+      "path": "extension/dist/extension.js",
+      "sha256": "5c485b4b3f170bec200f74e5afc47d2f214a5edcd15dcffd781f3980df0e5585",
+      "before": "`Sending notification ${kr.DidChangeWorkspaceFoldersNotification.type.method} failed`",
+      "after": "(be.env.language===\"zh-cn\"?`发送通知 ${kr.DidChangeWorkspaceFoldersNotification.type.method} 失败`:`Sending notification ${kr.DidChangeWorkspaceFoldersNotification.type.method} failed`)",
+      "count": 2
+    },
+    {
+      "path": "extension/dist/extension.js",
+      "sha256": "5c485b4b3f170bec200f74e5afc47d2f214a5edcd15dcffd781f3980df0e5585",
+      "before": "`Failed to determine file type for ${s.toString()}.`",
+      "after": "(be.env.language===\"zh-cn\"?`无法确定 ${s.toString()} 的文件类型。`:`Failed to determine file type for ${s.toString()}.`)",
+      "count": 1
+    },
+    {
+      "path": "extension/dist/extension.js",
+      "sha256": "5c485b4b3f170bec200f74e5afc47d2f214a5edcd15dcffd781f3980df0e5585",
+      "before": "`Ignoring invalid glob pattern for ${this._serverCapability} registration: ${i}`",
+      "after": "(be.env.language===\"zh-cn\"?`忽略 ${this._serverCapability} 注册中的无效 glob 模式：${i}`:`Ignoring invalid glob pattern for ${this._serverCapability} registration: ${i}`)",
+      "count": 1
+    },
+    {
+      "path": "extension/dist/extension.js",
+      "sha256": "5c485b4b3f170bec200f74e5afc47d2f214a5edcd15dcffd781f3980df0e5585",
+      "before": "`Sending progress for token ${t} failed.`",
+      "after": "(be.env.language===\"zh-cn\"?`发送标记 ${t} 的进度失败。`:`Sending progress for token ${t} failed.`)",
+      "count": 1
+    },
+    {
+      "path": "extension/dist/extension.js",
+      "sha256": "5c485b4b3f170bec200f74e5afc47d2f214a5edcd15dcffd781f3980df0e5585",
+      "before": "`Lost request state in diagnostic pull model. Clearing diagnostics for ${o}`",
+      "after": "(be.env.language===\"zh-cn\"?`诊断拉取模型中的请求状态丢失。正在清除 ${o} 的诊断`:`Lost request state in diagnostic pull model. Clearing diagnostics for ${o}`)",
+      "count": 1
+    },
+    {
+      "path": "extension/dist/extension.js",
+      "sha256": "5c485b4b3f170bec200f74e5afc47d2f214a5edcd15dcffd781f3980df0e5585",
+      "before": "`Request ${e.method} failed.`",
+      "after": "(be.env.language===\"zh-cn\"?`请求 ${e.method} 失败。`:`Request ${e.method} failed.`)",
+      "count": 1
+    },
+    {
+      "path": "extension/dist/extension.js",
+      "sha256": "5c485b4b3f170bec200f74e5afc47d2f214a5edcd15dcffd781f3980df0e5585",
+      "before": "`${this._name} client: couldn't create connection to server.`",
+      "after": "(be.env.language===\"zh-cn\"?`${this._name} 客户端：无法创建与服务器的连接。`:`${this._name} client: couldn't create connection to server.`)",
+      "count": 1
+    },
+    {
+      "path": "extension/dist/extension.js",
+      "sha256": "5c485b4b3f170bec200f74e5afc47d2f214a5edcd15dcffd781f3980df0e5585",
+      "before": "`Couldn't write to clipboard: ${c}`",
+      "after": "(be.env.language===\"zh-cn\"?`无法写入剪贴板：${c}`:`Couldn't write to clipboard: ${c}`)",
+      "count": 2
+    },
+    {
+      "path": "extension/dist/extension.js",
+      "sha256": "5c485b4b3f170bec200f74e5afc47d2f214a5edcd15dcffd781f3980df0e5585",
+      "before": "\"failed to locate Taplo LSP\"",
+      "after": "(be.env.language===\"zh-cn\"?\"无法找到 Taplo 语言服务器\":\"failed to locate Taplo LSP\")",
+      "count": 2
+    },
+    {
+      "path": "extension/dist/extension.js",
+      "sha256": "5c485b4b3f170bec200f74e5afc47d2f214a5edcd15dcffd781f3980df0e5585",
+      "before": "title:\"Retry\",id:\"retry\"",
+      "after": "title:(be.env.language===\"zh-cn\"?\"重试\":\"Retry\"),id:\"retry\"",
+      "count": 1
+    },
+    {
+      "path": "extension/dist/browser-extension.js",
+      "sha256": "2fed89c116cca5bcc141966f5328b373d8583224f6babf888db68bf160eb0f77",
+      "before": "\"Show Details\"",
+      "after": "(ae.env.language===\"zh-cn\"?\"查看详情\":\"Show Details\")",
+      "count": 13
+    },
+    {
+      "path": "extension/dist/browser-extension.js",
+      "sha256": "2fed89c116cca5bcc141966f5328b373d8583224f6babf888db68bf160eb0f77",
+      "before": "\"Copying has failed!\"",
+      "after": "(ae.env.language===\"zh-cn\"?\"复制失败！\":\"Copying has failed!\")",
+      "count": 6
+    },
+    {
+      "path": "extension/dist/browser-extension.js",
+      "sha256": "2fed89c116cca5bcc141966f5328b373d8583224f6babf888db68bf160eb0f77",
+      "before": "\"JSON copied!\"",
+      "after": "(ae.env.language===\"zh-cn\"?\"已复制 JSON！\":\"JSON copied!\")",
+      "count": 1
+    },
+    {
+      "path": "extension/dist/browser-extension.js",
+      "sha256": "2fed89c116cca5bcc141966f5328b373d8583224f6babf888db68bf160eb0f77",
+      "before": "\"TOML copied!\"",
+      "after": "(ae.env.language===\"zh-cn\"?\"已复制 TOML！\":\"TOML copied!\")",
+      "count": 1
+    },
+    {
+      "path": "extension/dist/browser-extension.js",
+      "sha256": "2fed89c116cca5bcc141966f5328b373d8583224f6babf888db68bf160eb0f77",
+      "before": "\"Paste from clipboard has failed!\"",
+      "after": "(ae.env.language===\"zh-cn\"?\"从剪贴板粘贴失败！\":\"Paste from clipboard has failed!\")",
+      "count": 3
+    },
+    {
+      "path": "extension/dist/browser-extension.js",
+      "sha256": "2fed89c116cca5bcc141966f5328b373d8583224f6babf888db68bf160eb0f77",
+      "before": "\"Pasting JSON has failed!\"",
+      "after": "(ae.env.language===\"zh-cn\"?\"粘贴 JSON 失败！\":\"Pasting JSON has failed!\")",
+      "count": 1
+    },
+    {
+      "path": "extension/dist/browser-extension.js",
+      "sha256": "2fed89c116cca5bcc141966f5328b373d8583224f6babf888db68bf160eb0f77",
+      "before": "\"The response shouldn't be empty, but it is.\"",
+      "after": "(ae.env.language===\"zh-cn\"?\"响应不应为空，但实际为空。\":\"The response shouldn't be empty, but it is.\")",
+      "count": 2
+    },
+    {
+      "path": "extension/dist/browser-extension.js",
+      "sha256": "2fed89c116cca5bcc141966f5328b373d8583224f6babf888db68bf160eb0f77",
+      "before": "`Failed to convert TOML to JSON: ${o.error}`",
+      "after": "(ae.env.language===\"zh-cn\"?`将 TOML 转换为 JSON 失败：${o.error}`:`Failed to convert TOML to JSON: ${o.error}`)",
+      "count": 1
+    },
+    {
+      "path": "extension/dist/browser-extension.js",
+      "sha256": "2fed89c116cca5bcc141966f5328b373d8583224f6babf888db68bf160eb0f77",
+      "before": "`Failed to convert JSON to TOML: ${o.error}`",
+      "after": "(ae.env.language===\"zh-cn\"?`将 JSON 转换为 TOML 失败：${o.error}`:`Failed to convert JSON to TOML: ${o.error}`)",
+      "count": 1
+    },
+    {
+      "path": "extension/dist/browser-extension.js",
+      "sha256": "2fed89c116cca5bcc141966f5328b373d8583224f6babf888db68bf160eb0f77",
+      "before": "`Failed to convert to JSON: ${o.error}`",
+      "after": "(ae.env.language===\"zh-cn\"?`转换为 JSON 失败：${o.error}`:`Failed to convert to JSON: ${o.error}`)",
+      "count": 1
+    },
+    {
+      "path": "extension/dist/browser-extension.js",
+      "sha256": "2fed89c116cca5bcc141966f5328b373d8583224f6babf888db68bf160eb0f77",
+      "before": "`Failed to convert to TOML: ${o.error}`",
+      "after": "(ae.env.language===\"zh-cn\"?`转换为 TOML 失败：${o.error}`:`Failed to convert to TOML: ${o.error}`)",
+      "count": 1
+    },
+    {
+      "path": "extension/dist/browser-extension.js",
+      "sha256": "2fed89c116cca5bcc141966f5328b373d8583224f6babf888db68bf160eb0f77",
+      "before": "`Failed to read from clipboard:${s}`",
+      "after": "(ae.env.language===\"zh-cn\"?`读取剪贴板失败：${s}`:`Failed to read from clipboard:${s}`)",
+      "count": 2
+    },
+    {
+      "path": "extension/dist/browser-extension.js",
+      "sha256": "2fed89c116cca5bcc141966f5328b373d8583224f6babf888db68bf160eb0f77",
+      "before": "\"no schema selected\"",
+      "after": "(ae.env.language===\"zh-cn\"?\"未选择架构\":\"no schema selected\")",
+      "count": 2
+    },
+    {
+      "path": "extension/dist/browser-extension.js",
+      "sha256": "2fed89c116cca5bcc141966f5328b373d8583224f6babf888db68bf160eb0f77",
+      "before": "\"TOML Schema\"",
+      "after": "(ae.env.language===\"zh-cn\"?\"TOML 架构\":\"TOML Schema\")",
+      "count": 1
+    },
+    {
+      "path": "extension/dist/browser-extension.js",
+      "sha256": "2fed89c116cca5bcc141966f5328b373d8583224f6babf888db68bf160eb0f77",
+      "before": "\"A request has failed. See the output for more information.\"",
+      "after": "(ae.env.language===\"zh-cn\"?\"请求失败。请查看输出以了解详情。\":\"A request has failed. See the output for more information.\")",
+      "count": 1
+    },
+    {
+      "path": "extension/dist/browser-extension.js",
+      "sha256": "2fed89c116cca5bcc141966f5328b373d8583224f6babf888db68bf160eb0f77",
+      "before": "\"Go to output\"",
+      "after": "(ae.env.language===\"zh-cn\"?\"查看输出\":\"Go to output\")",
+      "count": 1
+    },
+    {
+      "path": "extension/dist/browser-extension.js",
+      "sha256": "2fed89c116cca5bcc141966f5328b373d8583224f6babf888db68bf160eb0f77",
+      "before": "\"Server initialization failed.\"",
+      "after": "(ae.env.language===\"zh-cn\"?\"服务器初始化失败。\":\"Server initialization failed.\")",
+      "count": 1
+    },
+    {
+      "path": "extension/dist/browser-extension.js",
+      "sha256": "2fed89c116cca5bcc141966f5328b373d8583224f6babf888db68bf160eb0f77",
+      "before": "`The ${this.client.name} server crashed ${this.maxRestartCount+1} times in the last 3 minutes. The server will not be restarted. See the output for more information.`",
+      "after": "(ae.env.language===\"zh-cn\"?`${this.client.name} 服务器在过去 3 分钟内崩溃了 ${this.maxRestartCount+1} 次。将不再重启服务器。请查看输出以了解详情。`:`The ${this.client.name} server crashed ${this.maxRestartCount+1} times in the last 3 minutes. The server will not be restarted. See the output for more information.`)",
+      "count": 1
+    },
+    {
+      "path": "extension/dist/browser-extension.js",
+      "sha256": "2fed89c116cca5bcc141966f5328b373d8583224f6babf888db68bf160eb0f77",
+      "before": "\"Connection to server got closed. Server will not be restarted.\"",
+      "after": "(ae.env.language===\"zh-cn\"?\"与服务器的连接已关闭。将不再重启服务器。\":\"Connection to server got closed. Server will not be restarted.\")",
+      "count": 1
+    },
+    {
+      "path": "extension/dist/browser-extension.js",
+      "sha256": "2fed89c116cca5bcc141966f5328b373d8583224f6babf888db68bf160eb0f77",
+      "before": "\"Connection to server got closed. Server will restart.\"",
+      "after": "(ae.env.language===\"zh-cn\"?\"与服务器的连接已关闭。服务器将重启。\":\"Connection to server got closed. Server will restart.\")",
+      "count": 1
+    },
+    {
+      "path": "extension/dist/browser-extension.js",
+      "sha256": "2fed89c116cca5bcc141966f5328b373d8583224f6babf888db68bf160eb0f77",
+      "before": "\"Restarting server failed\"",
+      "after": "(ae.env.language===\"zh-cn\"?\"重启服务器失败\":\"Restarting server failed\")",
+      "count": 1
+    },
+    {
+      "path": "extension/dist/browser-extension.js",
+      "sha256": "2fed89c116cca5bcc141966f5328b373d8583224f6babf888db68bf160eb0f77",
+      "before": "`Client ${this._name}: connection to server is erroring.\n${e.message}\nShutting down server.`",
+      "after": "(ae.env.language===\"zh-cn\"?`客户端 ${this._name}：与服务器的连接出现错误。\n${e.message}\n正在关闭服务器。`:`Client ${this._name}: connection to server is erroring.\n${e.message}\nShutting down server.`)",
+      "count": 1
+    },
+    {
+      "path": "extension/dist/browser-extension.js",
+      "sha256": "2fed89c116cca5bcc141966f5328b373d8583224f6babf888db68bf160eb0f77",
+      "before": "`Client ${this._name}: connection to server is erroring.\n${e.message}`",
+      "after": "(ae.env.language===\"zh-cn\"?`客户端 ${this._name}：与服务器的连接出现错误。\n${e.message}`:`Client ${this._name}: connection to server is erroring.\n${e.message}`)",
+      "count": 1
+    },
+    {
+      "path": "extension/dist/browser-extension.js",
+      "sha256": "2fed89c116cca5bcc141966f5328b373d8583224f6babf888db68bf160eb0f77",
+      "before": "\"Converting workspace diagnostics failed.\"",
+      "after": "(ae.env.language===\"zh-cn\"?\"转换工作区诊断失败。\":\"Converting workspace diagnostics failed.\")",
+      "count": 1
+    },
+    {
+      "path": "extension/dist/browser-extension.js",
+      "sha256": "2fed89c116cca5bcc141966f5328b373d8583224f6babf888db68bf160eb0f77",
+      "before": "\"Workspace diagnostic pull failed.\"",
+      "after": "(ae.env.language===\"zh-cn\"?\"拉取工作区诊断失败。\":\"Workspace diagnostic pull failed.\")",
+      "count": 1
+    },
+    {
+      "path": "extension/dist/browser-extension.js",
+      "sha256": "2fed89c116cca5bcc141966f5328b373d8583224f6babf888db68bf160eb0f77",
+      "before": "\"Sending DidOpenNotebookDocumentNotification failed\"",
+      "after": "(ae.env.language===\"zh-cn\"?\"发送 DidOpenNotebookDocumentNotification 失败\":\"Sending DidOpenNotebookDocumentNotification failed\")",
+      "count": 1
+    },
+    {
+      "path": "extension/dist/browser-extension.js",
+      "sha256": "2fed89c116cca5bcc141966f5328b373d8583224f6babf888db68bf160eb0f77",
+      "before": "\"Sending DidChangeNotebookDocumentNotification failed\"",
+      "after": "(ae.env.language===\"zh-cn\"?\"发送 DidChangeNotebookDocumentNotification 失败\":\"Sending DidChangeNotebookDocumentNotification failed\")",
+      "count": 1
+    },
+    {
+      "path": "extension/dist/browser-extension.js",
+      "sha256": "2fed89c116cca5bcc141966f5328b373d8583224f6babf888db68bf160eb0f77",
+      "before": "\"Sending DidSaveNotebookDocumentNotification failed\"",
+      "after": "(ae.env.language===\"zh-cn\"?\"发送 DidSaveNotebookDocumentNotification 失败\":\"Sending DidSaveNotebookDocumentNotification failed\")",
+      "count": 1
+    },
+    {
+      "path": "extension/dist/browser-extension.js",
+      "sha256": "2fed89c116cca5bcc141966f5328b373d8583224f6babf888db68bf160eb0f77",
+      "before": "\"Sending DidCloseNotebookDocumentNotification failed\"",
+      "after": "(ae.env.language===\"zh-cn\"?\"发送 DidCloseNotebookDocumentNotification 失败\":\"Sending DidCloseNotebookDocumentNotification failed\")",
+      "count": 1
+    },
+    {
+      "path": "extension/dist/browser-extension.js",
+      "sha256": "2fed89c116cca5bcc141966f5328b373d8583224f6babf888db68bf160eb0f77",
+      "before": "\"Handling connection error failed\"",
+      "after": "(ae.env.language===\"zh-cn\"?\"处理连接错误失败\":\"Handling connection error failed\")",
+      "count": 1
+    },
+    {
+      "path": "extension/dist/browser-extension.js",
+      "sha256": "2fed89c116cca5bcc141966f5328b373d8583224f6babf888db68bf160eb0f77",
+      "before": "\"Handling connection close failed\"",
+      "after": "(ae.env.language===\"zh-cn\"?\"处理连接关闭失败\":\"Handling connection close failed\")",
+      "count": 1
+    },
+    {
+      "path": "extension/dist/browser-extension.js",
+      "sha256": "2fed89c116cca5bcc141966f5328b373d8583224f6babf888db68bf160eb0f77",
+      "before": "`Sending document notification ${this._type.method} failed.`",
+      "after": "(ae.env.language===\"zh-cn\"?`发送文档通知 ${this._type.method} 失败。`:`Sending document notification ${this._type.method} failed.`)",
+      "count": 1
+    },
+    {
+      "path": "extension/dist/browser-extension.js",
+      "sha256": "2fed89c116cca5bcc141966f5328b373d8583224f6babf888db68bf160eb0f77",
+      "before": "`Sending document notification ${this._type.method} failed`",
+      "after": "(ae.env.language===\"zh-cn\"?`发送文档通知 ${this._type.method} 失败`:`Sending document notification ${this._type.method} failed`)",
+      "count": 2
+    },
+    {
+      "path": "extension/dist/browser-extension.js",
+      "sha256": "2fed89c116cca5bcc141966f5328b373d8583224f6babf888db68bf160eb0f77",
+      "before": "`Sending document notification ${De.DidChangeTextDocumentNotification.type.method} failed`",
+      "after": "(ae.env.language===\"zh-cn\"?`发送文档通知 ${De.DidChangeTextDocumentNotification.type.method} 失败`:`Sending document notification ${De.DidChangeTextDocumentNotification.type.method} failed`)",
+      "count": 1
+    },
+    {
+      "path": "extension/dist/browser-extension.js",
+      "sha256": "2fed89c116cca5bcc141966f5328b373d8583224f6babf888db68bf160eb0f77",
+      "before": "`Sending notification ${xi.DidChangeConfigurationNotification.type.method} failed`",
+      "after": "(ae.env.language===\"zh-cn\"?`发送通知 ${xi.DidChangeConfigurationNotification.type.method} 失败`:`Sending notification ${xi.DidChangeConfigurationNotification.type.method} failed`)",
+      "count": 1
+    },
+    {
+      "path": "extension/dist/browser-extension.js",
+      "sha256": "2fed89c116cca5bcc141966f5328b373d8583224f6babf888db68bf160eb0f77",
+      "before": "`Sending notification ${Ki.DidChangeWorkspaceFoldersNotification.type.method} failed`",
+      "after": "(ae.env.language===\"zh-cn\"?`发送通知 ${Ki.DidChangeWorkspaceFoldersNotification.type.method} 失败`:`Sending notification ${Ki.DidChangeWorkspaceFoldersNotification.type.method} failed`)",
+      "count": 2
+    },
+    {
+      "path": "extension/dist/browser-extension.js",
+      "sha256": "2fed89c116cca5bcc141966f5328b373d8583224f6babf888db68bf160eb0f77",
+      "before": "`Failed to determine file type for ${s.toString()}.`",
+      "after": "(ae.env.language===\"zh-cn\"?`无法确定 ${s.toString()} 的文件类型。`:`Failed to determine file type for ${s.toString()}.`)",
+      "count": 1
+    },
+    {
+      "path": "extension/dist/browser-extension.js",
+      "sha256": "2fed89c116cca5bcc141966f5328b373d8583224f6babf888db68bf160eb0f77",
+      "before": "`Ignoring invalid glob pattern for ${this._serverCapability} registration: ${r}`",
+      "after": "(ae.env.language===\"zh-cn\"?`忽略 ${this._serverCapability} 注册中的无效 glob 模式：${r}`:`Ignoring invalid glob pattern for ${this._serverCapability} registration: ${r}`)",
+      "count": 1
+    },
+    {
+      "path": "extension/dist/browser-extension.js",
+      "sha256": "2fed89c116cca5bcc141966f5328b373d8583224f6babf888db68bf160eb0f77",
+      "before": "`Sending progress for token ${n} failed.`",
+      "after": "(ae.env.language===\"zh-cn\"?`发送标记 ${n} 的进度失败。`:`Sending progress for token ${n} failed.`)",
+      "count": 1
+    },
+    {
+      "path": "extension/dist/browser-extension.js",
+      "sha256": "2fed89c116cca5bcc141966f5328b373d8583224f6babf888db68bf160eb0f77",
+      "before": "`Lost request state in diagnostic pull model. Clearing diagnostics for ${o}`",
+      "after": "(ae.env.language===\"zh-cn\"?`诊断拉取模型中的请求状态丢失。正在清除 ${o} 的诊断`:`Lost request state in diagnostic pull model. Clearing diagnostics for ${o}`)",
+      "count": 1
+    },
+    {
+      "path": "extension/dist/browser-extension.js",
+      "sha256": "2fed89c116cca5bcc141966f5328b373d8583224f6babf888db68bf160eb0f77",
+      "before": "`Request ${e.method} failed.`",
+      "after": "(ae.env.language===\"zh-cn\"?`请求 ${e.method} 失败。`:`Request ${e.method} failed.`)",
+      "count": 1
+    },
+    {
+      "path": "extension/dist/browser-extension.js",
+      "sha256": "2fed89c116cca5bcc141966f5328b373d8583224f6babf888db68bf160eb0f77",
+      "before": "`${this._name} client: couldn't create connection to server.`",
+      "after": "(ae.env.language===\"zh-cn\"?`${this._name} 客户端：无法创建与服务器的连接。`:`${this._name} client: couldn't create connection to server.`)",
+      "count": 1
+    },
+    {
+      "path": "extension/dist/browser-extension.js",
+      "sha256": "2fed89c116cca5bcc141966f5328b373d8583224f6babf888db68bf160eb0f77",
+      "before": "`Couldn't write to clipboard: ${a}`",
+      "after": "(ae.env.language===\"zh-cn\"?`无法写入剪贴板：${a}`:`Couldn't write to clipboard: ${a}`)",
+      "count": 2
+    },
+    {
+      "path": "extension/dist/browser-extension.js",
+      "sha256": "2fed89c116cca5bcc141966f5328b373d8583224f6babf888db68bf160eb0f77",
+      "before": "title:\"Retry\",id:\"retry\"",
+      "after": "title:(ae.env.language===\"zh-cn\"?\"重试\":\"Retry\"),id:\"retry\"",
+      "count": 1
+    }
+  ],
+  "additions": [
+    {
+      "path": "extension/package.nls.json",
+      "content": "{\n  \"description\": \"Fully-featured TOML support\",\n  \"contributes.commands.0.title\": \"TOML: Select Schema\",\n  \"contributes.commands.1.title\": \"TOML: Copy as JSON\",\n  \"contributes.commands.2.title\": \"TOML: Copy as TOML\",\n  \"contributes.commands.3.title\": \"TOML: Paste as JSON\",\n  \"contributes.commands.4.title\": \"TOML: Paste as TOML\",\n  \"contributes.semanticTokenTypes.0.description\": \"Keys of regular arrays.\",\n  \"contributes.semanticTokenTypes.1.description\": \"Keys of inline tables.\",\n  \"contributes.configuration.properties.evenBetterToml.taplo.bundled.description\": \"Use the bundled taplo language server. If set to `false`, the `taplo` executable must be found in PATH or must be set in `evenBetterToml.taplo.path`.\",\n  \"contributes.configuration.properties.evenBetterToml.taplo.path.description\": \"An absolute path to the `taplo` executable. `evenBetterToml.taplo.bundled` needs to be set to `false` for this to have any effect.\",\n  \"contributes.configuration.properties.evenBetterToml.taplo.environment.description\": \"Environment variables for Taplo.\",\n  \"contributes.configuration.properties.evenBetterToml.taplo.extraArgs.description\": \"Additional arguments for Taplo. Has no effect for the bundled LSP.\",\n  \"contributes.configuration.properties.evenBetterToml.taplo.configFile.path.description\": \"An absolute, or workspace relative path to the Taplo configuration file.\",\n  \"contributes.configuration.properties.evenBetterToml.taplo.configFile.enabled.description\": \"Whether to enable the usage of a Taplo configuration file.\",\n  \"contributes.configuration.properties.evenBetterToml.semanticTokens.description\": \"Enable semantic tokens for inline table and array keys.\",\n  \"contributes.configuration.properties.evenBetterToml.schema.enabled.description\": \"Enable completion and validation based on JSON schemas.\",\n  \"contributes.configuration.properties.evenBetterToml.schema.links.description\": \"Whether to show clickable links for keys in the editor.\",\n  \"contributes.configuration.properties.evenBetterToml.schema.catalogs.description\": \"A list of URLs to schema catalogs where schemas and associations can be fetched from\",\n  \"contributes.configuration.properties.evenBetterToml.schema.associations.description\": \"Document and schema associations.\",\n  \"contributes.configuration.properties.evenBetterToml.schema.associations.markdownDescription\": \"Additional document and schema associations. \\n\\n The key must be a regular expression, this pattern is used to associate schemas with absolute document URIs. Overlapping patterns result in undefined behaviour and either matching schema can be used. \\n\\n The value must be an absolute URI to the JSON schema, for supported values and more information [read here](https://taplo.tamasfe.dev/configuration#visual-studio-code).\",\n  \"contributes.configuration.properties.evenBetterToml.schema.cache.memoryExpiration.description\": \"The amount of seconds after which schemas will be invalidated from memory.\",\n  \"contributes.configuration.properties.evenBetterToml.schema.cache.memoryExpiration.markdownDescription\": \"The amount of seconds after which schemas will be invalidated from memory. \\n**NOTE**: setting too low values will cause performance issues and validation of some schemas will fail.\",\n  \"contributes.configuration.properties.evenBetterToml.schema.cache.diskExpiration.description\": \"The amount of seconds after which cached catalogs and schemas expire and will be attempted to be fetched again.\",\n  \"contributes.configuration.properties.evenBetterToml.completion.maxKeys.description\": \"The maximum amount of keys in a dotted key to display during completion, 0 effectively disables key completions.\",\n  \"contributes.configuration.properties.evenBetterToml.syntax.semanticTokens.description\": \"Whether to enable semantic tokens for tables and arrays.\",\n  \"contributes.configuration.properties.evenBetterToml.formatter.alignEntries.description\": \"Align entries vertically. Entries that have table headers, comments, or blank lines between them are not aligned.\",\n  \"contributes.configuration.properties.evenBetterToml.formatter.alignComments.description\": \"Align consecutive comments after entries and items vertically. This applies to comments that are after entries or array items\",\n  \"contributes.configuration.properties.evenBetterToml.formatter.arrayTrailingComma.description\": \"Put trailing commas for multiline arrays.\",\n  \"contributes.configuration.properties.evenBetterToml.formatter.arrayAutoExpand.description\": \"Automatically expand arrays to multiple lines.\",\n  \"contributes.configuration.properties.evenBetterToml.formatter.inlineTableExpand.description\": \"Expand values inside in line tables.\",\n  \"contributes.configuration.properties.evenBetterToml.formatter.arrayAutoCollapse.description\": \"Automatically collapse arrays if they fit in one line.\",\n  \"contributes.configuration.properties.evenBetterToml.formatter.compactArrays.description\": \"Omit whitespace padding inside single-line arrays.\",\n  \"contributes.configuration.properties.evenBetterToml.formatter.compactInlineTables.description\": \"Omit whitespace padding inside inline tables.\",\n  \"contributes.configuration.properties.evenBetterToml.formatter.compactEntries.description\": \"Omit whitespace around `=`.\",\n  \"contributes.configuration.properties.evenBetterToml.formatter.columnWidth.description\": \"Target maximum column width after which arrays are expanded into new lines.\",\n  \"contributes.configuration.properties.evenBetterToml.formatter.indentTables.description\": \"Indent subtables if they come in order.\",\n  \"contributes.configuration.properties.evenBetterToml.formatter.indentEntries.description\": \"Indent entries under tables.\",\n  \"contributes.configuration.properties.evenBetterToml.formatter.indentString.description\": \"Indentation to use, should be tabs or spaces but technically could be anything.\",\n  \"contributes.configuration.properties.evenBetterToml.formatter.trailingNewline.description\": \"Add trailing newline to the source.\",\n  \"contributes.configuration.properties.evenBetterToml.formatter.reorderKeys.description\": \"Alphabetically reorder keys that are not separated by blank lines.\",\n  \"contributes.configuration.properties.evenBetterToml.formatter.reorderArrays.description\": \"Alphabetically reorder array values that are not separated by blank lines.\",\n  \"contributes.configuration.properties.evenBetterToml.formatter.reorderInlineTables.description\": \"Alphabetically reorder inline tables.\",\n  \"contributes.configuration.properties.evenBetterToml.formatter.allowedBlankLines.description\": \"The maximum amount of consecutive blank lines allowed.\",\n  \"contributes.configuration.properties.evenBetterToml.formatter.crlf.description\": \"Use CRLF line endings.\",\n  \"contributes.configuration.properties.evenBetterToml.rules.markdownDescription\": \"Array of Taplo rules in JSON format, see [Configuration File - Rules](https://taplo.tamasfe.dev/configuration/file.html#rules). The rules given here are appended to existing rules from config files, if any. There is no conversion done, all object keys must be snake_case, including formatting rules.\"\n}\n"
+    },
+    {
+      "path": "extension/package.nls.zh-cn.json",
+      "content": "{\n  \"description\": \"功能全面的 TOML 支持\",\n  \"contributes.commands.0.title\": \"TOML：选择架构\",\n  \"contributes.commands.1.title\": \"TOML：复制为 JSON\",\n  \"contributes.commands.2.title\": \"TOML：复制为 TOML\",\n  \"contributes.commands.3.title\": \"TOML：粘贴为 JSON\",\n  \"contributes.commands.4.title\": \"TOML：粘贴为 TOML\",\n  \"contributes.semanticTokenTypes.0.description\": \"普通数组的键。\",\n  \"contributes.semanticTokenTypes.1.description\": \"内联表的键。\",\n  \"contributes.configuration.properties.evenBetterToml.taplo.bundled.description\": \"使用内置的 taplo 语言服务器。设为 `false` 时，必须能在 PATH 中找到 `taplo` 可执行文件，或通过 `evenBetterToml.taplo.path` 指定其路径。\",\n  \"contributes.configuration.properties.evenBetterToml.taplo.path.description\": \"`taplo` 可执行文件的绝对路径。仅在 `evenBetterToml.taplo.bundled` 设为 `false` 时生效。\",\n  \"contributes.configuration.properties.evenBetterToml.taplo.environment.description\": \"Taplo 的环境变量。\",\n  \"contributes.configuration.properties.evenBetterToml.taplo.extraArgs.description\": \"传递给 Taplo 的附加参数。对内置语言服务器无效。\",\n  \"contributes.configuration.properties.evenBetterToml.taplo.configFile.path.description\": \"Taplo 配置文件的绝对路径或相对于工作区的路径。\",\n  \"contributes.configuration.properties.evenBetterToml.taplo.configFile.enabled.description\": \"是否使用 Taplo 配置文件。\",\n  \"contributes.configuration.properties.evenBetterToml.semanticTokens.description\": \"为内联表和数组键启用语义标记。\",\n  \"contributes.configuration.properties.evenBetterToml.schema.enabled.description\": \"启用基于 JSON 架构的补全和验证。\",\n  \"contributes.configuration.properties.evenBetterToml.schema.links.description\": \"是否在编辑器中为键显示可点击的链接。\",\n  \"contributes.configuration.properties.evenBetterToml.schema.catalogs.description\": \"架构目录的 URL 列表，可从中获取架构及其关联。\",\n  \"contributes.configuration.properties.evenBetterToml.schema.associations.description\": \"文档与架构的关联。\",\n  \"contributes.configuration.properties.evenBetterToml.schema.associations.markdownDescription\": \"附加的文档与架构关联。\\n\\n 键必须是正则表达式，用于将架构与文档的绝对 URI 关联。重叠的匹配模式会导致未定义行为，可能使用任一匹配的架构。\\n\\n 值必须是 JSON 架构的绝对 URI；支持的值和更多信息请参阅[此处](https://taplo.tamasfe.dev/configuration#visual-studio-code)。\",\n  \"contributes.configuration.properties.evenBetterToml.schema.cache.memoryExpiration.description\": \"架构在内存中保持有效的秒数。\",\n  \"contributes.configuration.properties.evenBetterToml.schema.cache.memoryExpiration.markdownDescription\": \"架构在内存中保持有效的秒数。\\n**注意**：值过低会导致性能问题，并使部分架构验证失败。\",\n  \"contributes.configuration.properties.evenBetterToml.schema.cache.diskExpiration.description\": \"缓存的目录和架构过期并尝试重新获取之前的有效秒数。\",\n  \"contributes.configuration.properties.evenBetterToml.completion.maxKeys.description\": \"补全时显示的点分隔键中的最大键数。设为 0 会禁用键补全。\",\n  \"contributes.configuration.properties.evenBetterToml.syntax.semanticTokens.description\": \"是否为表和数组启用语义标记。\",\n  \"contributes.configuration.properties.evenBetterToml.formatter.alignEntries.description\": \"纵向对齐条目。条目之间存在表头、注释或空行时不进行对齐。\",\n  \"contributes.configuration.properties.evenBetterToml.formatter.alignComments.description\": \"纵向对齐条目和数组项之后的连续注释。适用于条目或数组项末尾的注释。\",\n  \"contributes.configuration.properties.evenBetterToml.formatter.arrayTrailingComma.description\": \"为多行数组添加尾随逗号。\",\n  \"contributes.configuration.properties.evenBetterToml.formatter.arrayAutoExpand.description\": \"自动将数组展开为多行。\",\n  \"contributes.configuration.properties.evenBetterToml.formatter.inlineTableExpand.description\": \"展开内联表中的值。\",\n  \"contributes.configuration.properties.evenBetterToml.formatter.arrayAutoCollapse.description\": \"数组可在一行容纳时，自动将其折叠为单行。\",\n  \"contributes.configuration.properties.evenBetterToml.formatter.compactArrays.description\": \"省略单行数组内侧的空白填充。\",\n  \"contributes.configuration.properties.evenBetterToml.formatter.compactInlineTables.description\": \"省略内联表内侧的空白填充。\",\n  \"contributes.configuration.properties.evenBetterToml.formatter.compactEntries.description\": \"省略 `=` 两侧的空白。\",\n  \"contributes.configuration.properties.evenBetterToml.formatter.columnWidth.description\": \"目标最大列宽；超过后将数组展开到多行。\",\n  \"contributes.configuration.properties.evenBetterToml.formatter.indentTables.description\": \"子表按顺序出现时，对其进行缩进。\",\n  \"contributes.configuration.properties.evenBetterToml.formatter.indentEntries.description\": \"缩进表中的条目。\",\n  \"contributes.configuration.properties.evenBetterToml.formatter.indentString.description\": \"使用的缩进字符串，通常为制表符或空格，但也可为其他字符串。\",\n  \"contributes.configuration.properties.evenBetterToml.formatter.trailingNewline.description\": \"在源文件末尾添加换行符。\",\n  \"contributes.configuration.properties.evenBetterToml.formatter.reorderKeys.description\": \"按字母顺序重新排列未被空行分隔的键。\",\n  \"contributes.configuration.properties.evenBetterToml.formatter.reorderArrays.description\": \"按字母顺序重新排列未被空行分隔的数组值。\",\n  \"contributes.configuration.properties.evenBetterToml.formatter.reorderInlineTables.description\": \"按字母顺序重新排列内联表。\",\n  \"contributes.configuration.properties.evenBetterToml.formatter.allowedBlankLines.description\": \"允许的最大连续空行数。\",\n  \"contributes.configuration.properties.evenBetterToml.formatter.crlf.description\": \"使用 CRLF 换行符。\",\n  \"contributes.configuration.properties.evenBetterToml.rules.markdownDescription\": \"JSON 格式的 Taplo 规则数组，参阅[配置文件 - 规则](https://taplo.tamasfe.dev/configuration/file.html#rules)。此处的规则会追加到配置文件中已有的规则之后（如果有）。不会执行任何转换；所有对象键（包括格式化规则）必须使用 snake_case。\"\n}\n"
+    }
+  ],
+  "target": {
+    "publisher": "local-chinese",
+    "name": "even-better-toml-zh"
+  }
+}

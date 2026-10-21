@@ -1,0 +1,936 @@
+{
+  "schemaVersion": 1,
+  "sourceSha256": "74e89cc9ad01dacae24dc0d2742ca1b69d0c731e5be9351a14a55bd185378d47",
+  "sourceBytes": 3268062,
+  "sourceEntryCount": 1233,
+  "removedFiles": 1223,
+  "removedBytes": 8697700,
+  "removedPackageMetadata": [
+    {
+      "packagePath": "extension/node_modules/@vscode/test-web/package.json",
+      "name": "@vscode/test-web",
+      "version": "0.0.8",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/@koa/router/package.json",
+      "name": "@koa/router",
+      "version": "10.1.1",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/decompress-targz/package.json",
+      "name": "decompress-targz",
+      "version": "4.1.1",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/decompress/package.json",
+      "name": "decompress",
+      "version": "4.2.1",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/http-proxy-agent/package.json",
+      "name": "http-proxy-agent",
+      "version": "4.0.1",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/https-proxy-agent/package.json",
+      "name": "https-proxy-agent",
+      "version": "5.0.0",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/koa-morgan/package.json",
+      "name": "koa-morgan",
+      "version": "1.0.1",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/koa-mount/package.json",
+      "name": "koa-mount",
+      "version": "4.0.0",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/koa-static/package.json",
+      "name": "koa-static",
+      "version": "5.0.0",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/koa/package.json",
+      "name": "koa",
+      "version": "2.13.1",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/minimist/package.json",
+      "name": "minimist",
+      "version": "1.2.6",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/playwright/package.json",
+      "name": "playwright",
+      "version": "1.15.0",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/vscode-uri/package.json",
+      "name": "vscode-uri",
+      "version": "3.0.2",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/debug/package.json",
+      "name": "debug",
+      "version": "4.3.3",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/http-errors/package.json",
+      "name": "http-errors",
+      "version": "1.8.0",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/koa-compose/package.json",
+      "name": "koa-compose",
+      "version": "4.1.0",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/methods/package.json",
+      "name": "methods",
+      "version": "1.1.2",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/path-to-regexp/package.json",
+      "name": "path-to-regexp",
+      "version": "6.2.0",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/decompress-tar/package.json",
+      "name": "decompress-tar",
+      "version": "4.1.1",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/file-type/package.json",
+      "name": "file-type",
+      "version": "5.2.0",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/is-stream/package.json",
+      "name": "is-stream",
+      "version": "1.1.0",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/decompress-tarbz2/package.json",
+      "name": "decompress-tarbz2",
+      "version": "4.1.1",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/decompress-unzip/package.json",
+      "name": "decompress-unzip",
+      "version": "4.0.1",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/graceful-fs/package.json",
+      "name": "graceful-fs",
+      "version": "4.2.8",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/make-dir/package.json",
+      "name": "make-dir",
+      "version": "1.3.0",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/pify/package.json",
+      "name": "pify",
+      "version": "2.3.0",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/strip-dirs/package.json",
+      "name": "strip-dirs",
+      "version": "2.1.0",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/@tootallnate/once/package.json",
+      "name": "@tootallnate/once",
+      "version": "1.1.2",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/agent-base/package.json",
+      "name": "agent-base",
+      "version": "6.0.2",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/morgan/package.json",
+      "name": "morgan",
+      "version": "1.10.0",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/koa-static/node_modules/debug/package.json",
+      "name": "debug",
+      "version": "3.2.7",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/koa-send/package.json",
+      "name": "koa-send",
+      "version": "5.0.1",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/accepts/package.json",
+      "name": "accepts",
+      "version": "1.3.7",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/cache-content-type/package.json",
+      "name": "cache-content-type",
+      "version": "1.0.1",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/content-disposition/package.json",
+      "name": "content-disposition",
+      "version": "0.5.3",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/content-type/package.json",
+      "name": "content-type",
+      "version": "1.0.4",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/cookies/package.json",
+      "name": "cookies",
+      "version": "0.8.0",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/koa/node_modules/debug/package.json",
+      "name": "debug",
+      "version": "3.1.0",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/delegates/package.json",
+      "name": "delegates",
+      "version": "1.0.0",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/koa/node_modules/depd/package.json",
+      "name": "depd",
+      "version": "2.0.0",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/destroy/package.json",
+      "name": "destroy",
+      "version": "1.0.4",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/encodeurl/package.json",
+      "name": "encodeurl",
+      "version": "1.0.2",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/escape-html/package.json",
+      "name": "escape-html",
+      "version": "1.0.3",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/fresh/package.json",
+      "name": "fresh",
+      "version": "0.5.2",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/http-assert/package.json",
+      "name": "http-assert",
+      "version": "1.5.0",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/is-generator-function/package.json",
+      "name": "is-generator-function",
+      "version": "1.0.10",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/koa-convert/package.json",
+      "name": "koa-convert",
+      "version": "1.2.0",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/on-finished/package.json",
+      "name": "on-finished",
+      "version": "2.3.0",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/only/package.json",
+      "name": "only",
+      "version": "0.0.2",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/parseurl/package.json",
+      "name": "parseurl",
+      "version": "1.3.3",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/statuses/package.json",
+      "name": "statuses",
+      "version": "1.5.0",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/type-is/package.json",
+      "name": "type-is",
+      "version": "1.6.18",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/vary/package.json",
+      "name": "vary",
+      "version": "1.1.2",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/commander/package.json",
+      "name": "commander",
+      "version": "6.2.1",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/extract-zip/package.json",
+      "name": "extract-zip",
+      "version": "2.0.1",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/jpeg-js/package.json",
+      "name": "jpeg-js",
+      "version": "0.4.3",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/mime/package.json",
+      "name": "mime",
+      "version": "2.5.2",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/pngjs/package.json",
+      "name": "pngjs",
+      "version": "5.0.0",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/progress/package.json",
+      "name": "progress",
+      "version": "2.0.3",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/proper-lockfile/package.json",
+      "name": "proper-lockfile",
+      "version": "4.1.2",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/proxy-from-env/package.json",
+      "name": "proxy-from-env",
+      "version": "1.1.0",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/rimraf/package.json",
+      "name": "rimraf",
+      "version": "3.0.2",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/stack-utils/package.json",
+      "name": "stack-utils",
+      "version": "2.0.5",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/ws/package.json",
+      "name": "ws",
+      "version": "7.5.5",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/yazl/package.json",
+      "name": "yazl",
+      "version": "2.5.1",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/ms/package.json",
+      "name": "ms",
+      "version": "2.1.2",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/depd/package.json",
+      "name": "depd",
+      "version": "1.1.2",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/inherits/package.json",
+      "name": "inherits",
+      "version": "2.0.4",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/setprototypeof/package.json",
+      "name": "setprototypeof",
+      "version": "1.2.0",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/toidentifier/package.json",
+      "name": "toidentifier",
+      "version": "1.0.0",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/tar-stream/package.json",
+      "name": "tar-stream",
+      "version": "1.6.2",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/decompress-tarbz2/node_modules/file-type/package.json",
+      "name": "file-type",
+      "version": "6.2.0",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/seek-bzip/package.json",
+      "name": "seek-bzip",
+      "version": "1.0.6",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/unbzip2-stream/package.json",
+      "name": "unbzip2-stream",
+      "version": "1.4.3",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/decompress-unzip/node_modules/file-type/package.json",
+      "name": "file-type",
+      "version": "3.9.0",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/get-stream/package.json",
+      "name": "get-stream",
+      "version": "2.3.1",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/yauzl/package.json",
+      "name": "yauzl",
+      "version": "2.10.0",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/make-dir/node_modules/pify/package.json",
+      "name": "pify",
+      "version": "3.0.0",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/is-natural-number/package.json",
+      "name": "is-natural-number",
+      "version": "4.0.1",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/basic-auth/package.json",
+      "name": "basic-auth",
+      "version": "2.0.1",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/morgan/node_modules/debug/package.json",
+      "name": "debug",
+      "version": "2.6.9",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/morgan/node_modules/depd/package.json",
+      "name": "depd",
+      "version": "2.0.0",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/on-headers/package.json",
+      "name": "on-headers",
+      "version": "1.0.2",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/resolve-path/package.json",
+      "name": "resolve-path",
+      "version": "1.4.0",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/mime-types/package.json",
+      "name": "mime-types",
+      "version": "2.1.32",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/negotiator/package.json",
+      "name": "negotiator",
+      "version": "0.6.2",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/ylru/package.json",
+      "name": "ylru",
+      "version": "1.2.1",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/safe-buffer/package.json",
+      "name": "safe-buffer",
+      "version": "5.1.2",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/cookies/node_modules/depd/package.json",
+      "name": "depd",
+      "version": "2.0.0",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/keygrip/package.json",
+      "name": "keygrip",
+      "version": "1.1.0",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/koa/node_modules/ms/package.json",
+      "name": "ms",
+      "version": "2.0.0",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/deep-equal/package.json",
+      "name": "deep-equal",
+      "version": "1.0.1",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/has-tostringtag/package.json",
+      "name": "has-tostringtag",
+      "version": "1.0.0",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/co/package.json",
+      "name": "co",
+      "version": "4.6.0",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/koa-convert/node_modules/koa-compose/package.json",
+      "name": "koa-compose",
+      "version": "3.2.1",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/ee-first/package.json",
+      "name": "ee-first",
+      "version": "1.1.1",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/media-typer/package.json",
+      "name": "media-typer",
+      "version": "0.3.0",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/@types/yauzl/package.json",
+      "name": "@types/yauzl",
+      "version": "2.9.2",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/extract-zip/node_modules/get-stream/package.json",
+      "name": "get-stream",
+      "version": "5.2.0",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/retry/package.json",
+      "name": "retry",
+      "version": "0.12.0",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/signal-exit/package.json",
+      "name": "signal-exit",
+      "version": "3.0.4",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/glob/package.json",
+      "name": "glob",
+      "version": "7.2.0",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/stack-utils/node_modules/escape-string-regexp/package.json",
+      "name": "escape-string-regexp",
+      "version": "2.0.0",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/buffer-crc32/package.json",
+      "name": "buffer-crc32",
+      "version": "0.2.13",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/bl/package.json",
+      "name": "bl",
+      "version": "1.2.3",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/buffer-alloc/package.json",
+      "name": "buffer-alloc",
+      "version": "1.2.0",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/end-of-stream/package.json",
+      "name": "end-of-stream",
+      "version": "1.4.4",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/fs-constants/package.json",
+      "name": "fs-constants",
+      "version": "1.0.0",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/readable-stream/package.json",
+      "name": "readable-stream",
+      "version": "2.3.7",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/to-buffer/package.json",
+      "name": "to-buffer",
+      "version": "1.1.1",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/xtend/package.json",
+      "name": "xtend",
+      "version": "4.0.2",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/seek-bzip/node_modules/commander/package.json",
+      "name": "commander",
+      "version": "2.20.3",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/buffer/package.json",
+      "name": "buffer",
+      "version": "5.7.1",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/through/package.json",
+      "name": "through",
+      "version": "2.3.8",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/object-assign/package.json",
+      "name": "object-assign",
+      "version": "4.1.1",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/pinkie-promise/package.json",
+      "name": "pinkie-promise",
+      "version": "2.0.1",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/fd-slicer/package.json",
+      "name": "fd-slicer",
+      "version": "1.1.0",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/morgan/node_modules/ms/package.json",
+      "name": "ms",
+      "version": "2.0.0",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/resolve-path/node_modules/http-errors/package.json",
+      "name": "http-errors",
+      "version": "1.6.3",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/path-is-absolute/package.json",
+      "name": "path-is-absolute",
+      "version": "1.0.1",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/mime-db/package.json",
+      "name": "mime-db",
+      "version": "1.49.0",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/tsscmp/package.json",
+      "name": "tsscmp",
+      "version": "1.0.6",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/has-symbols/package.json",
+      "name": "has-symbols",
+      "version": "1.0.2",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/any-promise/package.json",
+      "name": "any-promise",
+      "version": "1.3.0",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/@types/node/package.json",
+      "name": "@types/node",
+      "version": "12.20.26",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/pump/package.json",
+      "name": "pump",
+      "version": "3.0.0",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/fs.realpath/package.json",
+      "name": "fs.realpath",
+      "version": "1.0.0",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/inflight/package.json",
+      "name": "inflight",
+      "version": "1.0.6",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/minimatch/package.json",
+      "name": "minimatch",
+      "version": "3.0.4",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/once/package.json",
+      "name": "once",
+      "version": "1.4.0",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/buffer-alloc-unsafe/package.json",
+      "name": "buffer-alloc-unsafe",
+      "version": "1.1.0",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/buffer-fill/package.json",
+      "name": "buffer-fill",
+      "version": "1.0.0",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/core-util-is/package.json",
+      "name": "core-util-is",
+      "version": "1.0.3",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/isarray/package.json",
+      "name": "isarray",
+      "version": "1.0.0",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/process-nextick-args/package.json",
+      "name": "process-nextick-args",
+      "version": "2.0.1",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/string_decoder/package.json",
+      "name": "string_decoder",
+      "version": "1.1.1",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/util-deprecate/package.json",
+      "name": "util-deprecate",
+      "version": "1.0.2",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/base64-js/package.json",
+      "name": "base64-js",
+      "version": "1.5.1",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/ieee754/package.json",
+      "name": "ieee754",
+      "version": "1.2.1",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/pinkie/package.json",
+      "name": "pinkie",
+      "version": "2.0.4",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/pend/package.json",
+      "name": "pend",
+      "version": "1.2.0",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/resolve-path/node_modules/inherits/package.json",
+      "name": "inherits",
+      "version": "2.0.3",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/resolve-path/node_modules/setprototypeof/package.json",
+      "name": "setprototypeof",
+      "version": "1.1.0",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/wrappy/package.json",
+      "name": "wrappy",
+      "version": "1.0.2",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/brace-expansion/package.json",
+      "name": "brace-expansion",
+      "version": "1.1.11",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/balanced-match/package.json",
+      "name": "balanced-match",
+      "version": "1.0.2",
+      "removed": true
+    },
+    {
+      "packagePath": "extension/node_modules/concat-map/package.json",
+      "name": "concat-map",
+      "version": "0.0.1",
+      "removed": true
+    }
+  ],
+  "retainedOriginalPaths": [
+    "[Content_Types].xml",
+    "extension.vsixmanifest",
+    "extension/.github/FUNDING.yml",
+    "extension/LICENSE.txt",
+    "extension/README.md",
+    "extension/assets/example.png",
+    "extension/assets/icon.png",
+    "extension/dist/web/extension.js",
+    "extension/out/src/extension.js",
+    "extension/package.json"
+  ],
+  "entrypointAnalysis": {
+    "extension/out/src/extension.js": {
+      "sourceSha256": "68dc4167cd0635251e327da62dfaec6f8a2883d6105d59d2baa5615d1865cc47",
+      "requireTargets": [
+        "vscode"
+      ],
+      "dynamicImport": false,
+      "dynamicRequire": false,
+      "eval": false,
+      "filesystemReads": false,
+      "hardcodedUpstreamId": false
+    },
+    "extension/dist/web/extension.js": {
+      "sourceSha256": "fc089229f093f07503b11f1178f92f28234246ca334ded4c15f6cc59ac0b7030",
+      "requireTargets": [
+        "vscode"
+      ],
+      "dynamicImport": false,
+      "dynamicRequire": false,
+      "eval": false,
+      "filesystemReads": false,
+      "hardcodedUpstreamId": false
+    }
+  },
+  "upstreamIdentityOccurrencesOutsideManifest": [
+    {
+      "path": "extension/README.md",
+      "line": 19,
+      "context": "tps://marketplace.visualstudio.com/items?itemName=oderwat.indent-rainbow)\n\nIt uses the current editor window tab size and "
+    }
+  ],
+  "boundary": "Static inspection and API fixture are not native Extension Host or visual runtime evidence."
+}

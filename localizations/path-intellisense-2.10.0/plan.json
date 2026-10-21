@@ -1,0 +1,111 @@
+{
+  "schemaVersion": 1,
+  "sourceSha256": "6c4df6566cd906c02a812c5d4002bd3a84dc4e0bad184b60bf0ebe45a89ea91b",
+  "replacements": [
+    {
+      "path": "extension/package.json",
+      "sha256": "3486249b25a4f5f6154f6c75fa83b36059108f195258630e812ac953061105f0",
+      "before": "\"displayName\": \"Path Intellisense\"",
+      "after": "\"displayName\": \"%extension.displayName%\"",
+      "count": 1
+    },
+    {
+      "path": "extension/package.json",
+      "sha256": "3486249b25a4f5f6154f6c75fa83b36059108f195258630e812ac953061105f0",
+      "before": "\"description\": \"Visual Studio Code plugin that autocompletes filenames\"",
+      "after": "\"description\": \"%extension.description%\"",
+      "count": 1
+    },
+    {
+      "path": "extension/package.json",
+      "sha256": "3486249b25a4f5f6154f6c75fa83b36059108f195258630e812ac953061105f0",
+      "before": "\"title\": \"path-intellisense\"",
+      "after": "\"title\": \"%configuration.title%\"",
+      "count": 1
+    },
+    {
+      "path": "extension/package.json",
+      "sha256": "3486249b25a4f5f6154f6c75fa83b36059108f195258630e812ac953061105f0",
+      "before": "\"description\": \"Adds the file extension to a import statements\"",
+      "after": "\"description\": \"%configuration.path-intellisense.extensionOnImport.description%\"",
+      "count": 1
+    },
+    {
+      "path": "extension/package.json",
+      "sha256": "3486249b25a4f5f6154f6c75fa83b36059108f195258630e812ac953061105f0",
+      "before": "\"description\": \"Mappings for paths.  The values should be interpreted as absolute paths (and can use '${workspaceFolder}')\"",
+      "after": "\"description\": \"%configuration.path-intellisense.mappings.description%\"",
+      "count": 1
+    },
+    {
+      "path": "extension/package.json",
+      "sha256": "3486249b25a4f5f6154f6c75fa83b36059108f195258630e812ac953061105f0",
+      "before": "\"description\": \"Show hidden files\"",
+      "after": "\"description\": \"%configuration.path-intellisense.showHiddenFiles.description%\"",
+      "count": 1
+    },
+    {
+      "path": "extension/package.json",
+      "sha256": "3486249b25a4f5f6154f6c75fa83b36059108f195258630e812ac953061105f0",
+      "before": "\"description\": \"Automatically adds slash after directory\"",
+      "after": "\"description\": \"%configuration.path-intellisense.autoSlashAfterDirectory.description%\"",
+      "count": 1
+    },
+    {
+      "path": "extension/package.json",
+      "sha256": "3486249b25a4f5f6154f6c75fa83b36059108f195258630e812ac953061105f0",
+      "before": "\"description\": \"Sets an absolute path to the current workspace\"",
+      "after": "\"description\": \"%configuration.path-intellisense.absolutePathToWorkspace.description%\"",
+      "count": 1
+    },
+    {
+      "path": "extension/package.json",
+      "sha256": "3486249b25a4f5f6154f6c75fa83b36059108f195258630e812ac953061105f0",
+      "before": "\"description\": \"If defined, unmapped absolute path imports are based on this location.  Takes priority over 'absolutePathToWorkspace' if both are defined\"",
+      "after": "\"description\": \"%configuration.path-intellisense.absolutePathTo.description%\"",
+      "count": 1
+    },
+    {
+      "path": "extension/package.json",
+      "sha256": "3486249b25a4f5f6154f6c75fa83b36059108f195258630e812ac953061105f0",
+      "before": "\"description\": \"Shows suggestions when the import starts with a forward slash ('/')\"",
+      "after": "\"description\": \"%configuration.path-intellisense.showOnAbsoluteSlash.description%\"",
+      "count": 1
+    },
+    {
+      "path": "extension/package.json",
+      "sha256": "3486249b25a4f5f6154f6c75fa83b36059108f195258630e812ac953061105f0",
+      "before": "\"description\": \"Ignores tsconfig file for mappings\"",
+      "after": "\"description\": \"%configuration.path-intellisense.ignoreTsConfigBaseUrl.description%\"",
+      "count": 1
+    },
+    {
+      "path": "extension/package.json",
+      "sha256": "3486249b25a4f5f6154f6c75fa83b36059108f195258630e812ac953061105f0",
+      "before": "\"description\": \"Automatically triggers next suggestion after previous suggestion\"",
+      "after": "\"description\": \"%configuration.path-intellisense.autoTriggerNextSuggestion.description%\"",
+      "count": 1
+    },
+    {
+      "path": "extension/out/utils/createCompletionItem.js",
+      "sha256": "d7b7f4e3b35af241b1f55095504029d828d49821e9adf304b08a19f7392e5cf0",
+      "before": "title: \"Trigger suggest\",",
+      "after": "title: vscode.env.language === \"zh-cn\" ? \"触发建议\" : \"Trigger suggest\",",
+      "count": 1
+    }
+  ],
+  "additions": [
+    {
+      "path": "extension/package.nls.json",
+      "content": "{\n  \"extension.displayName\": \"Path Intellisense\",\n  \"extension.description\": \"Visual Studio Code plugin that autocompletes filenames\",\n  \"configuration.title\": \"path-intellisense\",\n  \"configuration.path-intellisense.extensionOnImport.description\": \"Adds the file extension to a import statements\",\n  \"configuration.path-intellisense.mappings.description\": \"Mappings for paths.  The values should be interpreted as absolute paths (and can use '${workspaceFolder}')\",\n  \"configuration.path-intellisense.showHiddenFiles.description\": \"Show hidden files\",\n  \"configuration.path-intellisense.autoSlashAfterDirectory.description\": \"Automatically adds slash after directory\",\n  \"configuration.path-intellisense.absolutePathToWorkspace.description\": \"Sets an absolute path to the current workspace\",\n  \"configuration.path-intellisense.absolutePathTo.description\": \"If defined, unmapped absolute path imports are based on this location.  Takes priority over 'absolutePathToWorkspace' if both are defined\",\n  \"configuration.path-intellisense.showOnAbsoluteSlash.description\": \"Shows suggestions when the import starts with a forward slash ('/')\",\n  \"configuration.path-intellisense.ignoreTsConfigBaseUrl.description\": \"Ignores tsconfig file for mappings\",\n  \"configuration.path-intellisense.autoTriggerNextSuggestion.description\": \"Automatically triggers next suggestion after previous suggestion\"\n}\n"
+    },
+    {
+      "path": "extension/package.nls.zh-cn.json",
+      "content": "{\n  \"extension.displayName\": \"Path Intellisense\",\n  \"extension.description\": \"自动补全文件名的 Visual Studio Code 插件\",\n  \"configuration.title\": \"Path Intellisense\",\n  \"configuration.path-intellisense.extensionOnImport.description\": \"在 import 语句中添加文件扩展名\",\n  \"configuration.path-intellisense.mappings.description\": \"路径映射。映射值按绝对路径解析（可使用 '${workspaceFolder}'）\",\n  \"configuration.path-intellisense.showHiddenFiles.description\": \"显示隐藏文件\",\n  \"configuration.path-intellisense.autoSlashAfterDirectory.description\": \"自动在目录后添加斜杠\",\n  \"configuration.path-intellisense.absolutePathToWorkspace.description\": \"将绝对路径的起点设为当前工作区\",\n  \"configuration.path-intellisense.absolutePathTo.description\": \"指定后，未映射的绝对路径导入将以此位置为起点。与 'absolutePathToWorkspace' 同时设置时，此项优先\",\n  \"configuration.path-intellisense.showOnAbsoluteSlash.description\": \"导入路径以正斜杠（'/'）开头时显示建议\",\n  \"configuration.path-intellisense.ignoreTsConfigBaseUrl.description\": \"忽略 tsconfig 文件中的路径映射\",\n  \"configuration.path-intellisense.autoTriggerNextSuggestion.description\": \"完成一次补全后自动触发下一次建议\"\n}\n"
+    }
+  ],
+  "target": {
+    "publisher": "local-chinese",
+    "name": "path-intellisense-zh"
+  }
+}

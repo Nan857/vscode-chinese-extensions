@@ -123,12 +123,400 @@
         "publication/licenses/gitlab-7.2.5/DOMPurify-3.4.0-Apache-2.0-OR-MPL-2.0.txt",
         "publication/licenses/gitlab-7.2.5/GitLab-MIT.txt"
       ]
+    },
+    {
+      "id": "autodocstring",
+      "version": "0.6.1",
+      "extensionId": "local-chinese.autodocstring-zh",
+      "upstreamId": "njpwerner.autodocstring",
+      "upstream": {
+        "url": "https://marketplace.visualstudio.com/_apis/public/gallery/publishers/njpwerner/vsextensions/autodocstring/0.6.1/vspackage",
+        "sha256": "348d1c6e3b193d6f27eaa45344aa2ace748384b651520b8fed26bf7747de7a87",
+        "bytes": 428356
+      },
+      "base": {
+        "assetName": "autodocstring-zh-0.6.1.vsix",
+        "sha256": "89104ca7898e5b6bded006693077f5151da7acf0aed4b7373a4716bee2d4ab86",
+        "bytes": 429954
+      },
+      "recipe": {
+        "script": "scripts/build-autodocstring-product.py",
+        "inputs": [
+          {
+            "path": "scripts/build-store-product.py",
+            "sha256": "44f1d6d062ab2519272d9124ede421f02d10f8a85416a95d3999e68e753f1058",
+            "bytes": 20851
+          },
+          {
+            "path": "scripts/build-autodocstring-product.py",
+            "sha256": "8a7e8dd2a1d4409fdcbb75a3b2350ed522eb0b283e826f91354b593518dd1e7c",
+            "bytes": 7855
+          },
+          {
+            "path": "localizations/autodocstring-0.6.1/config.json",
+            "sha256": "654d27d841848c33805d72376aa89bf8e628ae32c560e30548712fa38784f18e",
+            "bytes": 4153
+          },
+          {
+            "path": "localizations/autodocstring-0.6.1/plan.json",
+            "sha256": "fdd3875e738517ea70063a21b0244d6774b71f1741ae9330ea8793992b58cb12",
+            "bytes": 9547
+          },
+          {
+            "path": "localizations/autodocstring-0.6.1/package.nls.json",
+            "sha256": "50204551b124f64d2f130a485e80cafa3d61da004c695fd3c7a5f0a29b77bee8",
+            "bytes": 1493
+          },
+          {
+            "path": "localizations/autodocstring-0.6.1/package.nls.zh-cn.json",
+            "sha256": "0b66ac3f786f4b415886b548e54d6017c6810173b6c234138f3fcfa4f1be2a08",
+            "bytes": 1534
+          },
+          {
+            "path": "localizations/autodocstring-0.6.1/vsix-localize.py.txt",
+            "sha256": "c7ae82a602368c00856535d624614404a3aba999ff46f8b1ed1d587ea6389eb8",
+            "bytes": 17708
+          }
+        ]
+      },
+      "artifact": {
+        "localizationRevision": 1,
+        "tag": "autodocstring-0.6.1-r1",
+        "assetName": "autodocstring-zh-0.6.1-r1.vsix",
+        "url": "https://github.com/Nan857/vscode-chinese-extensions/releases/download/autodocstring-0.6.1-r1/autodocstring-zh-0.6.1-r1.vsix",
+        "targetPlatform": "universal",
+        "enginesVscode": "^1.53.0",
+        "verificationProfile": "metadata-v1",
+        "sha256": "5b58563d055d1841c7fd9ba2fe8bb5e1ecfbb60351a9d3ccc81dd47d41f9f86c",
+        "bytes": 435780
+      },
+      "licenseFiles": [
+        "publication/licenses/autodocstring-0.6.1/THIRD-PARTY-NOTICES.md",
+        "publication/licenses/autodocstring-0.6.1/autoDocstring-0.6.1-MIT.txt",
+        "publication/licenses/autodocstring-0.6.1/mustache-4.2.0-MIT.txt",
+        "publication/licenses/autodocstring-0.6.1/stack-trace-0.0.10-MIT.txt",
+        "publication/licenses/autodocstring-0.6.1/ts-dedent-2.2.0-MIT.txt",
+        "publication/licenses/autodocstring-0.6.1/types-stack-trace-0.0.29-MIT.txt"
+      ]
+    },
+    {
+      "id": "even-better-toml",
+      "version": "0.21.2",
+      "extensionId": "local-chinese.even-better-toml-zh",
+      "upstreamId": "tamasfe.even-better-toml",
+      "upstream": {
+        "url": "https://marketplace.visualstudio.com/_apis/public/gallery/publishers/tamasfe/vsextensions/even-better-toml/0.21.2/vspackage",
+        "sha256": "21b8d66af4285eee31e21a4492f921ab36dffcd859a67f1115d2930274650808",
+        "bytes": 21008128
+      },
+      "base": {
+        "assetName": "even-better-toml-zh-0.21.2.vsix",
+        "sha256": "d17b1ab609a94059dc9166358ba4d180347b9f78d807b7391a6eb3d98bb3a887",
+        "bytes": 21058475
+      },
+      "recipe": {
+        "script": "scripts/build-even-better-toml-product.py",
+        "inputs": [
+          {
+            "path": "scripts/build-store-product.py",
+            "sha256": "44f1d6d062ab2519272d9124ede421f02d10f8a85416a95d3999e68e753f1058",
+            "bytes": 20851
+          },
+          {
+            "path": "scripts/build-even-better-toml-product.py",
+            "sha256": "ee467fd7333646d27b9d5744a1755b91ea4fb7d3c8a90f413fce20ca3d278244",
+            "bytes": 5536
+          },
+          {
+            "path": "localizations/even-better-toml-0.21.2/plan.json",
+            "sha256": "410be02fa097c68a5c4d587719bd542b201eb44b86d38058bef260a9f15ede11",
+            "bytes": 81317
+          },
+          {
+            "path": "localizations/even-better-toml-0.21.2/vsix_localize.py.txt",
+            "sha256": "c7ae82a602368c00856535d624614404a3aba999ff46f8b1ed1d587ea6389eb8",
+            "bytes": 17708
+          },
+          {
+            "path": "localizations/even-better-toml-0.21.2/LOCALIZATION-NOTICE.md",
+            "sha256": "683a99348d257987b0bfda186a1b77be74cf11ae22ff9638b34e5ca811dfad2b",
+            "bytes": 1213
+          }
+        ]
+      },
+      "artifact": {
+        "localizationRevision": 1,
+        "tag": "even-better-toml-0.21.2-r1",
+        "assetName": "even-better-toml-zh-0.21.2-r1.vsix",
+        "url": "https://github.com/Nan857/vscode-chinese-extensions/releases/download/even-better-toml-0.21.2-r1/even-better-toml-zh-0.21.2-r1.vsix",
+        "targetPlatform": "universal",
+        "enginesVscode": "^1.90.0",
+        "verificationProfile": "metadata-v1",
+        "sha256": "6526f88ccac72d494a22240398ebdd8cf17517809dd06624637278d9caeef8c0",
+        "bytes": 21529396
+      },
+      "licenseFiles": [
+        "publication/licenses/even-better-toml-0.21.2/Even-Better-TOML-MIT.txt",
+        "publication/licenses/even-better-toml-0.21.2/JAVASCRIPT-NOTICES-1.txt",
+        "publication/licenses/even-better-toml-0.21.2/RUST-STANDARD-LIBRARY-NOTICES.txt",
+        "publication/licenses/even-better-toml-0.21.2/RUST-WASM-NOTICES-1.txt",
+        "publication/licenses/even-better-toml-0.21.2/SOURCE-PROVENANCE.txt",
+        "publication/licenses/even-better-toml-0.21.2/Taplo-MIT.txt"
+      ]
+    },
+    {
+      "id": "path-intellisense",
+      "version": "2.10.0",
+      "extensionId": "local-chinese.path-intellisense-zh",
+      "upstreamId": "christian-kohler.path-intellisense",
+      "upstream": {
+        "url": "https://marketplace.visualstudio.com/_apis/public/gallery/publishers/christian-kohler/vsextensions/path-intellisense/2.10.0/vspackage",
+        "sha256": "6c4df6566cd906c02a812c5d4002bd3a84dc4e0bad184b60bf0ebe45a89ea91b",
+        "bytes": 130151
+      },
+      "base": {
+        "assetName": "path-intellisense-zh-2.10.0.vsix",
+        "sha256": "1e1b9e8dd9dc77035984016faf090c67fff64c682aab2e4459820ff62160674a",
+        "bytes": 131830
+      },
+      "recipe": {
+        "script": "scripts/build-path-intellisense-product.py",
+        "inputs": [
+          {
+            "path": "scripts/build-store-product.py",
+            "sha256": "44f1d6d062ab2519272d9124ede421f02d10f8a85416a95d3999e68e753f1058",
+            "bytes": 20851
+          },
+          {
+            "path": "scripts/build-path-intellisense-product.py",
+            "sha256": "6793a9fdec17e4e2f96e0b733d0cfa297f8037ab9f4f78416862dd7a7c7e040f",
+            "bytes": 7868
+          },
+          {
+            "path": "localizations/path-intellisense-2.10.0/config.json",
+            "sha256": "0a395d5127748a7da043083bcebdd1bc599be5a37ae97e68fd408a14ea59f56e",
+            "bytes": 5011
+          },
+          {
+            "path": "localizations/path-intellisense-2.10.0/plan.json",
+            "sha256": "6fa28a0caebfbc36af68c7c0bb8ef30d77b5fff03c05ae2c644a62325ce704cd",
+            "bytes": 7655
+          },
+          {
+            "path": "localizations/path-intellisense-2.10.0/package.nls.json",
+            "sha256": "63b91aa58ff0abacd1feb7bfba027f6700c9ae269f259ddd2319dd5e57885e73",
+            "bytes": 1390
+          },
+          {
+            "path": "localizations/path-intellisense-2.10.0/package.nls.zh-cn.json",
+            "sha256": "98a4e0235165a5b37391d375873a10fad314c62d3023513025ca1b646d0bd276",
+            "bytes": 1315
+          },
+          {
+            "path": "localizations/path-intellisense-2.10.0/vsix-localize.py.txt",
+            "sha256": "c7ae82a602368c00856535d624614404a3aba999ff46f8b1ed1d587ea6389eb8",
+            "bytes": 17708
+          }
+        ]
+      },
+      "artifact": {
+        "localizationRevision": 1,
+        "tag": "path-intellisense-2.10.0-r1",
+        "assetName": "path-intellisense-zh-2.10.0-r1.vsix",
+        "url": "https://github.com/Nan857/vscode-chinese-extensions/releases/download/path-intellisense-2.10.0-r1/path-intellisense-zh-2.10.0-r1.vsix",
+        "targetPlatform": "universal",
+        "enginesVscode": "^1.43.0",
+        "verificationProfile": "metadata-v1",
+        "sha256": "d0adfba280bd5e2b3239266387f77126a6bdbb9a92257431e03fa56877b4bda7",
+        "bytes": 138708
+      },
+      "licenseFiles": [
+        "publication/licenses/path-intellisense-2.10.0/Path-Intellisense-2.10.0-MIT.txt",
+        "publication/licenses/path-intellisense-2.10.0/THIRD-PARTY-NOTICES.md",
+        "publication/licenses/path-intellisense-2.10.0/balanced-match-1.0.2-MIT.txt",
+        "publication/licenses/path-intellisense-2.10.0/brace-expansion-1.1.11-MIT.txt",
+        "publication/licenses/path-intellisense-2.10.0/concat-map-0.0.1-MIT.txt",
+        "publication/licenses/path-intellisense-2.10.0/json5-2.2.0-MIT.txt",
+        "publication/licenses/path-intellisense-2.10.0/minimatch-3.0.4-ISC.txt"
+      ]
+    },
+    {
+      "id": "indent-rainbow",
+      "version": "8.3.1",
+      "extensionId": "local-chinese.indent-rainbow-zh",
+      "upstreamId": "oderwat.indent-rainbow",
+      "upstream": {
+        "url": "https://marketplace.visualstudio.com/_apis/public/gallery/publishers/oderwat/vsextensions/indent-rainbow/8.3.1/vspackage",
+        "sha256": "74e89cc9ad01dacae24dc0d2742ca1b69d0c731e5be9351a14a55bd185378d47",
+        "bytes": 3268062
+      },
+      "base": {
+        "assetName": "indent-rainbow-zh-8.3.1.vsix",
+        "sha256": "b363f2d0d6fea7c8c86c8d2bbaa59aaa16820c17e58de092f00c5a3e5eac5ee0",
+        "bytes": 212917
+      },
+      "recipe": {
+        "script": "scripts/build-indent-rainbow-product.py",
+        "inputs": [
+          {
+            "path": "scripts/build-store-product.py",
+            "sha256": "44f1d6d062ab2519272d9124ede421f02d10f8a85416a95d3999e68e753f1058",
+            "bytes": 20851
+          },
+          {
+            "path": "scripts/build-indent-rainbow-product.py",
+            "sha256": "db1a4bb4d3dfd3169ae44203f90d163b60f3009bf9c667c88b0f7c9d288e2677",
+            "bytes": 12580
+          },
+          {
+            "path": "localizations/indent-rainbow-8.3.1/plan.json",
+            "sha256": "71fb8268d1e03c1a6a4cb544a417a5aebc43debec70e21a69e794a9673682cb1",
+            "bytes": 18153
+          },
+          {
+            "path": "localizations/indent-rainbow-8.3.1/deletions.json",
+            "sha256": "253d49b57750a7b483fae71a123ee0effac31469358cadc40c56f6c11d3b3f4e",
+            "bytes": 307071
+          },
+          {
+            "path": "localizations/indent-rainbow-8.3.1/dependency-proof.json",
+            "sha256": "cb49eac8cd7bcae02183b1f5cdcc716c634a80064c42d8b23f9f29073f386fc3",
+            "bytes": 25514
+          },
+          {
+            "path": "localizations/indent-rainbow-8.3.1/coverage.json",
+            "sha256": "c9f50e161b025751f457443c2b62372b5b97688061c77be02aa031355973ef33",
+            "bytes": 7255
+          },
+          {
+            "path": "localizations/indent-rainbow-8.3.1/README.md",
+            "sha256": "7a4598a92bcbfd160e8fb588c9cd279a8aa149f228e0ac48f1c542d2c2c72ed7",
+            "bytes": 1118
+          }
+        ]
+      },
+      "artifact": {
+        "localizationRevision": 1,
+        "tag": "indent-rainbow-8.3.1-r1",
+        "assetName": "indent-rainbow-zh-8.3.1-r1.vsix",
+        "url": "https://github.com/Nan857/vscode-chinese-extensions/releases/download/indent-rainbow-8.3.1-r1/indent-rainbow-zh-8.3.1-r1.vsix",
+        "targetPlatform": "universal",
+        "enginesVscode": "^1.52.0",
+        "verificationProfile": "metadata-v1",
+        "sha256": "21f548e54a402266fd9b629354d4c7b9e623c4cb35250ee4cc40b22ca9a69e44",
+        "bytes": 216774
+      },
+      "licenseFiles": [
+        "publication/licenses/indent-rainbow-8.3.1/THIRD-PARTY-NOTICES.md",
+        "publication/licenses/indent-rainbow-8.3.1/indent-rainbow-MIT.txt"
+      ]
+    },
+    {
+      "id": "ruff",
+      "version": "2026.88.0",
+      "extensionId": "local-chinese.ruff-zh",
+      "upstreamId": "charliermarsh.ruff",
+      "upstream": {
+        "url": "https://marketplace.visualstudio.com/_apis/public/gallery/publishers/charliermarsh/vsextensions/ruff/2026.88.0/vspackage?targetPlatform=darwin-arm64",
+        "sha256": "fab82cde8e053c4421794e4d6718e78a166c1aa72ae20261e394737d09462d10",
+        "bytes": 10211783
+      },
+      "base": {
+        "assetName": "ruff-zh-2026.88.0-darwin-arm64.vsix",
+        "sha256": "7a70f1651ff62fd71786528dadff303698d666e004cbf2acb0ae06c825fbebcb",
+        "bytes": 9861468
+      },
+      "recipe": {
+        "script": "scripts/build-ruff-product.py",
+        "inputs": [
+          {
+            "path": "scripts/build-store-product.py",
+            "sha256": "44f1d6d062ab2519272d9124ede421f02d10f8a85416a95d3999e68e753f1058",
+            "bytes": 20851
+          },
+          {
+            "path": "scripts/build-ruff-product.py",
+            "sha256": "b047c86b8da331b7ba94dd380e360fd01e6c6675ef54cdaac306fd69010dec73",
+            "bytes": 8265
+          },
+          {
+            "path": "localizations/ruff-2026.88.0/config.json",
+            "sha256": "a87d592dda5b08f0b36dc464bc2b3a12949a88762ad2585a1ad9b6bc8fdb7c43",
+            "bytes": 1183
+          },
+          {
+            "path": "localizations/ruff-2026.88.0/plan.json",
+            "sha256": "6176ce7cdd5d1bf80c2c93ce51a52729a99d85b1ecfa476e75b18e9d161e28de",
+            "bytes": 70591
+          },
+          {
+            "path": "localizations/ruff-2026.88.0/package.nls.json",
+            "sha256": "f45f0c7a23f22a905a154df2b7dcfab723f25ca5739d6b2fda9e5ed1d482246b",
+            "bytes": 9960
+          },
+          {
+            "path": "localizations/ruff-2026.88.0/package.nls.zh-cn.json",
+            "sha256": "1eb6e6cff7b7fd38f29e8b18a60b55a95bfa68f6fc71b8080d1bc409fe9c26fa",
+            "bytes": 9517
+          },
+          {
+            "path": "localizations/ruff-2026.88.0/vsix-localize.py.txt",
+            "sha256": "c7ae82a602368c00856535d624614404a3aba999ff46f8b1ed1d587ea6389eb8",
+            "bytes": 17708
+          },
+          {
+            "path": "localizations/ruff-2026.88.0/license-materials-lock.json",
+            "sha256": "d6ee818b1fb8d6dcafa24e215691495c06d8ef3a6aac70d7786f8e8acc0591c4",
+            "bytes": 449632
+          }
+        ]
+      },
+      "artifact": {
+        "localizationRevision": 1,
+        "tag": "ruff-2026.88.0-r1",
+        "assetName": "ruff-zh-2026.88.0-darwin-arm64-r1.vsix",
+        "url": "https://github.com/Nan857/vscode-chinese-extensions/releases/download/ruff-2026.88.0-r1/ruff-zh-2026.88.0-darwin-arm64-r1.vsix",
+        "targetPlatform": "darwin-arm64",
+        "enginesVscode": "^1.91.0",
+        "verificationProfile": "metadata-v1",
+        "sha256": "60ee092176b6271e07ff3ae96cba94f9d58a2e7158ff9cd4b29aef2c8e68dac4",
+        "bytes": 10093778
+      },
+      "licenseFiles": [
+        "publication/licenses/ruff-2026.88.0/CARGO-REGISTRY-COMPLETE-NOTICES.txt",
+        "publication/licenses/ruff-2026.88.0/MIT-DECLARATIONS-AND-STANDARD-TERMS.txt",
+        "publication/licenses/ruff-2026.88.0/NPM-COMPLETE-NOTICES.txt",
+        "publication/licenses/ruff-2026.88.0/Ruff-0.17.1-ALL-UPSTREAM-LICENSES.txt",
+        "publication/licenses/ruff-2026.88.0/Ruff-VSCode-2026.88.0-MIT.txt",
+        "publication/licenses/ruff-2026.88.0/Rust-stdlib-1.99.0-COMPLETE-NOTICES.txt",
+        "publication/licenses/ruff-2026.88.0/THIRD-PARTY-NOTICES.md"
+      ]
     }
   ],
   "files": {
     "README.md": {
       "sha256": "90dcdf0fe40ea4283c30285c72df954b039693ad6283b3fe227b632573c996c1",
       "bytes": 2136
+    },
+    "localizations/autodocstring-0.6.1/config.json": {
+      "sha256": "654d27d841848c33805d72376aa89bf8e628ae32c560e30548712fa38784f18e",
+      "bytes": 4153
+    },
+    "localizations/autodocstring-0.6.1/package.nls.json": {
+      "sha256": "50204551b124f64d2f130a485e80cafa3d61da004c695fd3c7a5f0a29b77bee8",
+      "bytes": 1493
+    },
+    "localizations/autodocstring-0.6.1/package.nls.zh-cn.json": {
+      "sha256": "0b66ac3f786f4b415886b548e54d6017c6810173b6c234138f3fcfa4f1be2a08",
+      "bytes": 1534
+    },
+    "localizations/autodocstring-0.6.1/plan.json": {
+      "sha256": "fdd3875e738517ea70063a21b0244d6774b71f1741ae9330ea8793992b58cb12",
+      "bytes": 9547
+    },
+    "localizations/autodocstring-0.6.1/vsix-localize.py.txt": {
+      "sha256": "c7ae82a602368c00856535d624614404a3aba999ff46f8b1ed1d587ea6389eb8",
+      "bytes": 17708
     },
     "localizations/error-lens-3.29.0/LICENSES/lodash-MIT.txt": {
       "sha256": "f71e8ed126b46346494aad5486874cd8f0aafe95092ed67d2e3cb6110f939abc",
@@ -142,21 +530,141 @@
       "sha256": "615e5f2e92e2c37c1750ccc18bb4822d4290a6c452744e37abb3fd8ba45009e4",
       "bytes": 10374
     },
+    "localizations/even-better-toml-0.21.2/LOCALIZATION-NOTICE.md": {
+      "sha256": "683a99348d257987b0bfda186a1b77be74cf11ae22ff9638b34e5ca811dfad2b",
+      "bytes": 1213
+    },
+    "localizations/even-better-toml-0.21.2/plan.json": {
+      "sha256": "410be02fa097c68a5c4d587719bd542b201eb44b86d38058bef260a9f15ede11",
+      "bytes": 81317
+    },
+    "localizations/even-better-toml-0.21.2/vsix_localize.py.txt": {
+      "sha256": "c7ae82a602368c00856535d624614404a3aba999ff46f8b1ed1d587ea6389eb8",
+      "bytes": 17708
+    },
+    "localizations/indent-rainbow-8.3.1/README.md": {
+      "sha256": "7a4598a92bcbfd160e8fb588c9cd279a8aa149f228e0ac48f1c542d2c2c72ed7",
+      "bytes": 1118
+    },
+    "localizations/indent-rainbow-8.3.1/coverage.json": {
+      "sha256": "c9f50e161b025751f457443c2b62372b5b97688061c77be02aa031355973ef33",
+      "bytes": 7255
+    },
+    "localizations/indent-rainbow-8.3.1/deletions.json": {
+      "sha256": "253d49b57750a7b483fae71a123ee0effac31469358cadc40c56f6c11d3b3f4e",
+      "bytes": 307071
+    },
+    "localizations/indent-rainbow-8.3.1/dependency-proof.json": {
+      "sha256": "cb49eac8cd7bcae02183b1f5cdcc716c634a80064c42d8b23f9f29073f386fc3",
+      "bytes": 25514
+    },
+    "localizations/indent-rainbow-8.3.1/plan.json": {
+      "sha256": "71fb8268d1e03c1a6a4cb544a417a5aebc43debec70e21a69e794a9673682cb1",
+      "bytes": 18153
+    },
+    "localizations/path-intellisense-2.10.0/config.json": {
+      "sha256": "0a395d5127748a7da043083bcebdd1bc599be5a37ae97e68fd408a14ea59f56e",
+      "bytes": 5011
+    },
+    "localizations/path-intellisense-2.10.0/package.nls.json": {
+      "sha256": "63b91aa58ff0abacd1feb7bfba027f6700c9ae269f259ddd2319dd5e57885e73",
+      "bytes": 1390
+    },
+    "localizations/path-intellisense-2.10.0/package.nls.zh-cn.json": {
+      "sha256": "98a4e0235165a5b37391d375873a10fad314c62d3023513025ca1b646d0bd276",
+      "bytes": 1315
+    },
+    "localizations/path-intellisense-2.10.0/plan.json": {
+      "sha256": "6fa28a0caebfbc36af68c7c0bb8ef30d77b5fff03c05ae2c644a62325ce704cd",
+      "bytes": 7655
+    },
+    "localizations/path-intellisense-2.10.0/vsix-localize.py.txt": {
+      "sha256": "c7ae82a602368c00856535d624614404a3aba999ff46f8b1ed1d587ea6389eb8",
+      "bytes": 17708
+    },
+    "localizations/ruff-2026.88.0/config.json": {
+      "sha256": "a87d592dda5b08f0b36dc464bc2b3a12949a88762ad2585a1ad9b6bc8fdb7c43",
+      "bytes": 1183
+    },
+    "localizations/ruff-2026.88.0/license-materials-lock.json": {
+      "sha256": "d6ee818b1fb8d6dcafa24e215691495c06d8ef3a6aac70d7786f8e8acc0591c4",
+      "bytes": 449632
+    },
+    "localizations/ruff-2026.88.0/package.nls.json": {
+      "sha256": "f45f0c7a23f22a905a154df2b7dcfab723f25ca5739d6b2fda9e5ed1d482246b",
+      "bytes": 9960
+    },
+    "localizations/ruff-2026.88.0/package.nls.zh-cn.json": {
+      "sha256": "1eb6e6cff7b7fd38f29e8b18a60b55a95bfa68f6fc71b8080d1bc409fe9c26fa",
+      "bytes": 9517
+    },
+    "localizations/ruff-2026.88.0/plan.json": {
+      "sha256": "6176ce7cdd5d1bf80c2c93ce51a52729a99d85b1ecfa476e75b18e9d161e28de",
+      "bytes": 70591
+    },
+    "localizations/ruff-2026.88.0/vsix-localize.py.txt": {
+      "sha256": "c7ae82a602368c00856535d624614404a3aba999ff46f8b1ed1d587ea6389eb8",
+      "bytes": 17708
+    },
     "patches/gitlab-7.2.5.zh-cn.json": {
       "sha256": "62bc7f6b1ec5d60bc98e1138290245ebe35ac1ae84ab6dd89ab7b9fe36019ddf",
       "bytes": 547634
+    },
+    "products/autodocstring.json": {
+      "sha256": "45c467338bb22ef06732ca8b6327a9871014f09b8a192c4a558a954c833f63ba",
+      "bytes": 1141
     },
     "products/error-lens.json": {
       "sha256": "d156502f71bd766b332ff8c989ac4aff6b1d8e1b93f33e28c4dc8cf4418d40fe",
       "bytes": 962
     },
+    "products/even-better-toml.json": {
+      "sha256": "70b68c9cb31039ed29ac513a147f9e873f7aee1cebf7fea344b9cbc2644ac295",
+      "bytes": 1046
+    },
     "products/gitlab.json": {
       "sha256": "5829feef50ed6bdc55197e5169ffdb9a6ac08cf9378f9b77d1976a9e47e09b31",
       "bytes": 1187
     },
+    "products/indent-rainbow.json": {
+      "sha256": "9386f2272556936a011950e916dc15925d6b37f9c8ff1dea07c25b383c0e40c5",
+      "bytes": 1130
+    },
+    "products/path-intellisense.json": {
+      "sha256": "6898adc78c905c9783dedd4edd826744bdec77f6bcfa39bdca2915568ff80e73",
+      "bytes": 1225
+    },
+    "products/ruff.json": {
+      "sha256": "ec056ea514f455680ab0d4fa9c57892c6073085a04192e384f7effbff8cdb3eb",
+      "bytes": 1428
+    },
     "publication/license-manifest.json": {
-      "sha256": "c7499a12ff6f472b40faf631aacd41c2b00ea8e323d2c0b45b88f52245d6835c",
-      "bytes": 3659
+      "sha256": "638c2242700568b7fe83a7a5b5a19579539a8420c8a37f9d2138a85c0a101af6",
+      "bytes": 349585
+    },
+    "publication/licenses/autodocstring-0.6.1/THIRD-PARTY-NOTICES.md": {
+      "sha256": "9052e7eff3c8e0dc8fe29ae0913be3c581d60cdfac5b556166d568ccc874daa8",
+      "bytes": 1159
+    },
+    "publication/licenses/autodocstring-0.6.1/autoDocstring-0.6.1-MIT.txt": {
+      "sha256": "b45dabfc0ae9ace61c82135fb1814400766adc2f3415e79e7e5f7b53fc0f0d06",
+      "bytes": 1068
+    },
+    "publication/licenses/autodocstring-0.6.1/mustache-4.2.0-MIT.txt": {
+      "sha256": "e60b280838180a70cbb4b934f825c8119cdcf8912259ff4c6da20b284231c832",
+      "bytes": 1183
+    },
+    "publication/licenses/autodocstring-0.6.1/stack-trace-0.0.10-MIT.txt": {
+      "sha256": "c5ece09265dbd6335030832335dec72919b9ecfd4db126cb9bb9b8d023970304",
+      "bytes": 1101
+    },
+    "publication/licenses/autodocstring-0.6.1/ts-dedent-2.2.0-MIT.txt": {
+      "sha256": "eff13095d9d762c3bd9dda74370c81e2130c28f2691bc455603abf973bac25b9",
+      "bytes": 1073
+    },
+    "publication/licenses/autodocstring-0.6.1/types-stack-trace-0.0.29-MIT.txt": {
+      "sha256": "27ebda9d51f0a56b7e281ccd8230a27236dcb51c05f64b07869ecf6e965d68b0",
+      "bytes": 1162
     },
     "publication/licenses/error-lens-3.29.0/Error-Lens-MIT.txt": {
       "sha256": "6c34860f0a1fe1dcf6afcfb2f83655f6ce21a95fcd402cc118a642fccb861b1e",
@@ -170,6 +678,30 @@
       "sha256": "f71e8ed126b46346494aad5486874cd8f0aafe95092ed67d2e3cb6110f939abc",
       "bytes": 1952
     },
+    "publication/licenses/even-better-toml-0.21.2/Even-Better-TOML-MIT.txt": {
+      "sha256": "552604656340642782345c47dda89218136f141a25aaecdfd1501180841ff98b",
+      "bytes": 1069
+    },
+    "publication/licenses/even-better-toml-0.21.2/JAVASCRIPT-NOTICES-1.txt": {
+      "sha256": "2a8aa784c47035d2bb1ae097eaa904d35d612cdcf7db0172bad42060db7ab179",
+      "bytes": 233799
+    },
+    "publication/licenses/even-better-toml-0.21.2/RUST-STANDARD-LIBRARY-NOTICES.txt": {
+      "sha256": "8235437db74f3939949a8a76e19c5dde3f0feea20168c05832d4e3bf0ca79578",
+      "bytes": 1056811
+    },
+    "publication/licenses/even-better-toml-0.21.2/RUST-WASM-NOTICES-1.txt": {
+      "sha256": "256512f32f234044314e6b5765e44054899348d8d6ffd9b824ae23548863914a",
+      "bytes": 2750477
+    },
+    "publication/licenses/even-better-toml-0.21.2/SOURCE-PROVENANCE.txt": {
+      "sha256": "18feb4999f792e48644221e960dbce75899f30a6b313713fe0a17b39a9ab2923",
+      "bytes": 1290796
+    },
+    "publication/licenses/even-better-toml-0.21.2/Taplo-MIT.txt": {
+      "sha256": "552604656340642782345c47dda89218136f141a25aaecdfd1501180841ff98b",
+      "bytes": 1069
+    },
     "publication/licenses/gitlab-7.2.5/DOMPurify-3.4.0-Apache-2.0-OR-MPL-2.0.txt": {
       "sha256": "1b02e03c3fb4f87d476c128f0eb9def1f5a1709d28b180465228bd41574623b7",
       "bytes": 27729
@@ -178,9 +710,93 @@
       "sha256": "f79103fcbadad38768311d14ca346c74aa1f59bcf046f3ee4202bb94c1e98255",
       "bytes": 1076
     },
+    "publication/licenses/indent-rainbow-8.3.1/THIRD-PARTY-NOTICES.md": {
+      "sha256": "2bc413dfc881302ef82329c8184843514a3dd296cd492629b331e77c3c2b202a",
+      "bytes": 1662
+    },
+    "publication/licenses/indent-rainbow-8.3.1/indent-rainbow-MIT.txt": {
+      "sha256": "8e94abce811c74b32120e94643ca35285ebe3237efcd1d98708c3d59c2e1ba7e",
+      "bytes": 1066
+    },
+    "publication/licenses/path-intellisense-2.10.0/Path-Intellisense-2.10.0-MIT.txt": {
+      "sha256": "4d1fba419d6b3a6ccc249f9a7ea619304e580c346b927df824f8b4b86041d625",
+      "bytes": 1083
+    },
+    "publication/licenses/path-intellisense-2.10.0/THIRD-PARTY-NOTICES.md": {
+      "sha256": "bc3895e72d123b5a3b1a9e96ccdeff3353a8cbf066438cc24b632bcf7a432c33",
+      "bytes": 1600
+    },
+    "publication/licenses/path-intellisense-2.10.0/balanced-match-1.0.2-MIT.txt": {
+      "sha256": "a1bd5deadb6a06dd74efa852c1b8b23f63b67f2214fbe9c8bd591da51da69268",
+      "bytes": 1096
+    },
+    "publication/licenses/path-intellisense-2.10.0/brace-expansion-1.1.11-MIT.txt": {
+      "sha256": "68f12f6e2c33688699249c01d8f9623c534da20aa71989c57b061b7bc1676d14",
+      "bytes": 1096
+    },
+    "publication/licenses/path-intellisense-2.10.0/concat-map-0.0.1-MIT.txt": {
+      "sha256": "435a6722c786b0a56fbe7387028f1d9d3f3a2d0fb615bb8fee118727c3f59b7b",
+      "bytes": 1073
+    },
+    "publication/licenses/path-intellisense-2.10.0/json5-2.2.0-MIT.txt": {
+      "sha256": "53e59feb13058722d977c699eb0407c7bce2f93c949b681bbd2ff31698535927",
+      "bytes": 1145
+    },
+    "publication/licenses/path-intellisense-2.10.0/minimatch-3.0.4-ISC.txt": {
+      "sha256": "4ec3d4c66cd87f5c8d8ad911b10f99bf27cb00cdfcff82621956e379186b016b",
+      "bytes": 765
+    },
+    "publication/licenses/ruff-2026.88.0/CARGO-REGISTRY-COMPLETE-NOTICES.txt": {
+      "sha256": "1001a8a8c50d4a743d0e375d21ca9ddfff9f3805a1e5252d4b593a3874691280",
+      "bytes": 2592983
+    },
+    "publication/licenses/ruff-2026.88.0/MIT-DECLARATIONS-AND-STANDARD-TERMS.txt": {
+      "sha256": "4bd79bdef2e784c91f26a477cf18a808628191cddda03f88bab73b49dee29bd5",
+      "bytes": 14362
+    },
+    "publication/licenses/ruff-2026.88.0/NPM-COMPLETE-NOTICES.txt": {
+      "sha256": "c5798ad20e7486cf79881c8963465a6449afb51abe44b873c71c8538b73170e1",
+      "bytes": 27706
+    },
+    "publication/licenses/ruff-2026.88.0/Ruff-0.17.1-ALL-UPSTREAM-LICENSES.txt": {
+      "sha256": "1deec903ec7616bb0e0397199608a520d30a6cba89da2e597067e3908640ffab",
+      "bytes": 72186
+    },
+    "publication/licenses/ruff-2026.88.0/Ruff-VSCode-2026.88.0-MIT.txt": {
+      "sha256": "29dac247d4eb42880499e03143f54db85c5b19c8c0bd147bd48ae903292da051",
+      "bytes": 2381
+    },
+    "publication/licenses/ruff-2026.88.0/Rust-stdlib-1.99.0-COMPLETE-NOTICES.txt": {
+      "sha256": "33459a8368f774e475cc573bcf677ce1e305109d131a641c2f02432569482e4c",
+      "bytes": 1512325
+    },
+    "publication/licenses/ruff-2026.88.0/THIRD-PARTY-NOTICES.md": {
+      "sha256": "e36cb9f234568b423a4c75d1b60c5879e8c587595d9e787183d60bd2475252f7",
+      "bytes": 2453
+    },
+    "scripts/build-autodocstring-product.py": {
+      "sha256": "8a7e8dd2a1d4409fdcbb75a3b2350ed522eb0b283e826f91354b593518dd1e7c",
+      "bytes": 7855
+    },
     "scripts/build-error-lens-product.py": {
       "sha256": "65148e6c7589c054bd5f6c0371a73f61cb9c66b1ca69dc01ad8c93df27508fca",
       "bytes": 11093
+    },
+    "scripts/build-even-better-toml-product.py": {
+      "sha256": "ee467fd7333646d27b9d5744a1755b91ea4fb7d3c8a90f413fce20ca3d278244",
+      "bytes": 5536
+    },
+    "scripts/build-indent-rainbow-product.py": {
+      "sha256": "db1a4bb4d3dfd3169ae44203f90d163b60f3009bf9c667c88b0f7c9d288e2677",
+      "bytes": 12580
+    },
+    "scripts/build-path-intellisense-product.py": {
+      "sha256": "6793a9fdec17e4e2f96e0b733d0cfa297f8037ab9f4f78416862dd7a7c7e040f",
+      "bytes": 7868
+    },
+    "scripts/build-ruff-product.py": {
+      "sha256": "b047c86b8da331b7ba94dd380e360fd01e6c6675ef54cdaac306fd69010dec73",
+      "bytes": 8265
     },
     "scripts/build-store-product.py": {
       "sha256": "44f1d6d062ab2519272d9124ede421f02d10f8a85416a95d3999e68e753f1058",
@@ -191,8 +807,8 @@
       "bytes": 280
     },
     "scripts/rebuild-public-products.py": {
-      "sha256": "7769925e0bca97b6be737e46a8d1f93113da6caa5bce3f0d90720b440eadb0a6",
-      "bytes": 25667
+      "sha256": "4a6d07acb0754f861fa90f16670a4be8df59ddbd73a42f4cb16c0c285bc05bea",
+      "bytes": 26994
     }
   }
 }

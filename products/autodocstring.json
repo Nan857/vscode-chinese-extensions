@@ -1,0 +1,29 @@
+{
+  "id": "autodocstring",
+  "extensionId": "local-chinese.autodocstring-zh",
+  "upstreamId": "njpwerner.autodocstring",
+  "name": "autoDocstring",
+  "symbol": "DS",
+  "version": "0.6.1",
+  "description": "自动生成 Python 文档字符串",
+  "knownLimitations": [
+    "跟随 VS Code 界面语言：zh-cn 中文，其他语言使用原英文。",
+    "仅执行包级检查与模拟 VS Code API；未执行原生 VS Code 界面或 Windows 运行验证。",
+    "文档字符串模板、用户代码、诊断正文及日志的原始错误对象保持不变。"
+  ],
+  "schemaVersion": 1,
+  "localizationRevision": 1,
+  "artifacts": [
+    {
+      "localizationRevision": 1,
+      "tag": "autodocstring-0.6.1-r1",
+      "assetName": "autodocstring-zh-0.6.1-r1.vsix",
+      "url": "https://github.com/Nan857/vscode-chinese-extensions/releases/download/autodocstring-0.6.1-r1/autodocstring-zh-0.6.1-r1.vsix",
+      "targetPlatform": "universal",
+      "enginesVscode": "^1.53.0",
+      "verificationProfile": "metadata-v1",
+      "sha256": "5b58563d055d1841c7fd9ba2fe8bb5e1ecfbb60351a9d3ccc81dd47d41f9f86c",
+      "bytes": 435780
+    }
+  ]
+}

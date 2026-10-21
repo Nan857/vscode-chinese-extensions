@@ -1,0 +1,21 @@
+{
+  "id": "ruff",
+  "publisher": "charliermarsh",
+  "version": "2026.88.0",
+  "name": "Ruff",
+  "displayName": "Ruff（中文版）",
+  "symbol": "RF",
+  "description": "为 Python 提供 Ruff 代码检查与格式化支持。",
+  "sourceSha256": "fab82cde8e053c4421794e4d6718e78a166c1aa72ae20261e394737d09462d10",
+  "sourceBytes": 10211783,
+  "sourceUrl": "https://marketplace.visualstudio.com/_apis/public/gallery/publishers/charliermarsh/vsextensions/ruff/2026.88.0/vspackage?targetPlatform=darwin-arm64",
+  "targetPlatform": "darwin-arm64",
+  "identityAdaptations": [],
+  "knownLimitations": [
+    "仅含 Mac ARM64 上游 Ruff 0.17.1 二进制；不适用于 Intel Mac、Windows 或 Linux。",
+    "跟随 VS Code 界面语言：zh-cn 中文，其他语言使用原英文。",
+    "Ruff 诊断正文、用户代码、协议标识及检查/格式化行为不翻译。",
+    "仅执行包级、语法、模拟语言选择和捆绑 Ruff CLI 检查；未执行原生 VS Code 扩展激活或完整语言服务器功能。",
+    "4 个 Rust 组件上游只声明 MIT、未提供独立版权许可文件；已保存原声明和标准 MIT 条款，未补造版权人或年份。"
+  ]
+}

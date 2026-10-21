@@ -1,0 +1,18 @@
+{
+  "extension.displayName": "autoDocstring - Python Docstring Generator",
+  "extension.description": "Generates python docstrings automatically",
+  "command.generateDocstring.title": "Generate Docstring",
+  "configuration.title": "Python Docstring Generator configuration",
+  "configuration.autoDocstring.docstringFormat.description": "Which docstring format to use.",
+  "configuration.autoDocstring.customTemplatePath.description": "Path to custom docstring template (overrides docstringFormat). Path can be absolute or relative to the project root.",
+  "configuration.autoDocstring.generateDocstringOnEnter.description": "Generate docstring on pressing enter after opening a docstring (use quoteStyle)",
+  "configuration.autoDocstring.includeExtendedSummary.description": "Include [extended_summary] tag",
+  "configuration.autoDocstring.includeName.description": "Include function names at the start of docstrings",
+  "configuration.autoDocstring.startOnNewLine.description": "Start docstring on new line",
+  "configuration.autoDocstring.guessTypes.description": "Guess the type of parameters and return values",
+  "configuration.autoDocstring.quoteStyle.description": "Style of quote used with generate docstring command",
+  "configuration.autoDocstring.logLevel.description": "Output log information",
+  "configuration.autoDocstring.logLevel.label.none": "None",
+  "configuration.autoDocstring.logLevel.label.info": "Info",
+  "configuration.autoDocstring.logLevel.label.debug": "Debug"
+}

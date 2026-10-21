@@ -1,0 +1,29 @@
+{
+  "id": "path-intellisense",
+  "extensionId": "local-chinese.path-intellisense-zh",
+  "upstreamId": "christian-kohler.path-intellisense",
+  "name": "Path Intellisense",
+  "symbol": "PI",
+  "version": "2.10.0",
+  "description": "自动补全文件名的 Visual Studio Code 插件",
+  "knownLimitations": [
+    "跟随 VS Code 界面语言：zh-cn 中文，其他语言使用原英文。",
+    "仅执行包级检查与模拟 VS Code API；未执行原生 VS Code 界面或 Windows 运行验证。",
+    "上游 manifest 声明的 Web 入口未随原包分发，Web 扩展运行未验证；文件名及补全内容不翻译。"
+  ],
+  "schemaVersion": 1,
+  "localizationRevision": 1,
+  "artifacts": [
+    {
+      "localizationRevision": 1,
+      "tag": "path-intellisense-2.10.0-r1",
+      "assetName": "path-intellisense-zh-2.10.0-r1.vsix",
+      "url": "https://github.com/Nan857/vscode-chinese-extensions/releases/download/path-intellisense-2.10.0-r1/path-intellisense-zh-2.10.0-r1.vsix",
+      "targetPlatform": "universal",
+      "enginesVscode": "^1.43.0",
+      "verificationProfile": "metadata-v1",
+      "sha256": "d0adfba280bd5e2b3239266387f77126a6bdbb9a92257431e03fa56877b4bda7",
+      "bytes": 138708
+    }
+  ]
+}
